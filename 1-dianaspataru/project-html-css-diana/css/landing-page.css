@@ -1,0 +1,116 @@
+header{
+    background: gray url("https://img.muziekgebouw.nl/uF5gvmIkPLkbyMMBkqrD7pcZgpFZoTyV0u0qV-eyIlE/rs:fit:1920:800:1/aHR0cHM6Ly93d3cubXV6aWVrZ2Vib3V3Lm5sLy9jbXNfZmlsZXMvc3lzdGVtL2ltYWdlcy9pbWc4NDc5OV9vcmlnLmpwZw");
+    background-color: cover;
+    height: 35rem;
+    color:white;
+}
+
+.back-image{
+    width: 3rem;
+    position: fixed;
+    top: 1rem;
+    left:1rem;
+}
+
+header h1{
+    font-size:2.5rem;
+    margin:2rem  5rem 1.2rem;
+}
+
+header h1 span{
+    text-transform: uppercase;
+    display: block;
+    font-size:3rem;
+    color: orange;
+    position: relative;
+    z-index: 1;
+}
+
+header h1 span::before{
+    content:' ';
+    width: 9rem;
+    height: 1rem;
+    font-size:3rem;
+    color: orange;
+    position: absolute;
+    bottom: 0;
+    left: -3rem;
+    background-color:yellow;
+}
+
+.header-description{
+font-weight: bold;
+padding:2rem;
+max-width: 70%;
+display:flex;
+justify-content: center;
+align-items: center;
+margin-left: 5rem;
+border-radius: 1rem;
+box-shadow: 0.5rem 0.5rem 0.5rem orange;
+
+}
+
+.form-container label{
+color: white;
+}
+
+.form-container p{
+color:white;
+}
+
+.form-container form input[type="text"]{
+    border: 1px solid orange;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.form-container form input[type="button"]{
+    background-color: orange;
+    border: none;
+    border-radius: 0.5rem;
+    color:white;
+    padding: 1rem 0;
+    width: 30%;
+    font-size: 1.2rem;
+    align-self: center;
+    cursor: pointer;
+}
+
+
+.form-container form input[type="button"]:hover{
+    background-color: #b4790a;
+}
+
+.call-to-action{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.call-to-action .call-to-action-message{
+    padding: 5rem;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.call-to-action .call-to-action-message h2{
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+.call-to-action .call-to-action-message h2::before{
+    text-transform: uppercase;
+    content: ' ';
+    position: absolute;
+    width: 9rem;
+    height: 1rem;
+    z-index: -1;
+    bottom: 0;
+    left: -3rem;
+    background-color:yellow;
+}

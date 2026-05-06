@@ -1,0 +1,151 @@
+
+:root {
+  --lemon-icing: #f4e9bc;
+  --nimbus-cloud: #c5c5c5;
+  --raindrops-on-roses: #e8d0d3;
+  --cloud-dancer: #f0eee9;
+  --ice-melt: #cbdceb;
+  --peach-dust: #e8d1c5;
+  --almost-aqua: #c8d3be;
+  --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cloud-dancer);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px; 
+}
+
+/* style links*/
+a {
+    text-decoration: none;
+    color: var(--nimbus-cloud);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--almost-aqua);
+}
+
+
+.form-container {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 400px;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 3rem 2rem;
+    border: 1px solid var(--ice-melt);
+    text-align: center;
+}
+
+.form-container h1 {
+    margin-bottom: 2rem;
+    color: #444;
+    font-weight: 600;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 0.5rem;
+}
+
+.form-field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--nimbus-cloud);
+    padding-left: 0.5rem;
+}
+
+/* style mail/pass */
+.form-field input:not([type="checkbox"]) {
+    background-color: var(--cloud-dancer);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 0.8rem 1rem;
+    width: 100%;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-field input:not([type="checkbox"]):focus {
+    border-color: var(--almost-aqua);
+    background-color: var(--white);
+    box-shadow: 0 0 0 4px rgba(200, 211, 190, 0.2); 
+}
+
+.form-field input::placeholder {
+    color: var(--nimbus-cloud);
+}
+
+/* check box */
+.form-field:has(input[type="checkbox"]) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0;
+}
+/* style buttons */
+.login-button, .register-button {
+    padding: 0.9rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.login-button {
+    background-color: var(--almost-aqua);
+    color: var(--white);
+    border: none;
+}
+
+.login-button:hover {
+    background-color: var(--ice-melt);
+    transform: translateY(-2px);
+}
+
+.register-button {
+    background-color: transparent;
+    color: var(--almost-aqua);
+    border: 2px solid var(--almost-aqua);
+    margin-top: 1rem; 
+}
+
+.register-button:hover {
+    background-color: var(--almost-aqua);
+    color: var(--white);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--ice-melt);
+    margin: 2rem 0;
+}
+
+.forgot-pass-btn {
+    display: block; 
+    margin-top: 0.5rem;
+}
