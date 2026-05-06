@@ -48,7 +48,6 @@ body {
 
 
 
-/* ===== TOGGLE BUTTONS (HIDDEN BY DEFAULT) ===== */
 .toggle-checkbox {
     display: none;
 }
@@ -58,7 +57,7 @@ body {
     display: none;
 }
 
-/* ===== PAGE LAYOUT ===== */
+
 .container {
     display: grid;
     grid-template-columns: 250px 1fr 250px;
@@ -66,7 +65,6 @@ body {
     padding: 20px;
 }
 
-/* ===== LEFT SIDEBAR ===== */
 .left {
     background: rgb(237, 214, 217);
     padding: 30px;
@@ -117,7 +115,6 @@ body {
     font-size: 18px;
 }
 
-/* ===== FEED ===== */
 .feed {
     display: flex;
     flex-direction: column;
@@ -187,7 +184,7 @@ body {
     border: 2px solid whitesmoke;
 }
 
-/* ===== ACTION BUTTONS ===== */
+
 .actions {
     margin-top: 10px;
 }
@@ -205,7 +202,7 @@ body {
     color: #fff;
 }
 
-/* ===== RIGHT SIDEBAR ===== */
+
 .right {
     background: rgb(237, 214, 217);
     color: black;
@@ -300,7 +297,7 @@ body {
 
 @media (max-width: 768px) {
 
-    /* NAVBAR DEVINE PE 2 RANDURI */
+   
     .navbar {
         flex-direction: column;
         gap: 10px;
@@ -315,7 +312,6 @@ body {
         flex: 1;
     }
 
-    /* BUTOANELE DE DESCHIDERE */
     .toggle-left-btn,
     .toggle-right-btn {
         display: block;
@@ -339,7 +335,7 @@ body {
         right: 15px;
     }
 
-    /* SIDEBAR LEFT — MOBILE */
+   
     .left {
         position: fixed;
         top: 0;
@@ -359,7 +355,7 @@ body {
         left: 0;
     }
 
-    /* SIDEBAR RIGHT — MOBILE */
+  
     .right {
         position: fixed;
         top: 0;
@@ -380,7 +376,7 @@ body {
     }
 
 
-    /* LAYOUT DEVINE O SINGURĂ COLONĂ */
+   
     .container {
         grid-template-columns: 1fr;
     }
