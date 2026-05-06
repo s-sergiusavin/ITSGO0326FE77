@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session 6 | Responsive design</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Responsive design</h1>
+
+    <div class="responsiveContainer">
+      Textul va avea 30 de pixeli
+      <span class="responsiveSpanParrent"
+        >Iar acest text va avea 15 pixeli</span
+      >
+      <span class="responsiveSpan">Iar acest text va avea 8 pixeli</span>
+    </div>
+
+    <span>test display</span>
+
+    <div class="layer1">
+      <div class="layer2">test</div>
+    </div>
+
+    <img
+      src="responsive-image.avif"
+      alt="city image"
+      class="responsive-image"
+    />
+    <img src="low-res.png" alt="low resolution city" class="low-res" />
+
+    <picture class="picture-tag">
+      <source srcset="low-res.png" media="(max-width: 600px)" />
+      <source srcset="responsive-image.avif" media="(max-width: 1500px)" />
+      <source srcset="flowers.jpg" />
+      <img src="low-res.png" alt="city" />
+    </picture>
+
+    <div class="box"></div>
+
+    <div class="flex-container">
+        <div class="flex-item"></div>
+        <div class="flex-item"></div>
+        <div class="flex-item"></div>
+        <div class="flex-item"></div>
+        <div class="flex-item"></div>
+    </div>
+  </body>
+</html>
