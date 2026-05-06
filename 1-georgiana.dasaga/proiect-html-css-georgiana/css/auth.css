@@ -1,0 +1,103 @@
+body {
+    background-image: url('../assets/background-login2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.form-container {
+    margin: 5rem auto;
+    width: 95%;
+    max-width: 30rem;
+    background-color: black;
+    color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 20px rgb(86, 41, 49);
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.1rem;
+}
+
+.form-container form .form-field {
+    margin-bottom: 0.5rem;
+    display: flex;
+    gap: 1rem;
+
+}
+
+.form-container form .form-field input:not([type="checkbox"]) {
+    background-color: thistle;
+    color: black;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 50%;
+
+}
+
+.form-field input {
+    color: blanchedalmond;
+}
+
+.login-button {
+    background-color: pink;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    border: 1px solid black;
+    padding: 0.5rem 2.5rem;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: plum;
+    border: 1px solid black;
+    box-shadow: 0 1px 5px black;
+    font-weight: bolder;
+}
+
+.forgot-password-btn {
+    color: black;
+}
+
+.forgot-password-btn:hover {
+    color: purple;
+    text-decoration: underline;
+}
+
+.register-btn {
+    background-color: #ffc0cb;
+    border: 1px solid black;
+    box-shadow: 0 1px 5px black;
+    font-weight: bolder;
+    display: block;
+    margin: 0 auto;
+    border-radius: 0.3rem;
+    width: 50%;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    opacity: 0.8;
+}
+
+
+.form-container a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+
+.form-container a:hover {
+    color: #ffb6c1;
+    
+}

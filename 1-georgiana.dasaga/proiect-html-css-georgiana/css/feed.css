@@ -1,0 +1,391 @@
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: whitesmoke;
+    color: #fff;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    background: #000;
+    color: #fff;
+    padding: 12px 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .brand {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar i {
+    font-size: 22px;
+    color: #ff8ac6;
+}
+
+.nav-center {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar {
+    background-color: #000;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+}
+
+
+
+/* ===== TOGGLE BUTTONS (HIDDEN BY DEFAULT) ===== */
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-left-btn,
+.toggle-right-btn {
+    display: none;
+}
+
+/* ===== PAGE LAYOUT ===== */
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr 250px;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ===== LEFT SIDEBAR ===== */
+.left {
+    background: rgb(237, 214, 217);
+    padding: 30px;
+    border-radius: 12px;
+    color: black;
+}
+
+.left>* {
+    margin-bottom: 70px;
+}
+
+.left h3 {
+    color: black;
+}
+
+.group-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.group-list li {
+    background: rgb(237, 214, 217);
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: black;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.group-list li:hover {
+    background: #ffb6d9;
+    color: black;
+    transform: translateY(-2px);
+}
+
+.group-list li i {
+    color: #ffb6d9;
+    font-size: 18px;
+}
+
+/* ===== FEED ===== */
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.profile-box a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.avatar-profile {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.avatar-feed {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.post {
+    background: rgb(237, 214, 217);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.post-header h4 {
+    margin: 0;
+    color: black;
+}
+
+.post-header span {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.post p {
+    margin: 15px 0;
+    color: black;
+}
+
+.post-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 2px solid whitesmoke;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.actions {
+    margin-top: 10px;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    color: #ff8ac6;
+    font-size: 22px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.actions button:hover {
+    color: #fff;
+}
+
+/* ===== RIGHT SIDEBAR ===== */
+.right {
+    background: rgb(237, 214, 217);
+    color: black;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.right>* {
+    margin-bottom: 70px;
+}
+
+.right h3 {
+    color: black;
+}
+
+.online-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.online-box li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: black;
+}
+
+.online-box img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff8ac6;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #4cff4c;
+    border-radius: 50%;
+    margin-left: auto;
+}
+
+.faq-box p {
+    margin: 20px 0;
+    color: black;
+}
+
+.tags span {
+    display: inline-block;
+    background: #ff8ac6;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 12px;
+}
+
+.poll-box {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.poll-box button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    background: #ff8ac6;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+}
+
+.divider {
+    height: 0.5px;
+    background: #ff8ac6;
+    margin: 16px 0;
+    opacity: 0.7;
+}
+
+/* ========================================================= */
+/* ====================== MOBILE MODE ====================== */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR DEVINE PE 2 RANDURI */
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-right {
+        width: 100%;
+        display: flex;
+    }
+
+    .search-bar {
+        flex: 1;
+    }
+
+    /* BUTOANELE DE DESCHIDERE */
+    .toggle-left-btn,
+    .toggle-right-btn {
+        display: block;
+        position: fixed;
+        top: 15px;
+        z-index: 2000;
+        background: #ff8ac6;
+        padding: 10px 12px;
+        border-radius: 10px;
+        font-size: 26px;
+        color: black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+    }
+
+    .toggle-left-btn {
+        left: 15px;
+    }
+
+    .toggle-right-btn {
+        right: 15px;
+    }
+
+    /* SIDEBAR LEFT — MOBILE */
+    .left {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 250px;
+        height: 100vh;
+        background: #000;
+        color: white;
+        padding: 25px;
+        transition: 0.3s ease;
+        overflow-y: auto;
+        z-index: 1500;
+        border-right: 2px solid #ff8ac6;
+    }
+
+    #toggle-left:checked~.container .left {
+        left: 0;
+    }
+
+    /* SIDEBAR RIGHT — MOBILE */
+    .right {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 250px;
+        height: 100vh;
+        background: #000;
+        color: white;
+        padding: 25px;
+        transition: 0.3s ease;
+        overflow-y: auto;
+        z-index: 1500;
+        border-left: 2px solid #ff8ac6;
+    }
+
+    #toggle-right:checked~.container .right {
+        right: 0;
+    }
+
+
+    /* LAYOUT DEVINE O SINGURĂ COLONĂ */
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .feed {
+        width: 100%;
+    }
+}

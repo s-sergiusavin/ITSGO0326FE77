@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/feed.css">
+    <link rel="stylesheet" href="css/feed.css" class="rel">
+</head>
+
+<body>
+
+    <!-- TOGGLE LEFT -->
+    <input type="checkbox" id="toggle-left" class="toggle-checkbox">
+    <label for="toggle-left" class="toggle-left-btn">
+        <i class="bi bi-list"></i>
+    </label>
+
+    <!-- TOGGLE RIGHT -->
+    <input type="checkbox" id="toggle-right" class="toggle-checkbox">
+    <label for="toggle-right" class="toggle-right-btn">
+        <i class="bi bi-three-dots"></i>
+    </label>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <i class="bi bi-stars"></i>
+            <span class="brand">Butterfly</span>
+        </div>
+
+        <div class="nav-center">
+            <a href="feed.html"><i class="bi bi-house"></i></a>
+            <a href="auth.html"><i class="bi bi-box-arrow-in-right"></i></a>
+            <a href="profile.html"><i class="bi bi-person"></i></a>
+            <a href="landing-page.html"><i class="bi bi-window"></i></a>
+        </div>
+
+        <div class="nav-right">
+            <input type="text" placeholder="Search..." class="search-bar">
+            <button><i class="bi bi-search"></i></button>
+        </div>
+    </nav>
+
+    <!-- PAGE LAYOUT -->
+    <div class="container">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="left">
+            <div class="profile-box">
+                <a href="profile.html">
+                    <img src="./assets/profile img.jpg" class="avatar-profile">
+                    <h4>Vanessa Iulia Manea</h4>
+                </a>
+            </div>
+
+            <hr class="divider">
+
+            <h3>Beauty Groups</h3>
+            <ul class="group-list">
+                <li><i class="bi bi-heart-fill"></i> Makeup Queens</li>
+                <li><i class="bi bi-stars"></i> Skincare Lovers</li>
+                <li><i class="bi bi-brush-fill"></i> Nail Art Club</li>
+                <li><i class="bi bi-flower1"></i> Hair Styling Tips</li>
+                <li><i class="bi bi-sun-fill"></i> Self-Care Lounge</li>
+            </ul>
+
+            <div class="tags-box">
+                <h3>Trending Tags</h3>
+                <div class="tags">
+                    <span>#Makeup</span><br>
+                    <span>#Skincare</span><br>
+                    <span>#GlowUp</span><br>
+                    <span>#SelfCare</span><br>
+                    <span>#Nails</span><br>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <h3><strong>Beauty Quote</strong></h3>
+                <p>"Confidence is the best makeup."</p>
+            </div>
+        </aside>
+
+        <!-- FEED -->
+        <main class="feed">
+
+            <!-- POST 1 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="./assets/maria profile img.jpg" class="avatar-feed">
+                    <div>
+                        <h4>Maria Ionescu</h4>
+                        <span>2 hours ago</span>
+                    </div>
+                    
+                </div>
+
+                <p>Caut un fond de ten cu acoperire mare! Ce ziceti de cele in imagine?</p>
+
+                <img src="./assets/fond-de-ten-2.jpg" class="post-img">
+
+                <div class="actions">
+                    <button><i class="bi bi-heart"></i></button>
+                    <button><i class="bi bi-chat"></i></button>
+                </div>
+                 <div class="comment-section">
+                    
+                      
+                        
+                    </div>
+            </div>
+
+            <!-- POST 2 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="./assets/ioana profile img.jpg" class="avatar-feed">
+                    <div>
+                        <h4>Ioana Munteanu</h4>
+                        <span>5 hours ago</span>
+                    </div>
+                </div>
+
+                <p>Am realizat acest machiaj pentru o petrecere! Ce ziceti?</p>
+
+                <img src="./assets/soft.jpg" class="post-img">
+
+                <div class="actions">
+                    <button><i class="bi bi-heart"></i></button>
+                    <button><i class="bi bi-chat"></i></button>
+                </div>
+            </div>
+
+            <!-- POST 3 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="./assets/andreea profile img.jpg" class="avatar-feed">
+                    <div>
+                        <h4>Andreea Manolache</h4>
+                        <span>1 day ago</span>
+                    </div>
+                </div>
+
+                <p>Mă lupt cu un ten super uscat, ce ziceți de acest ser?</p>
+
+                <img src="./assets/ser ten uscat.webp" class="post-img">
+
+                <div class="actions">
+                    <button><i class="bi bi-heart"></i></button>
+                    <button><i class="bi bi-chat"></i></button>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="right">
+
+            <div class="faq-box">
+                <h3>Întrebări frecvente</h3>
+
+                <p><strong>Cât costă un fond de ten cu acoperire mare?</strong></p>
+                <p>Între 60 și 180 lei.</p>
+
+                <p><strong>Ce cremă e bună pentru ten sensibil?</strong></p>
+                <p>Fără parfum și alcool.</p>
+
+                <p><strong>Ce ruj rezistă cel mai mult?</strong></p>
+                <p>Rujurile matte lichide.</p>
+            </div>
+
+            <div class="online-box">
+                <h3>Girls Online</h3>
+                <ul>
+                    <li><img src="./assets/bianca profile img.jpg"> Bianca <span class="dot"></span></li>
+                    <li><img src="./assets/elena img .webp"> Elena <span class="dot"></span></li>
+                    <li><img src="./assets/diana img prfl.jpg"> Diana <span class="dot"></span></li>
+                </ul>
+            </div>
+
+            <div class="poll-box">
+                <h3>Beauty Poll</h3>
+                <p>Ce preferi?</p>
+                <button>Machiaj natural</button>
+                <button>Machiaj glam</button>
+            </div>
+
+        </aside>
+
+    </div>
+
+</body>
+
+
+
+</html>
