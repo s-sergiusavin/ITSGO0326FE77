@@ -1,0 +1,212 @@
+/* ─────────────────────────────────────────
+   NEXUS Social Platform — Global Styles
+   ───────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+
+:root {
+  --bg-deep:     #07080f;
+  --bg-mid:      #0d0f1c;
+  --bg-card:     rgba(255,255,255,0.04);
+  --border:      rgba(255,255,255,0.07);
+  --gold:        #c9a84c;
+  --gold-light:  #e8c97a;
+  --gold-dim:    rgba(201,168,76,0.13);
+  --cyan:        #00d4ff;
+  --cyan-dim:    rgba(0,212,255,0.10);
+  --text-1:      #f0ede6;
+  --text-2:      #9896a0;
+  --text-3:      #5a5867;
+  --radius:      1.1rem;
+  --radius-sm:   0.65rem;
+  --shadow:      0 8px 48px rgba(0,0,0,0.6);
+  --header-h:    4.5rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg-deep);
+  color: var(--text-1);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── Reset ─── */
+ul  { list-style: none; }
+a   { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+button { font-family: 'DM Sans', sans-serif; cursor: pointer; }
+input, button { font-family: inherit; }
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+
+/* ─── Global Header ─── */
+.app-header {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  z-index: 100;
+  background: rgba(7,8,15,0.94);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.6rem;
+  gap: 1rem;
+}
+
+.header-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.65rem;
+  font-weight: 300;
+  letter-spacing: .22em;
+  color: var(--text-1);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.header-logo span { color: var(--gold); }
+
+.header-search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 340px;
+  position: relative;
+}
+.header-search .icon-search {
+  position: absolute; left: .9rem;
+  color: var(--text-3);
+  font-size: .85rem;
+  pointer-events: none;
+}
+.header-search input {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  padding: .55rem 1rem .55rem 2.4rem;
+  color: var(--text-1);
+  font-size: .85rem;
+  transition: border .25s, box-shadow .25s;
+}
+.header-search input::placeholder { color: var(--text-3); }
+.header-search input:focus {
+  outline: none;
+  border-color: rgba(201,168,76,.4);
+  box-shadow: 0 0 0 3px rgba(201,168,76,.08);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+.nav-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: var(--text-2);
+  width: 2.6rem; height: 2.6rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  transition: color .2s, background .2s;
+}
+.nav-btn:hover { color: var(--gold); background: var(--gold-dim); }
+.nav-btn i { font-size: 1.1rem; }
+.nav-btn .badge {
+  position: absolute; top: .22rem; right: .22rem;
+  background: var(--gold);
+  color: #07080f;
+  font-size: .58rem; font-weight: 700;
+  width: 1.05rem; height: 1.05rem;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.nav-avatar {
+  width: 2.2rem; height: 2.2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  cursor: pointer;
+  transition: box-shadow .2s;
+  display: block;
+}
+.nav-avatar:hover { box-shadow: 0 0 0 3px var(--gold-dim); }
+
+/* ─── Mobile bottom nav ─── */
+.mobile-nav {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: rgba(7,8,15,0.96);
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  padding: .4rem 0 calc(.4rem + env(safe-area-inset-bottom));
+  z-index: 100;
+  justify-content: space-around;
+}
+.mob-btn {
+  display: flex; flex-direction: column; align-items: center; gap: .18rem;
+  background: none; border: none;
+  color: var(--text-3);
+  padding: .45rem .8rem;
+  border-radius: var(--radius-sm);
+  font-size: .6rem; letter-spacing: .04em;
+  transition: color .2s;
+}
+.mob-btn i { font-size: 1.2rem; display: block; }
+.mob-btn.active, .mob-btn:hover { color: var(--gold); }
+
+/* ─── Shared buttons ─── */
+.btn-gold {
+  background: linear-gradient(135deg, #c9a84c, #e8c97a);
+  color: #07080f;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: .7rem 1.4rem;
+  font-size: .88rem; font-weight: 600;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s, filter .2s;
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(201,168,76,.38);
+  filter: brightness(1.07);
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: .68rem 1.2rem;
+  color: var(--text-2);
+  font-size: .88rem;
+  cursor: pointer;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-dim);
+}
+
+/* ─── Page offset for fixed header ─── */
+.page-body { margin-top: var(--header-h); }
+
+@media (max-width: 768px) {
+  .mobile-nav { display: flex; }
+  .page-body  { padding-bottom: 4.5rem; }
+  .app-header { padding: 0 1rem; }
+  .header-search { display: none; }
+  .header-logo { font-size: 1.35rem; }
+}

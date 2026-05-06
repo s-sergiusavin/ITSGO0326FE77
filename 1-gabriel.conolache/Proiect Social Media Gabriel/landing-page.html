@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media App | The Best Summer Party</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/profile.css" />
+  <!-- Font Awesome Free 6 (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="app-header">
+    <a href="auth.html" class="header-logo">NEX<span>US</span></a>
+
+    <div class="header-search">
+      <i class="fa-solid fa-magnifying-glass icon-search"></i>
+      <input type="text" placeholder="Search people, posts, events&hellip;" />
+    </div>
+
+    <nav class="nav-actions">
+      <a href="feed.html" class="nav-btn" title="Feed">
+        <i class="fa-solid fa-house"></i>
+      </a>
+      <a href="landing-page.html" class="nav-btn" title="Events" style="color:var(--gold);background:var(--gold-dim)">
+        <i class="fa-solid fa-calendar"></i>
+      </a>
+      <button class="nav-btn" title="Messages">
+        <i class="fa-solid fa-message"></i>
+        <span class="badge">3</span>
+      </button>
+      <button class="nav-btn" title="Notifications">
+        <i class="fa-solid fa-bell"></i>
+        <span class="badge">7</span>
+      </button>
+      <a href="profile.html">
+        <img src="./assets/profile.webp" alt="My profile" class="nav-avatar" />
+      </a>
+    </nav>
+  </header>
+
+  <!-- ═══ PAGE BODY ═══ -->
+  <div class="page-body">
+
+    <!-- Hero -->
+    <header class="event-hero">
+      <div class="event-hero-bg"></div>
+
+      <a href="feed.html" class="back-image-link">
+        <img src="./assets/back.png" alt="Back" class="back-image" />
+        Back to feed
+      </a>
+
+      <div class="event-hero-content">
+        <span class="event-tag">&#11088; Featured Event</span>
+
+        <h1><span>The best</span> summer party</h1>
+
+        <p class="header-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto enim
+          ipsam labore vero quo eaque cum architecto consequuntur voluptas nulla
+          deserunt ex vel culpa velit non veritatis excepturi ea rerum, minus
+          neque corporis incidunt? At eveniet quis eius iusto vitae.
+        </p>
+
+        <div class="form-container">
+          <form action="">
+            <label for="name">Enter your name</label>
+            <input type="text" id="name" placeholder="Your name (e.g. Alex Smith)" />
+            <p>Example: Sergiu Sergiu</p>
+            <input type="button" value="Book now" id="callToActionButton" />
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <!-- Body content -->
+    <section class="call-to-action">
+      <div class="call-to-action-message">
+        <h2>Enjoy the party</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus odio
+          illo magnam ab at quod sunt alias eligendi perspiciatis aliquam
+          officia, minus inventore velit ea quaerat soluta ipsum nobis
+          reiciendis porro, totam aliquid quam dicta. Ea nihil quam corporis,
+          dolorum porro unde sit omnis, dolor aspernatur ratione deserunt? Est,
+          odio ab, molestias magni illo corrupti quisquam sunt dignissimos ullam
+          porro eum voluptatum modi ducimus, asperiores qui dolorem sequi.
+          Molestias error perspiciatis reiciendis adipisci quasi quam tempora at
+          commodi fuga, eligendi, quo qui culpa quos voluptate est ad fugit
+          unde. Beatae, quibusdam quis velit eos natus aperiam voluptates
+          laborum hic, illo exercitationem molestias vero, amet laboriosam.
+        </p>
+        <img src="./assets/post2.webp" alt="Party atmosphere" />
+      </div>
+    </section>
+
+  </div><!-- /page-body -->
+
+  <!-- ═══ MOBILE NAV ═══ -->
+  <nav class="mobile-nav">
+    <a href="feed.html" class="mob-btn">
+      <i class="fa-solid fa-house"></i> Feed
+    </a>
+    <a href="landing-page.html" class="mob-btn active">
+      <i class="fa-solid fa-calendar"></i> Events
+    </a>
+    <button class="mob-btn">
+      <i class="fa-solid fa-compass"></i> Explore
+    </button>
+    <button class="mob-btn">
+      <i class="fa-solid fa-message"></i> Msgs
+    </button>
+    <a href="profile.html" class="mob-btn">
+      <i class="fa-solid fa-user"></i> Profile
+    </a>
+  </nav>
+
+</body>
+</html>
