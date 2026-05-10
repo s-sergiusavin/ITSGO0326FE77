@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social media App | feed</title>
+    <link rel="stylesheet" href="./css/feed.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="main-search">
+        <a href=""><i class="bi bi-box-seam-fill logo"></i></a>
+        <input
+          type="search"
+          class="search-input"
+          placeholder="Search on social media"
+        />
+      </div>
+      <nav class="main-navigation">
+        <ul class="navigation">
+          <li class="feed">
+            <a href="feed.html"
+              ><i class="bi bi-house-door-fill nav-icons"></i
+            ></a>
+          </li>
+          <li class="profile">
+            <a href="profile.html"
+              ><i class="bi bi-person-circle nav-icons"></i
+            ></a>
+          </li>
+          <li class="messenger">
+            <a href=""><i class="bi bi-chat-dots-fill nav-icons"></i></a>
+          </li>
+          <li class="reels">
+            <a href=""><i class="bi bi-camera-video-fill nav-icons"></i></a>
+          </li>
+        </ul>
+      </nav>
+
+      <ul class="links">
+        <li>
+          <a
+            href="landing-page.html"
+            class="bi bi-plus-circle-fill nav-icons"
+          ></a>
+        </li>
+        <li>
+          <i class="bi bi-bell-fill nav-icons bell-icon"><span>12</span></i>
+        </li>
+        <li><i class="bi bi-gear-fill nav-icons"></i></li>
+      </ul>
+    </header>
+
+    <main>
+      <aside class="left-content">
+        <div class="side-buttons">
+          <div class="interests">
+            <div class="explore">
+              <a href="feed.html"
+                ><i class="bi bi-stars"></i><span>Explore</span></a
+              >
+            </div>
+
+            <div class="interests">
+              <div class="interests-item">
+                <input type="checkbox" id="item1" />
+                <label for="item1" class="interests-header">
+                  <i class="bi bi-box"></i><span>Your interests</span>
+                  <span class="icon">+</span>
+                </label>
+                <div class="interests-content">
+                  <ul>
+                    <li class="nature">
+                      <a href="feed_nature.html"
+                        ><i class="bi bi-leaf"></i><span>Nature</span></a
+                      >
+                    </li>
+                    <li class="food">
+                      <a href=""
+                        ><i class="bi bi-fork-knife"></i><span>Food</span></a
+                      >
+                    </li>
+                    <li class="gaming">
+                      <a href=""
+                        ><i class="bi bi-controller"></i><span>Gaming</span></a
+                      >
+                    </li>
+                    <li class="add-more">
+                      <a href=""
+                        ><i class="bi bi-plus-circle"></i
+                        ><span>Add more interests</span></a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sugestions">
+            <div class="popular">
+              <a href="">
+                <i class="bi bi-activity"></i><span>Trending</span></a
+              >
+            </div>
+            <div class="news">
+              <a href="">
+                <i class="bi bi-newspaper"></i>
+                <span>News</span>
+              </a>
+            </div>
+            <div class="events">
+              <a href=""
+                ><i class="bi bi-calendar2-heart"></i><span>Events</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="history">
+            <div class="likes">
+              <a href=""><i class="bi bi-heart"></i><span>Liked posts</span></a>
+            </div>
+            <div class="saves">
+              <a href=""
+                ><i class="bi bi-bookmark-heart"></i><span>Saved posts</span></a
+              >
+            </div>
+            <div class="watched">
+              <a href=""
+                ><i class="bi bi-collection-play"></i
+                ><span>Watch history</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="main-content">
+        <div class="post">
+          <div class="post-header">
+            <div class="profile-user-info">
+              <a href=""
+                ><img src="./assets/pic2.jpg" alt="" class="profile-image"
+              /></a>
+              <span>Ana-Maria Oprea</span>
+              <span>08 Apr 2026</span>
+              <div class="category">
+                <a href="feed_nature.html">
+                  <span class="nature">#nature</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="" class="profile-options"
+            ><i class="bi bi-three-dots"></i
+          ></a>
+          <div class="content">
+            <img src="./assets/liliac.webp" alt="" />
+            <p>Liliac</p>
+          </div>
+          <div class="bottom-section">
+            <div class="like">
+              <a href=""
+                ><i class="bi bi-heart"><span>10</span></i></a
+              >
+            </div>
+            <div class="comment">
+              <a href=""
+                ><i class="bi bi-chat-square-text"><span>20</span></i></a
+              >
+            </div>
+            <div class="save">
+              <a href=""
+                ><i class="bi bi-bookmark-heart"><span>5</span></i></a
+              >
+            </div>
+            <div class="share">
+              <a href=""><i class="bi bi-share"></i></a>
+            </div>
+          </div>
+          <hr />
+          <div class="comment-section">
+            <a href="#"
+              ><img
+                src="./assets/pic2.jpg"
+                alt="profile-image"
+                class="profile-image"
+            /></a>
+            <input
+              type="text"
+              placeholder="Adauga un comentariu."
+              class="new-comment-filed"
+            />
+            <button class="insert-comment-button button">
+              <i class="bi bi-send-fill"></i>
+            </button>
+          </div>
+        </div>
+        <div class="post">
+          <div class="post-header">
+            <div class="profile-user-info">
+              <a href=""
+                ><img src="./assets/pic2.jpg" alt="" class="profile-image"
+              /></a>
+              <span>Ana-Maria Oprea</span>
+              <span>08 Apr 2026</span>
+              <div class="category">
+                <a href="feed_nature.html">
+                  <span class="nature">#nature</span>
+                </a>
+                <a href="">
+                  <span class="event">#event</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="" class="profile-options"
+            ><i class="bi bi-three-dots"></i
+          ></a>
+          <div class="content">
+            <div class="img-wrapper">
+              <img
+                src="./assets/pic3.jpg"
+                alt="img-content"
+                class="img-content"
+              />
+              <i class="bi bi-info-circle-fill info-icon"></i>
+            </div>
+            <strong class="post-title">Titlu postare</strong>
+            <p class="post-description">
+              Aceasta este postarea pentru aplicatia ce am facut-o la cursul de
+              web dev.
+            </p>
+            <p><a href="landing-page.html">Read more...</a></p>
+          </div>
+          <div class="bottom-section">
+            <div class="like">
+              <a href=""
+                ><i class="bi bi-heart"><span>10</span></i></a
+              >
+            </div>
+            <div class="comment">
+              <a href=""
+                ><i class="bi bi-chat-square-text"><span>20</span></i></a
+              >
+            </div>
+            <div class="save">
+              <a href=""
+                ><i class="bi bi-bookmark-heart"><span>5</span></i></a
+              >
+            </div>
+            <div class="share">
+              <a href=""><i class="bi bi-share"></i></a>
+            </div>
+          </div>
+          <hr />
+          <div class="comment-section">
+            <a href="#"
+              ><img
+                src="./assets/pic2.jpg"
+                alt="profile-image"
+                class="profile-image"
+            /></a>
+            <input
+              type="text"
+              placeholder="Adauga un comentariu."
+              class="new-comment-filed"
+            />
+            <button class="insert-comment-button button">
+              <i class="bi bi-send-fill"></i>
+            </button>
+          </div>
+          <div class="user-comments">
+            <div class="comment-content">
+              <div class="profile-user-comment">
+                <a href="#"
+                  ><img
+                    src="./assets/photo.jpg"
+                    alt="profile-image"
+                    class="profile-image"
+                /></a>
+                <span>User name</span>
+              </div>
+              <div class="user-comment-text">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dolorum, fugiat est. Consequuntur a, officia placeat eveniet
+                  omnis eaque magni cumque temporibus atque tempora dolore
+                  ratione voluptatibus beatae laudantium itaque. Dolorem
+                  officia, unde minus aut magnam necessitatibus quis sapiente
+                  quod iure enim facilis a impedit id temporibus, assumenda
+                  accusantium corporis qui.
+                </p>
+              </div>
+              <div class="comment-reaction">
+                <span>Like</span>
+                <span>Reply</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="right-content">
+        <div class="messages">
+          <div class="stories">
+            <h3>Stories</h3>
+            <ul>
+              <li>
+                <a href=""
+                  ><img src="./assets/photo.jpg" alt="" class="friend-picture"
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img src="./assets/photo.jpg" alt="" class="friend-picture"
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img src="./assets/photo.jpg" alt="" class="friend-picture"
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img src="./assets/photo.jpg" alt="" class="friend-picture"
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img src="./assets/photo.jpg" alt="" class="friend-picture"
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img src="./assets/photo.jpg" alt="" class="friend-picture"
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img src="./assets/photo.jpg" alt="" class="friend-picture"
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img src="./assets/photo.jpg" alt="" class="friend-picture"
+                /></a>
+              </li>
+            </ul>
+          </div>
+<hr>
+          <h3>Messages</h3>
+          <ul class="messenger">
+            <li>
+              <a href="" class="friend first">
+                <div class="picture-status">
+                  <img
+                    src="./assets/friend_profile.webp"
+                    alt="friend-picture"
+                    class="friend-picture"
+                  />
+                  <span class="status"></span>
+                </div>
+                <span class="name">Alexandra</span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="friend second">
+                <div class="picture-status">
+                  <img
+                    src="./assets/friend_profile.webp"
+                    alt="friend-picture"
+                    class="friend-picture"
+                  />
+                  <span class="status"></span>
+                </div>
+                <span class="name">Mircea</span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="friend third">
+                <div class="picture-status">
+                  <img
+                    src="./assets/friend_profile.webp"
+                    alt="friend-picture"
+                    class="friend-picture"
+                  />
+                  <span class="status"></span>
+                </div>
+                <span class="name">Ioana</span>
+              </a>
+            </li>
+          </ul>
+          <hr>
+          <h3>Suggested</h3>
+          <ul class="suggested">
+            <li>
+              <a href="" class="friend first">
+                <div class="picture-status">
+                  <img
+                    src="./assets/friend_profile.webp"
+                    alt="friend-picture"
+                    class="friend-picture"
+                  />
+                </div>
+                <span class="name">Alexandra</span>
+                <span class="follow">Follow</span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="friend second">
+                <div class="picture-status">
+                  <img
+                    src="./assets/friend_profile.webp"
+                    alt="friend-picture"
+                    class="friend-picture"
+                  />
+                </div>
+                <span class="name">Mircea</span>
+                <span class="follow">Follow</span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="friend third">
+                <div class="picture-status">
+                  <img
+                    src="./assets/friend_profile.webp"
+                    alt="friend-picture"
+                    class="friend-picture"
+                  />
+                </div>
+                <span class="name">Ioana</span>
+                <span class="follow">Follow</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>

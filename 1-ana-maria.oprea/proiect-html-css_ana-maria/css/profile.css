@@ -1,0 +1,545 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: lightblue;
+}
+
+header .main-search {
+  display: flex;
+  align-items: center;
+}
+
+header .main-search .logo {
+  padding: 1rem;
+  font-size: 2rem;
+  color: royalblue;
+}
+
+header .main-search .search-input {
+  height: 2rem;
+  border-radius: 0.5rem;
+  width: 15rem;
+  padding: 0 1rem;
+  border: 1px solid #00ddff;
+  box-shadow: 0 1px 5px #00ddff;
+}
+
+header .main-search .search-input:hover {
+  border: 0.1rem solid #00ddff;
+  outline: none;
+}
+
+.navigation,
+.links {
+  display: flex;
+}
+
+.nav-icons {
+  font-size: 2rem;
+  color: royalblue;
+  margin: 0 2rem;
+}
+
+.nav-icons .feed i {
+  color: darkblue;
+}
+
+.nav-icons:hover {
+  color: darkblue;
+}
+
+.feed i {
+  color: darkblue;
+}
+
+.bell-icon {
+  position: relative;
+  display: block;
+}
+
+.bell-icon span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  margin-top: 3.5rem;
+}
+
+.profile-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 60%;
+}
+
+.profile-card {
+  margin: 0 2rem;
+}
+
+.profile-header {
+  margin: 40vh 10rem 2rem 10rem;
+  padding: 0 1rem 1rem 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 30px;
+  height: 100%;
+}
+
+.profile-pic {
+  width: 20rem;
+  height: 20rem;
+  border: 4px solid white;
+  border-radius: 50%;
+  position: relative;
+  bottom: 7.6rem;
+  right: 3px;
+}
+.profile-user {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+}
+
+.profile-user {
+  width: max-content;
+  border-radius: 40px 50px 50px 160px;
+  border: 3px solid white;
+  margin-left: 1rem;
+  padding-left: 0;
+}
+
+.profile-user section {
+  padding: 3rem 3.5rem 0 1rem;
+}
+
+.profile-user h1 {
+  font-size: 3rem;
+  width: 100%;
+}
+
+.following {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  font-size: larger;
+}
+
+.about {
+  border: 2px solid white;
+  padding: 1rem 2rem;
+  margin: 2rem;
+  border-radius: 10px;
+}
+
+.about p {
+  font-size: large;
+}
+
+.about .interests {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.about .interests ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about .interests li{
+border: 2px solid black;
+padding: 0 0.2rem;
+border-radius: 50%;
+align-self: center;
+transition: all 0.3s;
+}
+
+.about .interests .nature:hover{
+  border: 2px solid green;
+  color: green;
+}
+
+.about .interests .food:hover{
+  border: 2px solid orange;
+  color: orange;
+  box-shadow: 0px 0px 20px 2px rgba(236, 204, 111, 0.9);
+}
+
+.about .interests .gaming:hover{
+  border: 2px solid purple;
+  color: purple;
+  box-shadow: 0px 0px 20px 2px rgba(210, 99, 244, 0.9);
+}
+
+.profile-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5rem;
+  font-size: larger;
+  font-weight: bold;
+  margin-top: 2rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.profile-nav li {
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.profile-nav li:hover {
+  box-shadow: 0 2px royalblue;
+  color: royalblue;
+}
+
+.profile-nav .posts {
+  box-shadow: 0 2px royalblue;
+  color: royalblue;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add-post {
+  padding: 1rem;
+  width: 90%;
+  margin-top: 1.5rem;
+  position: relative;
+  font-size: medium;
+  background-color: white;
+  align-self: center;
+  border-radius: 20px;
+}
+
+.add-post .post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-post .post-header .profile-user-info {
+  display: flex;
+  align-items: center;
+}
+
+.add-post .profile-user-info span {
+  padding: 0.5rem;
+}
+
+.add-post .profile-options {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.5rem 1rem;
+}
+
+.add-post .bottom-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0.5rem;
+  font-weight: bold;
+}
+
+.add-post .bottom-section a:hover {
+  color: royalblue;
+}
+
+.post-content input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+
+.post-button input {
+  font-weight: bold;
+  border: 1px solid transparent;
+  background-color: royalblue;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.post-button input:hover {
+  background-color: darkblue;
+}
+
+.your-posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post {
+  padding: 1rem;
+  width: 90%;
+  margin-top: 1.5rem;
+  position: relative;
+  top: 0;
+  font-size: medium;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.post-header .profile-user-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-user-info span {
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.profile-user-info .category {
+  font-weight: bold;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  display: flex;
+  gap: 0.7rem;
+}
+
+.profile-user-info .category .nature {
+  color: green;
+  border: 1px solid green;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+
+.nature:hover {
+  box-shadow: 0px 0px 20px 2px rgba(45, 255, 196, 0.9);
+}
+
+.profile-user-info .category .event {
+  color: magenta;
+  border: 1px solid magenta;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+
+.event:hover {
+  box-shadow: 0px 0px 20px 2px rgba(255, 0, 255, 0.9);
+}
+
+.profile-options {
+  position: absolute;
+  right: 0;
+  top: -1rem;
+  padding: 1rem;
+}
+
+.profile-image {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content p {
+  padding: 0.5rem 1rem;
+}
+.content img {
+  border-radius: 2rem;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom-section span {
+  padding: 0.5rem;
+  font-style: normal;
+}
+
+.bottom-section .like:hover {
+  color: red;
+}
+
+.bottom-section .comment:hover,
+.share:hover,
+.save:hover {
+  color: royalblue;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.img-content {
+  max-width: 100%;
+}
+
+.content .info-icon {
+  position: absolute;
+  right: 2rem;
+  bottom: -0.5rem;
+  font-size: 2rem;
+  background-color: gray;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  cursor: pointer;
+  color: white;
+  border: 1px solid royalblue;
+}
+
+.post-title {
+  padding: 1rem;
+}
+
+.comment-section {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 1rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.comment-section .new-comment-filed {
+  width: 80%;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(173, 216, 230, 0.3);
+  border: 1px solid black;
+}
+
+.insert-comment-button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem 0.7rem;
+}
+
+.user-comments {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+.user-comments .profile-user-comment {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 10;
+  font-weight: 600;
+}
+
+.profile-user-comment img {
+  object-fit: cover;
+}
+
+.user-comment-text {
+  margin: 0 1rem;
+  border: 1px solid #888;
+  padding: 1rem;
+  border-radius: 0 1rem 1rem 1rem;
+  background-color: rgba(173, 216, 230, 0.2);
+  position: relative;
+  bottom: 1rem;
+}
+
+.comment-reaction {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 4rem;
+}
+
+.comment-reaction span {
+  padding-left: 0.3rem;
+  padding-right: 1rem;
+  font-style: normal;
+}
+
+.comment-reaction span:hover {
+  cursor: pointer;
+  color: darkblue;
+  font-weight: bold;
+}
+
+.button {
+  display: inline-flex;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: linear-gradient(
+    90deg,
+    rgb(154, 202, 241) 0%,
+    rgb(91, 174, 229) 100%
+  );
+  border: none;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px rgba(99, 173, 238, 0.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  transform: translateY(-6px);
+}
