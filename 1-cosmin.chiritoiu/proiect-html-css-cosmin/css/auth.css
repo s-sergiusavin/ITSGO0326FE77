@@ -1,0 +1,104 @@
+
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1b1d31;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-container {
+  background-color: #24253c;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  width: 420px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.489);
+  text-align: left;
+  color: white;
+  margin-bottom: 5rem;
+}
+
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container form .form-field {
+    margin-bottom: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.form-field input:not([type="checkbox"]) {
+    background-color: rgb(207, 194, 197);
+    color: rgb(255, 255, 255);
+    border-radius: 0.5rem;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 0.25rem;
+    width: 80%;
+}
+
+.form-field input::placeholder {
+    color: rgb(85, 83, 83);
+}
+
+.login-button {
+    background-color: #e53854;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    border: 1px solid #e53854;
+    padding: 0.5rem 2.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #f33f5a;
+    border: 1px solid rgb(255, 80, 94);
+    box-shadow: 0 1px 5px #f33f5a;
+    font-weight: bolder;
+}
+
+.forgot-password-btn {
+    color: rgb(255, 255, 255);
+    
+}
+
+.register-btn {
+    background-color: #f33f5a;
+    border: 1px solid rgb(255, 80, 94);
+    padding: 0.5rem 2.5rem;
+    display: block;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    width: 50%;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    color: white;
+}
+
+.register-btn:hover {
+    opacity: 0.8;
+}
+.back-pattern {
+    position: fixed;
+    left: 5px;
+    top: 5px;
+    width: 800px;
+    opacity: 40%;
+    height: auto;
+    z-index:  -1;
+    }
