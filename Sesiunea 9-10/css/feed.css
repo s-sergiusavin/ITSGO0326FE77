@@ -1,0 +1,300 @@
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1877f2;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* NAVBAR BUTTONS */
+.nav-center {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.nav-btn i {
+    font-size: 22px;
+    color: white;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn.active {
+    background: white;
+}
+
+.nav-btn.active i {
+    color: #1877f2;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-right input {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.nav-right img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* DROPDOWN PANELS */
+.dropdown-panel {
+    position: absolute;
+    top: 60px;
+    right: 80px;
+    width: 260px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 15px;
+    display: none;
+    z-index: 200;
+}
+
+.dropdown-panel.show {
+    display: block;
+}
+
+.dropdown-panel h4 {
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* LEFT */
+.left {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 20%;
+    height: fit-content;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* MAIN */
+.main {
+    padding: 0;
+    width: 60%;
+    min-height: 400px;
+    background: transparent;
+    border: none;
+}
+
+.img-content {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.post-title {
+    margin: 10px 0 5px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.post {
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.first-post {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.date {
+    margin-left: auto;
+    color: gray;
+}
+
+/* RIGHT */
+.right {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 20%;
+    height: fit-content;
+}
+
+/* LISTS */
+.left ul, .right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left li, .right li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.left li:hover, .right li:hover {
+    background: #e4e6eb;
+}
+
+/* Suggested Friends layout */
+.right ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.friend-name {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.friend-name:hover {
+    text-decoration: underline;
+}
+
+/* Add friend button */
+.add-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.add-btn i {
+    color: #1877f2;
+    transition: 0.2s;
+}
+
+.add-btn.added i {
+    color: green;
+}
+
+/* CHAT POPUP */
+.chat-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 260px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 300;
+}
+
+.chat-header {
+    background: #1877f2;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-body {
+    padding: 15px;
+}
+
+/* RESPONSIVE — TELEFON */
+@media (max-width: 900px) {
+    .navbar {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 0 10px;
+        gap: 15px;
+    }
+
+    .left {
+        width: 100%;
+        order: 1;
+    }
+
+    .right {
+        width: 100%;
+        order: 2;
+    }
+
+    .main {
+        width: 100%;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: 0;
+        order: 3;
+    }
+
+    .dropdown-panel {
+        right: 20px;
+        width: 90%;
+    }
+}

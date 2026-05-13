@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect | Feed</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/feed.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="nav-left">
+        <div class="logo">Connect</div>
+      </div>
+
+      <div class="nav-center">
+        <a href="./feed.html" class="nav-btn active">
+          <i class="bi bi-house-door"></i>
+        </a>
+        <a href="#" class="nav-btn">
+          <i class="bi bi-collection-play"></i>
+        </a>
+        <button class="nav-btn" onclick="toggleDropdown('notif')">
+          <i class="bi bi-bell"></i>
+        </button>
+        <button class="nav-btn" onclick="toggleDropdown('messages')">
+          <i class="bi bi-chat-dots"></i>
+        </button>
+      </div>
+
+      <div class="nav-right">
+        <input type="text" placeholder="Search..." />
+        <img src="./assets/Profileimg.png" alt="Profile" />
+      </div>
+    </header>
+
+    <!-- DROPDOWNS -->
+    <div id="notif-dropdown" class="dropdown-panel">
+      <h4>Notifications</h4>
+      <p>No new notifications.</p>
+    </div>
+
+    <div id="messages-dropdown" class="dropdown-panel">
+      <h4>Messages</h4>
+      <p>No new messages.</p>
+    </div>
+
+    <!-- MAIN LAYOUT -->
+    <div class="container">
+      <!-- LEFT SIDEBAR -->
+      <aside class="left">
+        <ul>
+          <li><a href="./feed.html"><i class="bi bi-house-door"></i> Home</a></li>
+          <li><a href="./feed.html"><i class="bi bi-people"></i> Friends</a></li>
+          <li><a href="./feed.html"><i class="bi bi-people-fill"></i> Groups</a></li>
+          <li><a href="./feed.html"><i class="bi bi-collection-play"></i> Watch</a></li>
+          <li><a href="./feed.html"><i class="bi bi-clock-history"></i> Memories</a></li>
+
+          <h4>Shortcuts</h4>
+          <li><a href="./photos.html"><i class="bi bi-camera"></i>Photos</a></li>
+          <li><a href="./feed.html"><i class="bi bi-airplane"></i>Travel Blog</a></li>
+        </ul>
+      </aside>
+
+      <!-- MAIN FEED -->
+      <main class="main" id="feed"></main>
+
+      <!-- RIGHT SIDEBAR -->
+      <aside class="right">
+        <h3>Suggested Friends</h3>
+        <ul>
+          <li><span class="friend-name" onclick="openChat('Dumi_')">Dumi_</span><button class="add-btn" onclick="addFriend(this)"><i class="bi bi-person-plus"></i></button></li>
+          <li><span class="friend-name" onclick="openChat('Andrew13')">Andrew13</span><button class="add-btn" onclick="addFriend(this)"><i class="bi bi-person-plus"></i></button></li>
+          <li><span class="friend-name" onclick="openChat('Silviu_11')">Silviu_11</span><button class="add-btn" onclick="addFriend(this)"><i class="bi bi-person-plus"></i></button></li>
+          <li><span class="friend-name" onclick="openChat('Mara')">Mara</span><button class="add-btn" onclick="addFriend(this)"><i class="bi bi-person-plus"></i></button></li>
+          <li><span class="friend-name" onclick="openChat('Alexia')">Alexia</span><button class="add-btn" onclick="addFriend(this)"><i class="bi bi-person-plus"></i></button></li>
+        </ul>
+      </aside>
+
+      <!-- POPUP CHAT -->
+      <div id="chat-popup" class="chat-popup">
+        <div class="chat-header">
+          <span id="chat-name"></span>
+          <button onclick="closeChat()">✖</button>
+        </div>
+        <div class="chat-body">
+          <p>Aici vor apărea mesajele...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+      function toggleDropdown(type) {
+        const notif = document.getElementById("notif-dropdown");
+        const messages = document.getElementById("messages-dropdown");
+
+        if (type === "notif") {
+          notif.classList.toggle("show");
+          messages.classList.remove("show");
+        }
+        if (type === "messages") {
+          messages.classList.toggle("show");
+          notif.classList.remove("show");
+        }
+      }
+
+      document.addEventListener("click", function (e) {
+        const notif = document.getElementById("notif-dropdown");
+        const messages = document.getElementById("messages-dropdown");
+
+        if (!e.target.closest(".nav-btn") && !e.target.closest(".dropdown-panel")) {
+          notif.classList.remove("show");
+          messages.classList.remove("show");
+        }
+      });
+
+      function addFriend(btn) {
+        const icon = btn.querySelector("i");
+        icon.classList.remove("bi-person-plus");
+        icon.classList.add("bi-check2");
+        btn.classList.add("added");
+
+        setTimeout(() => {
+          icon.classList.remove("bi-check2");
+          icon.classList.add("bi-person");
+        }, 1000);
+      }
+
+      function openChat(name) {
+        document.getElementById("chat-name").innerText = name;
+        document.getElementById("chat-popup").style.display = "block";
+      }
+
+      function closeChat() {
+        document.getElementById("chat-popup").style.display = "none";
+      }
+
+      /* ------------------ FEED RANDOM POSTS ------------------ */
+
+      const names = [
+        "RandomUser", "Alex", "Mara", "Dumi_", "Cristi", "Bianca",
+        "Tudor", "Robert", "Silviu_11", "Denis", "Larisa"
+      ];
+
+      const texts = [
+        "Exploring the world today.",
+        "Nature is amazing.",
+        "Just chilling.",
+        "A beautiful moment captured.",
+        "Life is good.",
+        "Random thoughts for today.",
+        "Walking through the forest.",
+        "Enjoying a peaceful moment.",
+        "Captured something cool today."
+      ];
+
+      function randomItem(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+      }
+
+      function generatePost() {
+        return `
+          <div class="post">
+            <div class="first-post">
+              <img class="profile-pic" src="https://thispersondoesnotexist.com/?t=${Date.now() + Math.random()}" />
+              <span class="username">${randomItem(names)}</span>
+              <span class="date">Today</span>
+            </div>
+
+            <img class="img-content" src="https://picsum.photos/600?random=${Date.now() + Math.random()}" />
+
+            <strong class="post-title">
+              <i class="bi bi-heart"></i>${Math.floor(Math.random()*200)}
+              <i class="bi bi-chat"></i>${Math.floor(Math.random()*50)}
+              <i class="bi bi-send"></i>${Math.floor(Math.random()*20)}
+              <i class="bi bi-bookmark"></i>
+            </strong>
+
+            <p class="post-description">${randomItem(texts)}</p>
+
+            <a href="#">Read more</a>
+          </div>
+        `;
+      }
+
+      function loadFeed() {
+        const feed = document.getElementById("feed");
+        let html = "";
+
+        for (let i = 0; i < 4; i++) {
+          html += generatePost();
+        }
+
+        feed.innerHTML = html;
+      }
+
+      loadFeed();
+    </script>
+  </body>
+</html>
