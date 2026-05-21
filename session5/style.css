@@ -1,0 +1,100 @@
+.my-div {
+  /* Default display for div is inline */
+  background-color: green;
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  display: inline-block;
+}
+
+.my-span {
+  background-color: blue;
+  /* Default display for span is inline */
+  display: inline;
+  width: 100px;
+  height: 100px;
+  margin: 20px 10px;
+  display: inline-block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 2000px;
+}
+
+.container {
+  background-color: lightblue;
+  border: 3px solid black;
+  position: relative;
+}
+
+.container div.second-box {
+  background-color: blue;
+  /* margin-top: 25px;
+  margin-left: 25px; */
+  top: 50px;
+  left: 50px;
+  position: absolute;
+  /* daca top este setat, bottom nu se aplica
+  /* bottom: 100px;
+  /* daca left este setat, right nu se aplica
+  right: 75px; */
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  color: white;
+  border: 1px solid black;
+  text-align: center;
+  display: inline-block;
+}
+
+.third-box {
+  position: relative;
+  z-index: 1;
+}
+
+.layer1 {
+  border: 2px solid red;
+  width: 750px;
+  height: 500px;
+  margin-top: 20px;
+}
+
+.layer2 {
+  border: 2px solid green;
+  width: 550px;
+  height: 400px;
+  margin-top: 20px;
+}
+
+.layer3 {
+  border: 2px solid brown;
+  width: 400px;
+  height: 300px;
+  margin-top: 20px;
+  position: absolute;
+}
+
+.layer4 {
+  border: 2px solid blue;
+  width: 300px;
+  height: 200px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.layer5 {
+  border: 2px solid purple;
+  background-color: lightcoral;
+  width: 200px;
+  height: 150px;
+position: absolute;
+top: 0;
+}

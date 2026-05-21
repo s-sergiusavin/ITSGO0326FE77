@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+}
+
+.page-content {
+  height: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+header.page-header {
+    background-color: red;
+}
+
+nav.navigation-menu {
+    background-color: yellow;
+}
+
+aside.content-sidebar {
+background-color: green;
+flex: 2px;
+}
+
+

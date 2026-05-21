@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session 7 | Advanced CSS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Pseudoelements</h1>
+    <header>
+      <nav class="menu">
+        <ul>
+          <li class="menu-item">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="menu-item">
+            <a href="visited.html">About</a>
+          </li>
+          <li class="menu-item">
+            <a href="#">Contact</a>
+          </li>
+          <li class="menu-item">
+            <a href="#" target="_blank">Extra</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <h2>Main Page</h2>
+
+    <main class="main-content">
+      <article>
+        Acesta este un paragraf pe care il voi stiliza in cursul sedintei de
+        astazi
+      </article>
+
+      <p></p>
+      <blockquote>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+          vero? Nisi rerum reiciendis est repellat voluptatibus ut adipisci
+          maiores ratione?
+        </p>
+      </blockquote>
+      <p><span class="first-word">Ultimul</span> paragraf din demo</p>
+    </main>
+
+    <section>
+      <table>
+        <caption>
+          Acesta este primul meu tabel in html
+        </caption>
+
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Nume</th>
+            <th>Prenume</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td colspan="3">Lista de actori</td>
+          </tr>
+
+          <tr>
+            <td rowspan="2">
+              <img src="photo.jpg" alt="Popular actor" class="portraitImage" />
+            </td>
+            <td>Johnny</td>
+            <td>Depp</td>
+          </tr>
+
+          <tr>
+            <td>Actor</td>
+            <td>American</td>
+          </tr>
+
+          <tr>
+            <td>
+              <img src="photo.jpg" alt="Popular actor" class="portraitImage" />
+            </td>
+            <td>Alt actor</td>
+            <td>Cunoscut</td>
+          </tr>
+
+          <tr>
+            <td>
+              <img src="photo.jpg" alt="Popular actor" class="portraitImage" />
+            </td>
+            <td>Brad</td>
+            <td>Pitt</td>
+          </tr>
+
+          <tr>
+            <td>
+              <img src="photo.jpg" alt="Popular actor" class="portraitImage" />
+            </td>
+            <td>Un actor</td>
+            <td>Roman</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <form action="" id="my-form">
+        <div class="form-group">
+            <label for="full-name">Numele meu*</label>
+            <input type="text" placeholder="Introduceti numele dvs" id="full-name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" placeholder="Introduceti adresa de email" id="email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" placeholder="Introduceti numarul de telefon" id="phone">
+        </div>
+        <div class="form-group"></div>
+        <div class="form-group"></div>
+    </form>
+  </body>
+</html>

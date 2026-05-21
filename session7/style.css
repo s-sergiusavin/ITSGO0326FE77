@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 2000px;
+  background-image: linear-gradient(red, yellow, green, blue);
+}
+
+nav.menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav.menu ul li::before {
+  content: "x";
+  background-color: red;
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul li:hover {
+  background-color: yellow;
+  border: 1px solid orange;
+  border-radius: 10px;
+}
+
+/* ul li a:visited {
+    color: green;
+} */
+
+ul li a:active {
+  background-color: green;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+p::first-letter {
+  color: red;
+  font-size: x-large;
+}
+
+p::first-line {
+  color: blue;
+  font-variant: small-caps;
+}
+
+.first-word {
+  color: green;
+}
+
+p::selection {
+  background-color: yellow;
+  color: red;
+}
+
+p:empty {
+  width: 100px;
+  height: 20px;
+  border: 2px solid red;
+}
+
+blockquote {
+  margin: 0;
+  font-style: italic;
+  font-size: 1.2rem;
+  padding: 2rem 4rem;
+  position: relative;
+}
+
+blockquote:before {
+  content: open-quote;
+  top: 0;
+  left: 0;
+}
+
+blockquote::after {
+  content: close-quote;
+  bottom: 0;
+  right: 0;
+}
+
+blockquote:before, blockquote:after {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+::marker {
+    font-size: 1.5rem;
+    color: red;
+}
+
+.portraitImage {
+    width: 5rem;
+    padding: 1rem;
+}
+
+form {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
