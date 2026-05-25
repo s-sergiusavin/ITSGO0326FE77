@@ -157,7 +157,7 @@ function showValue(value, functieCallback) {
 const totalValueCallback = showValue(5, addOne);
 console.log(totalValueCallback);
 
-// in cauzul declaratiei functiei, valorile primite se numesc parametrii
+// in cazul declaratiei functiei, valorile primite se numesc parametrii
 // in cazul apelului unei functii, valorile trimise se numesc argumente
 
 const menu = {
@@ -184,23 +184,21 @@ const secondWord = "al Doilea";
 const concatenatedString = firstWord + " " + link + " " + secondWord;
 console.log(concatenatedString.toUpperCase());
 
-
 const createString = (arr) => {
-    let string = '';
-    for (let i = 0; i < arr.length; i++){
-        // string = string + arr[i]; - afisam elementele fara 
-        string = string + arr[i] + ' * ';
-    }
-    
-}
-console.log(createString([3, '5', 7, 2, 1]));
-console.log(createString([2, '3425', 17, 22, 1]));
+  let string = "";
+  for (let i = 0; i < arr.length; i++) {
+    // string = string + arr[i]; - afisam elementele fara
+    string = string + arr[i] + " * ";
+  }
+};
+console.log(createString([3, "5", 7, 2, 1]));
+console.log(createString([2, "3425", 17, 22, 1]));
 
 const reverseArray = (array) => {
-    const newArray = [];
-    for (i = array.length - 1; i >= 0; i--){
-        newArray.push(array[i]);
-    }
-}
+  const newArray = [];
+  for (i = array.length - 1; i >= 0; i--) {
+    newArray.push(array[i]);
+  }
+};
 
 console.log(reverseArray([1, 2, 3, 4]));
