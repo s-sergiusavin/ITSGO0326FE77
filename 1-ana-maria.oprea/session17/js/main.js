@@ -248,9 +248,9 @@ console.log(includedElem);
  */
 
 const Car = {
-    wheels:5,
-    doors: 4,
-    speed:100;
+  wheels: 5,
+  doors: 4,
+  speed: 100,
 };
 
 class Car {
