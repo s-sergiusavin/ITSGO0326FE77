@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Session 18</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>DOM | Document object model</h1>
+
+    <div class="flex-container">
+        <div class="flex-items">
+            <div class="red-square">Red square</div>
+            <div class="red-square"></div>
+        </div>
+        <div class="flex-items">
+            <div class="blue-square"></div>
+            <div class="blue-square"></div>
+            <div class="blue-square"></div>
+        </div>
+    </div>
+<ul id="changed-list">
+    <li class="change-list">Unchanged</li>
+    <li class="change-list">Unchanged</li>
+    <li class="change-list">Unchanged</li>
+    <li class="change-list">Unchanged</li>
+    <li class="change-list">Unchanged</li>
+</ul>
+
+<div id="changedlist">
+    <p>Do not use the same id for multiple elements</p>
+</div>
+<p>This will be changed later with</p>
+<p>ghgkjdf.vcjdfkvjdfbv</p>
+<span class="style-messages">bla bla bla </span>
+<span class="style-messages">ok ok ok ok  </span>
+
+<!-- on mouse enter and on mouse leave -->
+
+<div class="green-square" onmouseenter="mouseEnter()" onmouseleave="mouseLeave()"></div>
+
+<!-- on click event -->
+<input type="button" value="Click this to change color" onClick="changeGreenSquare()">
+
+<!-- on focus si on blur  -->
+
+<label for="demoInput">Demo input event</label>
+<input type="text" id="demoInput" onfocus="focusInput()" onblur="blurInput()">
+
+
+<!-- on key down and on key up  -->
+
+<label for="demoKey">Demo key event</label>
+<input type="text" name="" id="demoKey" onkeyup="onKeyUp()" onkeydown="onKeyDown()">
+
+
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

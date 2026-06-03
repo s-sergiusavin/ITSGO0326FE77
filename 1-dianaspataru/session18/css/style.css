@@ -1,0 +1,21 @@
+.red-square, .blue-square, .green-square{
+    width: 10rem;
+    height: 10rem;
+    margin: 0.5rem;
+    
+}
+
+.green-square{
+     background-color: green;
+}
+.red-square{
+    background-color: red;
+}
+
+.blue-square{
+    background-color: blue;
+}
+
+.flex-container, .flex-items{
+    display: flex;
+}
