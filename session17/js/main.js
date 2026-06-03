@@ -274,5 +274,26 @@ vw.maxSpeed = 200;
 console.log(vw);
 console.log(porsche);
 
+/**
+ * Context in js
+ * this
+ */
+
+const person = {
+    name: 'Sergiu',
+    lastName: 'Savin',
+    age: 55,
+    address: {city: 'Brasov'},
+    sayHi: function() {
+        console.log(`${this.name} says hi!`)
+    },
+    sayHiArrow: () => {
+        console.log(`${this.lastName} says hi!`)
+    }
+}
+
+person.sayHi();
+person.sayHiArrow();
+
 
 
