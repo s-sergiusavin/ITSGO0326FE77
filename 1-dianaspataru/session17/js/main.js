@@ -195,4 +195,4 @@ const vw = new Car("vw", 150);
 const porsche = new Car("porsche", 450);
 
 console.log(vw)
-console.log(porsche)
+
