@@ -54,6 +54,36 @@ header .main-search .search-input:focus {
   display: flex;
 }
 
+.accountSettings {
+  position: relative;
+}
+
+.accountSettings #accountSettingsButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.accountSettings .accountSettingsMenu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  width: 12rem;
+  background-color: lightgray;
+}
+
+.accountSettings .accountSettingsMenu button {
+  padding: 0.5rem 0;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.accountSettings .accountSettingsMenu button:hover {
+  background-color: #00FFCB;
+}
+
 .nav-icons {
   font-size: 3rem;
   color: royalblue;
@@ -183,10 +213,14 @@ main {
 }
 
 .post .actions .reaction {
-  color: blue;
+  color: black;
   cursor: pointer;
   padding: 0.5rem 1rem;
 }
+
+.post .actions .reaction.touched {
+  color: blue;
+} 
 
 .post .actions .reaction:hover {
   color: royalblue;

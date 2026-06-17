@@ -58,14 +58,13 @@
           >
         </li>
         <li>
-          
           <div class="accountSettings">
             <button id="accountSettingsButton">
-<i class="bi bi-gear-fill nav-icons"></i>
+              <i class="bi bi-gear-fill nav-icons"></i>
             </button>
             <div class="accountSettingsMenu">
               <button>Profile Settings</button>
-              <button>Logout</button>
+              <button id="logoutButton">Logout</button>
             </div>
           </div>
         </li>
@@ -132,26 +131,26 @@
           <div class="reacts">
             <div class="likes-info">
               <i class="bi bi-hand-thumbs-up-fill reacts-icons"></i>
-              <span>10 likes</span>
+              <span id="likesNumber">25</span> <span> likes</span>
             </div>
 
             <div class="comments-info">
-              <span>15 comments</span>
+              <span id="sharesNumber"></span> <span>shares</span>
               <i class="bi bi-chat-left-text-fill reacts-icons"></i>
             </div>
           </div>
 
           <div class="react-actions">
             <ul class="actions">
-              <li class="reaction">
+              <li class="reaction" id="likeButton">
                 <i class="bi bi-hand-thumbs-up-fill"></i>
                 <span>Like</span>
               </li>
-              <li class="reaction">
+              <li class="reaction" id="commentButton">
                 <i class="bi bi-chat-left-text-fill"></i>
                 <span>Comment</span>
               </li>
-              <li class="reaction">
+              <li class="reaction" id="shareButton">
                 <i class="bi bi-share-fill"></i>
                 <span>Share</span>
               </li>
@@ -168,9 +167,13 @@
               type="text"
               placeholder="Adauga un comentariu"
               class="new-comment-filed"
+              id="commentInput"
             />
             <div class="wrap">
-              <button class="insert-comment-button button">
+              <button
+                class="insert-comment-button button"
+                id="commentInputButton"
+              >
                 <i class="bi bi-send-fill"></i>
               </button>
             </div>
@@ -188,10 +191,13 @@
                 <span>User name</span>
               </div>
               <div class="user-comment-text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Deleniti fugiat, iure consequuntur ex dolores eius culpa eaque
-                voluptatibus soluta eum.
+                <div id="commentMessage">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Deleniti fugiat, iure consequuntur ex dolores eius culpa eaque
+                  voluptatibus soluta eum.
+                </div>
                 <div class="emoji-reaction">😎</div>
+                <span id="removeCommentButton">Remove this comment</span>
               </div>
               <div class="comment-reaction">
                 <strong class="comment-reaction-button">Like</strong>
@@ -431,5 +437,7 @@
         voluptas laborum officiis. Ipsa, tempora.
       </aside>
     </main>
+
+    <script src="../js/feed.js"></script>
   </body>
 </html>
