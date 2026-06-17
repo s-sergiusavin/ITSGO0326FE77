@@ -1,14 +1,14 @@
 let isLoginPage = true;
 
-const toggleAuthButton = document.getElementById(toggleAuthButton);
-const loginButton = document.getElementById(loginButton);
+const toggleAuthButton = document.getElementById("toggleAuthButton");
+const loginButton = document.getElementById("loginButton");
 
 const emailField = document.getElementById("userInput");
-const passwprdField = document.getElementById("passwordInput");
+const passwordField = document.getElementById("passwordInput");
 const error = document.getElementById("error");
 
 toggleAuthButton.addEventListener("click", function () {
-  const headerTitleElement = document.getElementsByClassName("headerTittle")[0];
+  const headerTitleElement = document.getElementsByClassName("headerTitle")[0];
   const forgotPasswordElement = document.getElementById("forgotPassword");
 
   if (isLoginPage) {
@@ -33,25 +33,31 @@ const showError = (message) => {
 };
 
 const validateEmail = (value, pattern) => {
-  return !!value.match(pattern); //converteste o valoare la un rezultat boolean
+  return !!value.match(pattern); // !! converteste o valoare la un rezultat boolean
 };
 
 const validatePassword = (value) => {
-  // if (value === 'passw
-  return value.lenght > 3;
+  return value.length > 3;
+};
+
+const clearInputs = () => {
+  console.dir(emailField);
+
+  emailField.value = "";
+  passwordField.value = "";
 };
 
 loginButton.addEventListener("click", function (event) {
   event.preventDefault();
 
   const emailValue = emailField.value;
-  const passwordValue = passwprdField.value;
+  const passwordValue = passwordField.value;
   const regexEmailPattern = /\D{4,}\@\D{4,}\.\D{2,}/g;
 
-  errir.style.display = "none";
+  error.style.display = "none";
 
   if (emailValue === "" || passwordValue === "") {
-    showError("All fields are required and must contain a value");
+    showError("All fields are required and must contain a value!");
   } else {
     if (
       validateEmail(emailValue, regexEmailPattern) &&
@@ -69,34 +75,37 @@ loginButton.addEventListener("click", function (event) {
         createAccount(emailValue, passwordValue).then((data) => {
           clearInputs();
           console.log(data);
+          window.open("news.html", "_self");
         });
       }
 
-      // clear inputs
+      // clearInputs();
     } else {
-      // email or password not valid
-      showError("Email or password are invalid.");
+      // email or password not avlid
+      showError("Email or password are invalid");
       clearInputs();
     }
   }
 });
 
 async function login(emailValue, passwordValue) {
-  const loginUrl = "https://regres.in/api/login";
+  const loginUrl = "https://reqres.in/api/login";
   let loginData = {
     email: emailValue,
     password: passwordValue,
   };
 
-  loginData = {};
+  loginData = {
+    email: "eve.holt@reqres.in",
+    password: "cityslicka",
+  };
 
   const loginConfig = {
     method: "POST",
     headers: {
-      "Content-type": "application/json",
-      "x-api-key": "free_user_3Ex0S1TeDcRxCDRjSk3i9ZXZMjT",
+      "Content-Type": "application/json",
+      "x-api-key": "free_user_3Ex0RLGjQgptLlFTpJkPhoxoqKP",
     },
-
     body: JSON.stringify(loginData),
   };
 
@@ -106,25 +115,27 @@ async function login(emailValue, passwordValue) {
 }
 
 async function createAccount(emailValue, passwordValue) {
-  const registerUrl = "https://regres.in/api/register";
+  const registerUrl = "https://reqres.in/api/register";
   let registerData = {
     email: emailValue,
     password: passwordValue,
   };
 
-  registerData = {};
-
-  const loginConfig = {
-    method: "POST",
-    headers: {
-      "Content-type": "application/json",
-      "x-api-key": "free_user_3Ex0S1TeDcRxCDRjSk3i9ZXZMjT",
-    },
-
-    body: JSON.stringify(loginData),
+  registerData = {
+    email: "eve.holt@reqres.in",
+    password: "pistol",
   };
 
-  const response = await fetch(loginUrl, loginConfig);
+  const registerConfig = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": "free_user_3Ex0RLGjQgptLlFTpJkPhoxoqKP",
+    },
+    body: JSON.stringify(registerData),
+  };
+
+  const response = await fetch(registerUrl, registerConfig);
 
   return response.json();
 }
