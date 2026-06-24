@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
 }
-
 ul {
   list-style: none;
 }
@@ -26,26 +25,31 @@ header {
   background-color: #96ceaf;
 }
 
-header .main-search {
-  display: flex;
-  align-items: center;
-}
-header .main-search .logo {
-  padding: 1rem;
-  font-size: 2rem;
-  color: green;
-}
-header .main-search .search-input {
-  height: 2rem;
-  border-radius: 0.5rem;
-  width: 15rem;
-  padding: 0 1rem;
-  border: 1px solid #00ffa6;
-  box-shadow: 0 1px 5px #00ff95;
-}
-header .main-search .search-input:hover {
-  border: 0.1rem solid #00ff99;
-  outline: none;
+header {
+  .main-search {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      padding: 1rem;
+      font-size: 2rem;
+      color: green;
+    }
+
+    .search-input {
+      height: 2rem;
+      border-radius: 0.5rem;
+      width: 15rem;
+      padding: 0 1rem;
+      border: 1px solid #00ffa6;
+      box-shadow: 0 1px 5px #00ff95;
+
+      &:hover {
+        border: 0.1rem solid #00ff99;
+        outline: none;
+      }
+    }
+  }
 }
 
 header .main-search header .main-search .search-input .navigation,
@@ -225,11 +229,9 @@ main {
 .interests-content .food:hover {
   color: orange;
 }
-
 .interests-content .gaming:hover {
   color: purple;
 }
-
 .interests-content .add-more:hover {
   color: #045604;
 }
@@ -283,15 +285,14 @@ main {
 }
 
 .friend:hover {
-  background-color: rgba(255, 255, 255, 0.9019607843);
+  background-color: #ffffffe6;
 }
 
 .friend-picture {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .picture-status {
@@ -351,7 +352,6 @@ main {
   box-shadow: 1px 1px 1px 1px #ccc;
   padding: 1rem;
   width: 98%;
-  height: -moz-fit-content;
   height: fit-content;
   margin-top: 2rem;
   position: relative;
@@ -375,7 +375,6 @@ main {
   font-size: 1rem;
   font-weight: 600;
 }
-
 .profile-user-info .category {
   font-weight: bold;
   position: absolute;
@@ -428,7 +427,6 @@ main {
 .content p {
   padding: 0.5rem 1rem;
 }
-
 .content img {
   border-radius: 2rem;
   padding: 0.5rem 0;
@@ -495,7 +493,7 @@ main {
   width: 80%;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  background-color: rgba(173, 230, 201, 0.2);
+  background-color: #ade6c933;
   border: 1px solid black;
 }
 
@@ -522,8 +520,7 @@ main {
 }
 
 .profile-user-comment img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .user-comment-text {
@@ -531,7 +528,7 @@ main {
   border: 1px solid #888;
   padding: 1rem;
   border-radius: 0 1rem 1rem 1rem;
-  background-color: rgba(173, 230, 201, 0.2);
+  background-color: #ade6c933;
   position: relative;
   bottom: 1rem;
 }
@@ -562,7 +559,11 @@ main {
   letter-spacing: 1.3px;
   font-weight: 700;
   color: #313133;
-  background: linear-gradient(90deg, rgb(154, 241, 174) 0%, rgb(91, 229, 160) 100%);
+  background: linear-gradient(
+    90deg,
+    rgb(154, 241, 174) 0%,
+    rgb(91, 229, 160) 100%
+  );
   border: none;
   border-radius: 50%;
   box-shadow: 5px 5px 10px rgba(99, 238, 143, 0.64);
@@ -580,8 +581,9 @@ main {
     display: none;
     visibility: hidden;
   }
+
   .left-content {
     margin: 0;
     padding: 0.5rem;
   }
-}/*# sourceMappingURL=feed_nature.css.map */
+}
