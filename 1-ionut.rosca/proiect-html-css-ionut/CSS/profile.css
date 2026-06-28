@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left, .right {
+    width: 20%;
+    background: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+}
+
+.right {
+    border-right: none;
+    border-left: 1px solid #ddd;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.avatar {
+    width: 100%;
+    border-radius: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.dark {
+    background: #222;
+    color: #eee;
+}
+
+.dark .left, .dark .right, .dark main {
+    background: #333;
+    color: #eee;
+}
