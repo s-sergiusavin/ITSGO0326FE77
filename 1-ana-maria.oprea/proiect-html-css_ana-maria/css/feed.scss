@@ -11,6 +11,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 img {
   object-fit: cover;
 }
@@ -19,77 +20,68 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row;
   height: 4rem;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 10;
-  background-color: #96ceaf;
+  background-color: lightblue;
   .main-search {
     display: flex;
     align-items: center;
-
     .logo {
       padding: 1rem;
       font-size: 2rem;
-      color: green;
+      color: royalblue;
     }
-
     .search-input {
       height: 2rem;
       border-radius: 0.5rem;
       width: 15rem;
       padding: 0 1rem;
-      border: 1px solid #00ffa6;
-      box-shadow: 0 1px 5px #00ff95;
-
+      border: 1px solid #00ddff;
+      box-shadow: 0 1px 5px #00ddff;
       &:hover {
-        border: 0.1rem solid #00ff99;
+        border: 0.1rem solid #00ddff;
         outline: none;
       }
     }
   }
-
-  .navigation {
+  .navigation,
+  .links {
     display: flex;
-    flex-direction: row;
   }
   .nav-icons {
     font-size: 2rem;
-    color: green;
+    color: royalblue;
     margin: 0 2rem;
     .feed {
       i {
-        color: #045604;
+        color: darkblue;
       }
     }
     &:hover {
-      color: #045604;
+      color: darkblue;
     }
   }
-
-  .links {
-    display: flex;
-    .bell-icon {
-      position: relative;
-      display: block;
-      span {
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: red;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.6rem;
-        color: white;
-        font-weight: bold;
-        border-radius: 50%;
-        width: 1rem;
-        height: 1rem;
-      }
+  .bell-icon {
+    position: relative;
+    display: block;
+    span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.6rem;
+      color: white;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 1rem;
+      height: 1rem;
     }
   }
 }
@@ -97,9 +89,9 @@ header {
 main {
   display: flex;
   justify-content: center;
-  background-image: url(../assets/background3.jpg);
-  background-size: contain;
+  background-color: rgb(228, 246, 251);
   margin-top: 3.5rem;
+
   .left-content,
   .right-content {
     position: fixed;
@@ -117,6 +109,7 @@ main {
     font-weight: bold;
     padding-left: 1rem;
   }
+
   .side-buttons {
     div {
       padding: 0.5rem 0;
@@ -127,16 +120,17 @@ main {
       position: fixed;
       bottom: 0;
     }
-    .history div:hover,
-    .sugestions div:hover {
-      transform: scale(1) rotate(0deg) translate(0px, 0px) skewX(0deg);
-      box-shadow: -1px 0 rgba(0, 0, 0, 0.3);
-      padding-left: 1rem;
-      color: #045604;
+    .history div,
+    .sugestions div {
+      &:hover {
+        transform: scale(1) rotate(0deg) translate(0px, 0px) skewX(0deg);
+        box-shadow: -1px 0 rgba(0, 0, 0, 0.3);
+        padding-left: 1rem;
+        color: darkblue;
+      }
     }
   }
 }
-
 .interests {
   overflow: hidden;
   .interests-item {
@@ -150,7 +144,7 @@ main {
       transition: color 0.3s ease;
       position: relative;
       &:hover {
-        color: #045604;
+        color: darkblue;
       }
       .icon {
         transition: transform 0.3s ease;
@@ -161,10 +155,10 @@ main {
         position: absolute;
         width: 100%;
         transform: scaleX(0);
-        height: 2px;
+        height: 1px;
         bottom: 0;
         left: 0;
-        background-color: #045604;
+        background-color: darkblue;
         transition: transform 0.25s ease-out;
       }
       &:hover::after {
@@ -189,9 +183,11 @@ main {
         transition: color 0.3s ease;
       }
       .nature {
-        color: green;
-        background-color: rgba(255, 255, 255, 0.3);
+        &:hover {
+          color: green;
+        }
       }
+
       .food {
         &:hover {
           color: orange;
@@ -204,13 +200,13 @@ main {
       }
       .add-more {
         &:hover {
-          color: #045604;
+          color: darkblue;
         }
       }
     }
-    input {
-      display: none;
-    }
+  }
+  input {
+    display: none;
   }
 }
 
@@ -229,6 +225,9 @@ main {
   font-size: large;
   font-weight: 500;
   padding-right: 1.5rem;
+  h3 {
+    margin: 1.5rem 0 0.5rem 0;
+  }
   .messenger {
     list-style: none;
     padding: 0;
@@ -252,28 +251,18 @@ main {
     margin: 0;
     display: flex;
     flex-direction: column;
-    position: relative;
-    display: flex;
-    .friend-picture {
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+
     .follow {
       position: absolute;
       right: 2rem;
       font-size: small;
       font-weight: bold;
-      color: green;
+      color: royalblue;
       transition: all 0.3s;
       &:hover {
-        color: #045604;
+        color: darkblue;
       }
     }
-  }
-  h3 {
-    margin: 1.5rem 0 0.5rem 0;
   }
   .stories {
     ul {
@@ -284,19 +273,19 @@ main {
       padding: 0.5rem;
     }
     img {
-      border: 2px solid green;
+      border: 2px solid royalblue;
       border-radius: 50%;
       transition: all 0.5s ease;
       height: 3rem;
       width: 3rem;
-
       &:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 10px rgba(59, 75, 57, 0.8);
+        box-shadow: 0 0 10px rgba(72, 73, 73, 0.5);
       }
     }
   }
 }
+
 .friend {
   display: flex;
   align-items: center;
@@ -304,9 +293,8 @@ main {
   padding: 0.5rem 0.5rem;
   transition: all 0.3s;
   &:hover {
-    background-color: #96ceaf;
+    background-color: #ffffffe6;
   }
-
   .picture-status {
     position: relative;
     display: flex;
@@ -328,7 +316,6 @@ main {
     }
   }
 }
-
 .profile-image {
   width: 3rem;
   height: 3rem;
@@ -337,7 +324,7 @@ main {
 
 .main-content {
   width: 50%;
-  background-color: rgba(216, 241, 205, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -345,8 +332,9 @@ main {
   .post {
     box-shadow: 1px 1px 1px 1px #ccc;
     padding: 1rem;
-    width: 98%;
-    height: fit-content;
+    width: 100%;
+    height: min-content;
+    border-radius: 1rem;
     margin-top: 2rem;
     position: relative;
     font-size: medium;
@@ -397,6 +385,7 @@ main {
       top: -1rem;
       padding: 1rem;
     }
+
     .content {
       display: flex;
       flex-direction: column;
@@ -407,10 +396,10 @@ main {
         border-radius: 2rem;
         padding: 0.5rem 0;
         width: 100%;
-        height: 50%;
       }
       .img-wrapper {
         position: relative;
+
         .img-content {
           max-width: 100%;
         }
@@ -427,7 +416,7 @@ main {
         display: flex;
         cursor: pointer;
         color: white;
-        border: 1px solid green;
+        border: 1px solid royalblue;
       }
       .post-title {
         padding: 1rem;
@@ -448,11 +437,10 @@ main {
       .comment,
       .share,
       .save {
-        :hover {
-          color: green;
+        &:hover {
+          color: royalblue;
         }
       }
-      
     }
     .comment-section {
       display: flex;
@@ -464,7 +452,7 @@ main {
         width: 80%;
         border-radius: 0.5rem;
         padding: 0.5rem;
-        background-color: #ade6c933;
+        background-color: rgba(173, 216, 230, 0.3);
         border: 1px solid black;
       }
       .insert-comment-button {
@@ -485,12 +473,12 @@ main {
         color: #313133;
         background: linear-gradient(
           90deg,
-          rgb(154, 241, 174) 0%,
-          rgb(91, 229, 160) 100%
+          rgb(154, 202, 241) 0%,
+          rgb(91, 174, 229) 100%
         );
         border: none;
         border-radius: 50%;
-        box-shadow: 5px 5px 10px rgba(99, 238, 143, 0.64);
+        box-shadow: 5px 5px 10px rgba(99, 173, 238, 0.64);
         transition: all 0.3s ease-in-out 0s;
         cursor: pointer;
         &:hover,
@@ -509,27 +497,33 @@ main {
         position: relative;
         z-index: 10;
         font-weight: 600;
+        img {
+          object-fit: cover;
+          margin-left: 0.5rem;
+        }
       }
       .user-comment-text {
         margin: 0 1rem;
         border: 1px solid #888;
         padding: 1rem;
         border-radius: 0 1rem 1rem 1rem;
-        background-color: #ade6c933;
+        background-color: rgba(173, 216, 230, 0.2);
         position: relative;
+        left: 1rem;
         bottom: 1rem;
       }
+
       .comment-reaction {
         position: absolute;
         bottom: 0.5rem;
-        left: 2.5rem;
+        left: 3rem;
         span {
           padding-left: 0.3rem;
           padding-right: 1rem;
           font-style: normal;
           &:hover {
             cursor: pointer;
-            color: #045604;
+            color: darkblue;
           }
         }
       }

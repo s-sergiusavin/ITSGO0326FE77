@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 ul {
   list-style: none;
 }
@@ -10,6 +11,11 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 header {
@@ -24,18 +30,15 @@ header {
   z-index: 10;
   background-color: lightblue;
 }
-
 header .main-search {
   display: flex;
   align-items: center;
 }
-
 header .main-search .logo {
   padding: 1rem;
   font-size: 2rem;
   color: royalblue;
 }
-
 header .main-search .search-input {
   height: 2rem;
   border-radius: 0.5rem;
@@ -44,41 +47,30 @@ header .main-search .search-input {
   border: 1px solid #00ddff;
   box-shadow: 0 1px 5px #00ddff;
 }
-
 header .main-search .search-input:hover {
   border: 0.1rem solid #00ddff;
   outline: none;
 }
-
-.navigation,
-.links {
+header .navigation,
+header .links {
   display: flex;
 }
-
-.nav-icons {
+header .nav-icons {
   font-size: 2rem;
   color: royalblue;
   margin: 0 2rem;
 }
-
-.nav-icons .feed i {
+header .nav-icons .feed i {
   color: darkblue;
 }
-
-.nav-icons:hover {
+header .nav-icons:hover {
   color: darkblue;
 }
-
-.feed i {
-  color: darkblue;
-}
-
-.bell-icon {
+header .bell-icon {
   position: relative;
   display: block;
 }
-
-.bell-icon span {
+header .bell-icon span {
   position: absolute;
   top: 0;
   right: 0;
@@ -100,9 +92,8 @@ main {
   background-color: rgb(228, 246, 251);
   margin-top: 3.5rem;
 }
-
-.left-content,
-.right-content {
+main .left-content,
+main .right-content {
   position: fixed;
   width: 17%;
   overflow: auto;
@@ -113,48 +104,36 @@ main {
   left: 0;
   padding: 1rem 2rem;
 }
-
 .left-content span {
   font-size: large;
   font-weight: bold;
   padding-left: 1rem;
 }
-
-.history {
-  position: fixed;
-  bottom: 0;
-}
-
-.side-buttons div {
+.left-content .side-buttons div {
   padding: 0.5rem 0;
   width: 100%;
   transition: all 0.3s;
 }
-
-.history div:hover,
-.sugestions div:hover {
+.left-content .side-buttons .history {
+  position: fixed;
+  bottom: 0;
+}
+.left-content .side-buttons .history div:hover,
+.left-content .side-buttons .sugestions div:hover {
   transform: scale(1) rotate(0deg) translate(0px, 0px) skewX(0deg);
   box-shadow: -1px 0 rgba(0, 0, 0, 0.3);
   padding-left: 1rem;
   color: darkblue;
 }
 
-.interests .explore {
-  color: darkblue;
-  background-color: rgba(255, 255, 255, 0.3);
-  width: 100%;
-}
-
 .interests {
   overflow: hidden;
 }
-
-.interests-item {
+.interests .interests-item {
   padding: 0;
   margin: 0;
 }
-
-.interests-header {
+.interests .interests-item .interests-header {
   display: flex;
   padding: 0.5rem 0;
   margin: 0;
@@ -162,17 +141,14 @@ main {
   transition: color 0.3s ease;
   position: relative;
 }
-
-.interests-header:hover {
+.interests .interests-item .interests-header:hover {
   color: darkblue;
 }
-
-.interests-header .icon {
+.interests .interests-item .interests-header .icon {
   transition: transform 0.3s ease;
   padding-left: 2rem;
 }
-
-.interests-header::after {
+.interests .interests-item .interests-header::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -183,34 +159,40 @@ main {
   background-color: darkblue;
   transition: transform 0.25s ease-out;
 }
-
-.interests-header:hover::after {
+.interests .interests-item .interests-header:hover::after {
   transform: scaleX(1);
 }
-
-.interests-header::after {
+.interests .interests-item .interests-header::after {
   transform-origin: bottom right;
 }
-
-.interests-header:hover::after {
+.interests .interests-item .interests-header:hover::after {
   transform-origin: bottom left;
 }
-
-.interests-content {
+.interests .interests-item .interests-content {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
-
-.interests-content li {
+.interests .interests-item .interests-content li {
   padding: 0.5rem;
   font-size: 1rem;
   line-height: 1;
   list-style: none;
   transition: color 0.3s ease;
 }
-
-.interests-item input {
+.interests .interests-item .interests-content .nature:hover {
+  color: green;
+}
+.interests .interests-item .interests-content .food:hover {
+  color: orange;
+}
+.interests .interests-item .interests-content .gaming:hover {
+  color: purple;
+}
+.interests .interests-item .interests-content .add-more:hover {
+  color: darkblue;
+}
+.interests input {
   display: none;
 }
 
@@ -224,44 +206,36 @@ main {
   transform: rotate(45deg) translatey(-1rem);
 }
 
-.interests-content .nature:hover {
-  color: green;
-}
-
-.interests-content .food:hover {
-  color: orange;
-}
-.interests-content .gaming:hover {
-  color: purple;
-}
-.interests-content .add-more:hover {
-  color: darkblue;
-}
-
 .right-content {
   right: 0;
   font-size: large;
   font-weight: 500;
   padding-right: 1.5rem;
 }
-
-.messenger {
+.right-content h3 {
+  margin: 1.5rem 0 0.5rem 0;
+}
+.right-content .messenger {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
 }
-
-.suggested {
+.right-content .messenger .second .status {
+  background-color: green;
+}
+.right-content .messenger .third .status {
+  background: orange;
+}
+.right-content .suggested {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
 }
-
-.suggested .follow {
+.right-content .suggested .follow {
   position: absolute;
   right: 2rem;
   font-size: small;
@@ -269,13 +243,26 @@ main {
   color: royalblue;
   transition: all 0.3s;
 }
-
-.suggested .follow:hover {
+.right-content .suggested .follow:hover {
   color: darkblue;
 }
-
-.right-content h3 {
-  margin: 1.5rem 0 0.5rem 0;
+.right-content .stories ul {
+  display: flex;
+  gap: 0.5rem;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 0.5rem;
+}
+.right-content .stories img {
+  border: 2px solid royalblue;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  height: 3rem;
+  width: 3rem;
+}
+.right-content .stories img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(72, 73, 73, 0.5);
 }
 
 .friend {
@@ -285,24 +272,21 @@ main {
   padding: 0.5rem 0.5rem;
   transition: all 0.3s;
 }
-
 .friend:hover {
-  background-color: #ffffffe6;
+  background-color: rgba(255, 255, 255, 0.9019607843);
 }
-
-.friend-picture {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.picture-status {
+.friend .picture-status {
   position: relative;
   display: flex;
 }
-
-.status {
+.friend .picture-status .friend-picture {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.friend .picture-status .status {
   width: 0.5rem;
   height: 0.5rem;
   background-color: red;
@@ -313,32 +297,10 @@ main {
   right: 0;
 }
 
-.second .status {
-  background-color: green;
-}
-
-.third .status {
-  background: orange;
-}
-
-.stories ul {
-  display: flex;
-  gap: 0.5rem;
-  overflow: auto;
-  white-space: nowrap;
-  padding: 0.5rem;
-}
-
-.stories img {
-  border: 2px solid royalblue;
-  transition: all 0.5s ease;
-  height: 3rem;
+.profile-image {
   width: 3rem;
-}
-
-.stories img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(72, 73, 73, 0.5);
+  height: 3rem;
+  border-radius: 50%;
 }
 
 .main-content {
@@ -349,11 +311,11 @@ main {
   justify-content: center;
   align-items: center;
 }
-
-.post {
+.main-content .post {
   box-shadow: 1px 1px 1px 1px #ccc;
   padding: 1rem;
   width: 100%;
+  height: -moz-min-content;
   height: min-content;
   border-radius: 1rem;
   margin-top: 2rem;
@@ -361,24 +323,21 @@ main {
   font-size: medium;
   background-color: white;
 }
-
-.post-header {
+.main-content .post .post-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-.post-header .profile-user-info {
+.main-content .post .post-header .profile-user-info {
   display: flex;
   align-items: center;
 }
-
-.profile-user-info span {
+.main-content .post .post-header .profile-user-info span {
   padding: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
 }
-.profile-user-info .category {
+.main-content .post .post-header .profile-user-info .category {
   font-weight: bold;
   position: absolute;
   top: 1.5rem;
@@ -386,85 +345,49 @@ main {
   display: flex;
   gap: 0.7rem;
 }
-
-.profile-user-info .category .nature {
+.main-content .post .post-header .profile-user-info .category .nature {
   color: green;
   border: 1px solid green;
   border-radius: 10px;
   transition: all 0.4s;
 }
-
-.category .nature:hover {
+.main-content .post .post-header .profile-user-info .category .nature:hover {
   box-shadow: 0px 0px 20px 2px rgba(45, 255, 196, 0.9);
 }
-
-.profile-user-info .category .event {
+.main-content .post .post-header .profile-user-info .category .event {
   color: magenta;
   border: 1px solid magenta;
   border-radius: 10px;
   transition: all 0.4s;
 }
-
-.category .event:hover {
+.main-content .post .post-header .profile-user-info .category .event:hover {
   box-shadow: 0px 0px 20px 2px rgba(255, 0, 255, 0.9);
 }
-
-.profile-options {
+.main-content .post .profile-options {
   position: absolute;
   right: 0;
   top: -1rem;
   padding: 1rem;
 }
-
-.profile-image {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-}
-
-.content {
+.main-content .post .content {
   display: flex;
   flex-direction: column;
 }
-
-.content p {
+.main-content .post .content p {
   padding: 0.5rem 1rem;
 }
-.content img {
+.main-content .post .content img {
   border-radius: 2rem;
   padding: 0.5rem 0;
   width: 100%;
 }
-
-.bottom-section {
-  display: flex;
-  justify-content: space-around;
-}
-
-.bottom-section span {
-  padding: 0.5rem;
-  font-style: normal;
-}
-
-.bottom-section .like:hover {
-  color: red;
-}
-
-.bottom-section .comment:hover,
-.share:hover,
-.save:hover {
-  color: royalblue;
-}
-
-.img-wrapper {
+.main-content .post .content .img-wrapper {
   position: relative;
 }
-
-.img-content {
+.main-content .post .content .img-wrapper .img-content {
   max-width: 100%;
 }
-
-.content .info-icon {
+.main-content .post .content .info-icon {
   position: absolute;
   right: 2rem;
   bottom: -0.5rem;
@@ -478,41 +401,70 @@ main {
   color: white;
   border: 1px solid royalblue;
 }
-
-.post-title {
+.main-content .post .content .post-title {
   padding: 1rem;
 }
-
-.comment-section {
+.main-content .post .bottom-section {
+  display: flex;
+  justify-content: space-around;
+}
+.main-content .post .bottom-section span {
+  padding: 0.5rem;
+  font-style: normal;
+}
+.main-content .post .bottom-section .like:hover {
+  color: red;
+}
+.main-content .post .bottom-section .comment:hover,
+.main-content .post .bottom-section .share:hover,
+.main-content .post .bottom-section .save:hover {
+  color: royalblue;
+}
+.main-content .post .comment-section {
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 1rem;
   align-items: center;
   gap: 0.5rem;
 }
-
-.comment-section .new-comment-filed {
+.main-content .post .comment-section .new-comment-filed {
   width: 80%;
   border-radius: 0.5rem;
   padding: 0.5rem;
   background-color: rgba(173, 216, 230, 0.3);
   border: 1px solid black;
 }
-
-.insert-comment-button {
+.main-content .post .comment-section .insert-comment-button {
   border: none;
   background-color: transparent;
   font-size: 1.2rem;
   cursor: pointer;
   padding: 0.5rem 0.7rem;
 }
-
-.user-comments {
+.main-content .post .comment-section .button {
+  display: inline-flex;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: linear-gradient(90deg, rgb(154, 202, 241) 0%, rgb(91, 174, 229) 100%);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px rgba(99, 173, 238, 0.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+}
+.main-content .post .comment-section .button:hover, .main-content .post .comment-section .button:focus {
+  transform: translateY(-6px);
+}
+.main-content .post .user-comments {
   display: flex;
   flex-direction: column;
 }
-
-.user-comments .profile-user-comment {
+.main-content .post .user-comments .profile-user-comment {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -520,13 +472,12 @@ main {
   z-index: 10;
   font-weight: 600;
 }
-
-.profile-user-comment img {
-  object-fit: cover;
+.main-content .post .user-comments .profile-user-comment img {
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-left: 0.5rem;
 }
-
-.user-comment-text {
+.main-content .post .user-comments .user-comment-text {
   margin: 0 1rem;
   border: 1px solid #888;
   padding: 1rem;
@@ -536,48 +487,19 @@ main {
   left: 1rem;
   bottom: 1rem;
 }
-
-.comment-reaction {
+.main-content .post .user-comments .comment-reaction {
   position: absolute;
   bottom: 0.5rem;
   left: 3rem;
 }
-
-.comment-reaction span {
+.main-content .post .user-comments .comment-reaction span {
   padding-left: 0.3rem;
   padding-right: 1rem;
   font-style: normal;
 }
-
-.comment-reaction span:hover {
+.main-content .post .user-comments .comment-reaction span:hover {
   cursor: pointer;
   color: darkblue;
-}
-
-.button {
-  display: inline-flex;
-  font-size: 22px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  letter-spacing: 1.3px;
-  font-weight: 700;
-  color: #313133;
-  background: linear-gradient(
-    90deg,
-    rgb(154, 202, 241) 0%,
-    rgb(91, 174, 229) 100%
-  );
-  border: none;
-  border-radius: 50%;
-  box-shadow: 5px 5px 10px rgba(99, 173, 238, 0.64);
-  transition: all 0.3s ease-in-out 0s;
-  cursor: pointer;
-}
-
-.button:hover,
-.button:focus {
-  transform: translateY(-6px);
 }
 
 @media (max-width: 1040px) {
@@ -585,9 +507,8 @@ main {
     display: none;
     visibility: hidden;
   }
-
   .left-content {
     margin: 0;
     padding: 0.5rem;
   }
-}
+}/*# sourceMappingURL=feed.css.map */

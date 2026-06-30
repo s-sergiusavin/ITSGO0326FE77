@@ -15,29 +15,28 @@ a {
   box-shadow: 0 3px 20px #00ddff;
   padding: 2rem 4rem;
   text-align: center;
-}
-.form-container form {
-  display: flex;
-  flex-direction: column;
-}
-.form-container form .form-field {
-  margin-bottom: 0.5rem;
-  display: flex;
-  gap: 1rem;
-}
-.form-container form .form-field input:not([type=checkbox]) {
-  background-color: rgba(0, 221, 255, 0.2705882353);
-  color: darkblue;
-  border-radius: 0.5rem;
-  border: 1px solid darkblue;
-  padding: 0.5rem;
-  width: 80%;
-}
-.form-container form .form-field input::-moz-placeholder {
-  color: black;
-}
-.form-container form .form-field input::placeholder {
-  color: black;
+  form {
+    display: flex;
+    flex-direction: column;
+    .form-field {
+      margin-bottom: 0.5rem;
+      display: flex;
+      gap: 1rem;
+      input {
+        &:not([type="checkbox"]) {
+          background-color: #00ddff45;
+          color: darkblue;
+          border-radius: 0.5rem;
+          border: 1px solid darkblue;
+          padding: 0.5rem;
+          width: 80%;
+        }
+        &::placeholder {
+          color: black;
+        }
+      }
+    }
+  }
 }
 
 .login-button {
@@ -51,12 +50,12 @@ a {
   margin-bottom: 1rem;
   cursor: pointer;
   box-shadow: 0 1px 5px #00ddff;
-}
-.login-button:hover {
-  background-color: turquoise;
-  border: 1px solid cadetblue;
-  box-shadow: 0 1px 5px cadetblue;
-  font-weight: bolder;
+  &:hover {
+    background-color: turquoise;
+    border: 1px solid cadetblue;
+    box-shadow: 0 1px 5px cadetblue;
+    font-weight: bolder;
+  }
 }
 
 .forgot-password-btn {
@@ -73,7 +72,7 @@ a {
   width: 50%;
   margin-bottom: 1rem;
   cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 }
-.register-btn:hover {
-  opacity: 0.8;
-}/*# sourceMappingURL=auth.css.map */

@@ -1,23 +1,19 @@
 header {
-  background: gray
-    url("https://mshanken.imgix.net/wso/bolt/2025-06/restaurant-guide-chains-fogo-de-chao-dining-061225_1600.jpg");
+  background: gray url("https://mshanken.imgix.net/wso/bolt/2025-06/restaurant-guide-chains-fogo-de-chao-dining-061225_1600.jpg");
   background-size: cover;
   height: 35rem;
   color: white;
 }
-
-.back-image {
+header .back-image {
   width: 3rem;
   position: fixed;
   top: 1rem;
   left: 1rem;
 }
-
 header h1 {
   font-size: 2.5rem;
   margin: 2rem 5rem 1.2rem;
 }
-
 header h1 span {
   text-transform: uppercase;
   display: block;
@@ -26,7 +22,6 @@ header h1 span {
   position: relative;
   z-index: 1;
 }
-
 header h1 span::before {
   content: " ";
   position: absolute;
@@ -36,8 +31,7 @@ header h1 span::before {
   bottom: 0;
   left: -3rem;
 }
-
-.header-description {
+header .header-description {
   font-weight: bold;
   padding: 2rem;
   max-width: 70%;
@@ -48,23 +42,19 @@ header h1 span::before {
   border-radius: 1rem;
   box-shadow: 0.5rem 0.5rem 0.5rem #0fb;
 }
-
-.form-container label {
+header .form-container label {
   color: #0fb;
 }
-
-.form-container p {
+header .form-container p {
   color: #888;
 }
-
-.form-container form input[type="text"] {
+header .form-container form input[type=text] {
   border: 1px solid #0fb;
   padding: 0.5rem;
   border-radius: 0.5rem;
   margin-top: 1rem;
 }
-
-.form-container form input[type="button"] {
+header .form-container form input[type=button] {
   background-color: orange;
   border: none;
   border-radius: 0.5rem;
@@ -75,31 +65,26 @@ header h1 span::before {
   align-self: center;
   cursor: pointer;
 }
-
-.form-container form input[type="button"]:hover {
+header .form-container form input[type=button]:hover {
   background-color: #cc8501;
 }
-
-.call-to-action {
+header .call-to-action {
   display: flex;
   flex-direction: column;
 }
-
-.call-to-action .call-to-action-message {
+header .call-to-action .call-to-action-message {
   padding: 5rem;
   padding-bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.call-to-action .call-to-action-message h2 {
+header .call-to-action .call-to-action-message h2 {
   text-transform: uppercase;
   position: relative;
   z-index: 1;
 }
-
-.call-to-action .call-to-action-message h2::before {
+header .call-to-action .call-to-action-message h2::before {
   content: " ";
   position: absolute;
   width: 9rem;
@@ -108,4 +93,4 @@ header h1 span::before {
   bottom: 0;
   left: -3rem;
   z-index: -1;
-}
+}/*# sourceMappingURL=landing-page.css.map */

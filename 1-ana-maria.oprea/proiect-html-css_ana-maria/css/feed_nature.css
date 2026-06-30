@@ -13,10 +13,16 @@ a {
   color: inherit;
 }
 
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
   height: 4rem;
   position: fixed;
   width: 100%;
@@ -25,7 +31,6 @@ header {
   z-index: 10;
   background-color: #96ceaf;
 }
-
 header .main-search {
   display: flex;
   align-items: center;
@@ -47,36 +52,29 @@ header .main-search .search-input:hover {
   border: 0.1rem solid #00ff99;
   outline: none;
 }
-
-header .main-search header .main-search .search-input .navigation,
-.links {
+header .navigation {
   display: flex;
+  flex-direction: row;
 }
-
-.nav-icons {
+header .nav-icons {
   font-size: 2rem;
   color: green;
   margin: 0 2rem;
 }
-
-.nav-icons .feed i {
+header .nav-icons .feed i {
   color: #045604;
 }
-
-.nav-icons:hover {
+header .nav-icons:hover {
   color: #045604;
 }
-
-.feed i {
-  color: #045604;
+header .links {
+  display: flex;
 }
-
-.bell-icon {
+header .links .bell-icon {
   position: relative;
   display: block;
 }
-
-.bell-icon span {
+header .links .bell-icon span {
   position: absolute;
   top: 0;
   right: 0;
@@ -99,9 +97,8 @@ main {
   background-size: contain;
   margin-top: 3.5rem;
 }
-
-.left-content,
-.right-content {
+main .left-content,
+main .right-content {
   position: fixed;
   width: 17%;
   overflow: auto;
@@ -112,26 +109,22 @@ main {
   left: 0;
   padding: 1rem 2rem;
 }
-
 .left-content span {
   font-size: large;
   font-weight: bold;
   padding-left: 1rem;
 }
-
-.history {
-  position: fixed;
-  bottom: 0;
-}
-
-.side-buttons div {
+.left-content .side-buttons div {
   padding: 0.5rem 0;
   width: 100%;
   transition: all 0.3s;
 }
-
-.history div:hover,
-.sugestions div:hover {
+.left-content .side-buttons .history {
+  position: fixed;
+  bottom: 0;
+}
+.left-content .side-buttons .history div:hover,
+.left-content .side-buttons .sugestions div:hover {
   transform: scale(1) rotate(0deg) translate(0px, 0px) skewX(0deg);
   box-shadow: -1px 0 rgba(0, 0, 0, 0.3);
   padding-left: 1rem;
@@ -141,13 +134,11 @@ main {
 .interests {
   overflow: hidden;
 }
-
-.interests-item {
+.interests .interests-item {
   padding: 0;
   margin: 0;
 }
-
-.interests-header {
+.interests .interests-item .interests-header {
   display: flex;
   padding: 0.5rem 0;
   margin: 0;
@@ -155,17 +146,14 @@ main {
   transition: color 0.3s ease;
   position: relative;
 }
-
-.interests-header:hover {
+.interests .interests-item .interests-header:hover {
   color: #045604;
 }
-
-.interests-header .icon {
+.interests .interests-item .interests-header .icon {
   transition: transform 0.3s ease;
   padding-left: 2rem;
 }
-
-.interests-header::after {
+.interests .interests-item .interests-header::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -176,34 +164,41 @@ main {
   background-color: #045604;
   transition: transform 0.25s ease-out;
 }
-
-.interests-header:hover::after {
+.interests .interests-item .interests-header:hover::after {
   transform: scaleX(1);
 }
-
-.interests-header::after {
+.interests .interests-item .interests-header::after {
   transform-origin: bottom right;
 }
-
-.interests-header:hover::after {
+.interests .interests-item .interests-header:hover::after {
   transform-origin: bottom left;
 }
-
-.interests-content {
+.interests .interests-item .interests-content {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
-
-.interests-content li {
+.interests .interests-item .interests-content li {
   padding: 0.5rem;
   font-size: 1rem;
   line-height: 1;
   list-style: none;
   transition: color 0.3s ease;
 }
-
-.interests-item input {
+.interests .interests-item .interests-content .nature {
+  color: green;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.interests .interests-item .interests-content .food:hover {
+  color: orange;
+}
+.interests .interests-item .interests-content .gaming:hover {
+  color: purple;
+}
+.interests .interests-item .interests-content .add-more:hover {
+  color: #045604;
+}
+.interests .interests-item input {
   display: none;
 }
 
@@ -217,47 +212,42 @@ main {
   transform: rotate(45deg) translatey(-1rem);
 }
 
-.interests-content .nature {
-  color: green;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.interests-content .food:hover {
-  color: orange;
-}
-
-.interests-content .gaming:hover {
-  color: purple;
-}
-
-.interests-content .add-more:hover {
-  color: #045604;
-}
-
 .right-content {
   right: 0;
   font-size: large;
   font-weight: 500;
   padding-right: 1.5rem;
 }
-
-.messenger {
+.right-content .messenger {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
 }
-
-.suggested {
+.right-content .messenger .second .status {
+  background-color: green;
+}
+.right-content .messenger .third .status {
+  background: orange;
+}
+.right-content .suggested {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
+  position: relative;
+  display: flex;
 }
-
-.suggested .follow {
+.right-content .suggested .friend-picture {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.right-content .suggested .follow {
   position: absolute;
   right: 2rem;
   font-size: small;
@@ -265,13 +255,29 @@ main {
   color: green;
   transition: all 0.3s;
 }
-
-.suggested .follow:hover {
+.right-content .suggested .follow:hover {
   color: #045604;
 }
-
 .right-content h3 {
   margin: 1.5rem 0 0.5rem 0;
+}
+.right-content .stories ul {
+  display: flex;
+  gap: 0.5rem;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 0.5rem;
+}
+.right-content .stories img {
+  border: 2px solid green;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  height: 3rem;
+  width: 3rem;
+}
+.right-content .stories img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(59, 75, 57, 0.8);
 }
 
 .friend {
@@ -281,25 +287,21 @@ main {
   padding: 0.5rem 0.5rem;
   transition: all 0.3s;
 }
-
 .friend:hover {
-  background-color: rgba(255, 255, 255, 0.9019607843);
+  background-color: #96ceaf;
 }
-
-.friend-picture {
+.friend .picture-status {
+  position: relative;
+  display: flex;
+}
+.friend .picture-status .friend-picture {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
-.picture-status {
-  position: relative;
-  display: flex;
-}
-
-.status {
+.friend .picture-status .status {
   width: 0.5rem;
   height: 0.5rem;
   background-color: red;
@@ -310,32 +312,10 @@ main {
   right: 0;
 }
 
-.second .status {
-  background-color: green;
-}
-
-.third .status {
-  background: orange;
-}
-
-.stories ul {
-  display: flex;
-  gap: 0.5rem;
-  overflow: auto;
-  white-space: nowrap;
-  padding: 0.5rem;
-}
-
-.stories img {
-  border: 2px solid green;
-  transition: all 0.5s ease;
-  height: 3rem;
+.profile-image {
   width: 3rem;
-}
-
-.stories img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(59, 75, 57, 0.8);
+  height: 3rem;
+  border-radius: 50%;
 }
 
 .main-content {
@@ -346,8 +326,7 @@ main {
   justify-content: center;
   align-items: center;
 }
-
-.post {
+.main-content .post {
   box-shadow: 1px 1px 1px 1px #ccc;
   padding: 1rem;
   width: 98%;
@@ -358,25 +337,21 @@ main {
   font-size: medium;
   background-color: white;
 }
-
-.post-header {
+.main-content .post .post-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-.post-header .profile-user-info {
+.main-content .post .post-header .profile-user-info {
   display: flex;
   align-items: center;
 }
-
-.profile-user-info span {
+.main-content .post .post-header .profile-user-info span {
   padding: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
 }
-
-.profile-user-info .category {
+.main-content .post .post-header .profile-user-info .category {
   font-weight: bold;
   position: absolute;
   top: 1.5rem;
@@ -384,87 +359,50 @@ main {
   display: flex;
   gap: 0.7rem;
 }
-
-.profile-user-info .category .nature {
+.main-content .post .post-header .profile-user-info .category .nature {
   color: green;
   border: 1px solid green;
   border-radius: 10px;
   transition: all 0.4s;
 }
-
-.category .nature:hover {
+.main-content .post .post-header .profile-user-info .category .nature:hover {
   box-shadow: 0px 0px 20px 2px rgba(45, 255, 196, 0.9);
 }
-
-.profile-user-info .category .event {
+.main-content .post .post-header .profile-user-info .category .event {
   color: magenta;
   border: 1px solid magenta;
   border-radius: 10px;
   transition: all 0.4s;
 }
-
-.category .event:hover {
+.main-content .post .post-header .profile-user-info .category .event:hover {
   box-shadow: 0px 0px 20px 2px rgba(255, 0, 255, 0.9);
 }
-
-.profile-options {
+.main-content .post .profile-options {
   position: absolute;
   right: 0;
   top: -1rem;
   padding: 1rem;
 }
-
-.profile-image {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-}
-
-.content {
+.main-content .post .content {
   display: flex;
   flex-direction: column;
 }
-
-.content p {
+.main-content .post .content p {
   padding: 0.5rem 1rem;
 }
-
-.content img {
+.main-content .post .content img {
   border-radius: 2rem;
   padding: 0.5rem 0;
   width: 100%;
   height: 50%;
 }
-
-.bottom-section {
-  display: flex;
-  justify-content: space-around;
-}
-
-.bottom-section span {
-  padding: 0.5rem;
-  font-style: normal;
-}
-
-.bottom-section .like:hover {
-  color: red;
-}
-
-.bottom-section .comment:hover,
-.share:hover,
-.save:hover {
-  color: green;
-}
-
-.img-wrapper {
+.main-content .post .content .img-wrapper {
   position: relative;
 }
-
-.img-content {
+.main-content .post .content .img-wrapper .img-content {
   max-width: 100%;
 }
-
-.content .info-icon {
+.main-content .post .content .info-icon {
   position: absolute;
   right: 2rem;
   bottom: -0.5rem;
@@ -478,82 +416,47 @@ main {
   color: white;
   border: 1px solid green;
 }
-
-.post-title {
+.main-content .post .content .post-title {
   padding: 1rem;
 }
-
-.comment-section {
+.main-content .post .bottom-section {
+  display: flex;
+  justify-content: space-around;
+}
+.main-content .post .bottom-section span {
+  padding: 0.5rem;
+  font-style: normal;
+}
+.main-content .post .bottom-section .like:hover {
+  color: red;
+}
+.main-content .post .bottom-section .comment :hover,
+.main-content .post .bottom-section .share :hover,
+.main-content .post .bottom-section .save :hover {
+  color: green;
+}
+.main-content .post .comment-section {
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 1rem;
   align-items: center;
   gap: 0.5rem;
 }
-
-.comment-section .new-comment-filed {
+.main-content .post .comment-section .new-comment-filed {
   width: 80%;
   border-radius: 0.5rem;
   padding: 0.5rem;
   background-color: rgba(173, 230, 201, 0.2);
   border: 1px solid black;
 }
-
-.insert-comment-button {
+.main-content .post .comment-section .insert-comment-button {
   border: none;
   background-color: transparent;
   font-size: 1.2rem;
   cursor: pointer;
   padding: 0.5rem 0.7rem;
 }
-
-.user-comments {
-  display: flex;
-  flex-direction: column;
-}
-
-.user-comments .profile-user-comment {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  position: relative;
-  z-index: 10;
-  font-weight: 600;
-}
-
-.profile-user-comment img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.user-comment-text {
-  margin: 0 1rem;
-  border: 1px solid #888;
-  padding: 1rem;
-  border-radius: 0 1rem 1rem 1rem;
-  background-color: rgba(173, 230, 201, 0.2);
-  position: relative;
-  bottom: 1rem;
-}
-
-.comment-reaction {
-  position: absolute;
-  bottom: 0.5rem;
-  left: 2.5rem;
-}
-
-.comment-reaction span {
-  padding-left: 0.3rem;
-  padding-right: 1rem;
-  font-style: normal;
-}
-
-.comment-reaction span:hover {
-  cursor: pointer;
-  color: #045604;
-}
-
-.button {
+.main-content .post .comment-section .button {
   display: inline-flex;
   font-size: 22px;
   align-items: center;
@@ -569,10 +472,43 @@ main {
   transition: all 0.3s ease-in-out 0s;
   cursor: pointer;
 }
-
-.button:hover,
-.button:focus {
+.main-content .post .comment-section .button:hover, .main-content .post .comment-section .button:focus {
   transform: translateY(-6px);
+}
+.main-content .post .user-comments {
+  display: flex;
+  flex-direction: column;
+}
+.main-content .post .user-comments .profile-user-comment {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 10;
+  font-weight: 600;
+}
+.main-content .post .user-comments .user-comment-text {
+  margin: 0 1rem;
+  border: 1px solid #888;
+  padding: 1rem;
+  border-radius: 0 1rem 1rem 1rem;
+  background-color: rgba(173, 230, 201, 0.2);
+  position: relative;
+  bottom: 1rem;
+}
+.main-content .post .user-comments .comment-reaction {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 2.5rem;
+}
+.main-content .post .user-comments .comment-reaction span {
+  padding-left: 0.3rem;
+  padding-right: 1rem;
+  font-style: normal;
+}
+.main-content .post .user-comments .comment-reaction span:hover {
+  cursor: pointer;
+  color: #045604;
 }
 
 @media (max-width: 1040px) {
