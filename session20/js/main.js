@@ -122,7 +122,7 @@ const age = 25;
 
 /**
  * setTimeout
- * Executa o functie pe careo primeste ca argument pentru o singura data, dupa o anumita perioada de timp
+ * Executa o functie pe care o primeste ca argument, pentru o singura data, dupa o anumita perioada de timp
  * Perioada de timp este exprimata in milisecunde
  * Daca perioada de timp nu este mentionata, functia se executa la 0 milisecunde DUPA CE S-A EXECUTAT TOT CODUL DIN PAGINA
  */
