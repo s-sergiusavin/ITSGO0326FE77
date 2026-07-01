@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: lightblue;
+}
+
+header .main-search {
+  display: flex;
+  align-items: center;
+}
+
+header .main-search .logo {
+  padding: 1rem;
+  font-size: 3rem;
+  color: royalblue;
+}
+
+header .main-search .logo:hover {
+  color: darkblue;
+}
+
+header .main-search .search-input {
+  height: 3rem;
+  border-radius: 0.5rem;
+  width: 15rem;
+  padding: 0 1rem;
+  border: 1px solid #0fb;
+  box-shadow: 0 1px 5px #0fb;
+}
+
+header .main-search .search-input:focus {
+  border: 0.25rem solid #0fb;
+  outline: none;
+}
+
+.navigation,
+.links {
+  display: flex;
+}
+
+.nav-icons {
+  font-size: 3rem;
+  color: royalblue;
+  margin: 0 0.5rem;
+}
+
+.nav-icons:hover {
+  color: darkblue;
+}
+
+.bell-icon {
+  position: relative;
+  display: block;
+}
+
+.bell-icon span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.left-content,
+.right-content {
+  position: fixed;
+  width: 17%;
+  overflow: auto;
+  height: calc(100vh - 5rem);
+  border: 5px solid black;
+}
+
+.left-content {
+  left: 0;
+}
+
+.right-content {
+  right: 0;
+}
+
+.main-content {
+  width: 40%;
+}
+
+.main-content .post {
+  box-shadow: 5px 5px 5px 5px #ccc;
+  margin: 3rem 0;
+  padding: 1rem;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-header .profile-user-info {
+  display: flex;
+  align-items: center;
+}
+.profile-image {
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.img-content {
+  max-width: 100%;
+}
+
+.content .img-wrapperv.info-icon {
+  position: absolute;
+  right: 1rem;
+  bottom: -1rem;
+  font-size: 2rem;
+  background-color: gray;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  cursor: pointer;
+  color: white;
+  border: 1px solid black;
+}
+
+
+
