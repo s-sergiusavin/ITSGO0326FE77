@@ -155,6 +155,7 @@ function setFields() {
  * setInterval()
  * apeleaza o functie cu o frecventa mentionata in intervalul specificat
  */
+
 let start = 0;
 // const intervalulMeu = setInterval(() => {
 //     console.log(start)
