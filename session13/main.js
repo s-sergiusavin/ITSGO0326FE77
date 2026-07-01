@@ -1,15 +1,16 @@
-console.log("sergiu");
+console.log('sergiu');
 
 // Aceasta este o linie comentata
+
 /**
  * Multi line comment
  * care nu va fi luat in considerare
- *
+ * 
  * dasf
  * dsaf
  * asdf
- *
- * sasdasds
+ * 
+ * adsfsadfsadf
  */
 
 /**
@@ -23,8 +24,8 @@ console.log("sergiu");
  * Variable declaration types
  */
 
-//var - nu se mai foloseste
-// let - variabila dinamica, i se poate schimba valoarea
+// var - nu se mai foloseste
+// let - variabila dinamica, i se poate schimba valoare
 // const - variabila statica, nu i se poate schimba valoarea
 
 /**
@@ -38,14 +39,14 @@ let total;
 console.log(oneNumber);
 console.log(anotherNumber);
 console.log(total);
-// console.log(dvddsdfsfbg); // cauzeaza eroare
+// console.log(dskjfgadsfk); // cauzeaza eroare
 
 total = oneNumber + anotherNumber;
 total = oneNumber - anotherNumber;
 total = oneNumber * anotherNumber;
 total = oneNumber / anotherNumber;
 total = oneNumber % anotherNumber; // modulo operator => restul impartirii
-total = oneNumber ** anotherNumber; // ridicarea la putere
+total = oneNumber ** anotherNumber; //ridicarea la putere
 
 console.log(total);
 
@@ -56,9 +57,9 @@ console.log(total);
 
 const fullName = 'Sergiu Savin';
 const address = "Brasov, Romania";
-const zipCode = `508500`;
+const zipCode = `500500`;
 
-// fullName = "Brad Pitt";
+// fullName = 'Brad Pitt';
 
 const age = 30;
 const personalInfo = 'Salut, \n' + fullName + ' cu varsta de ' + age + 'Bine ai venit la curs.';
@@ -89,9 +90,10 @@ console.log(dogName);
  * (liste)
  */
 
-const random = [1, 'doi', null, true, 'false',[3, 'patru']];
-console.log(random.length);
+const random = [1, 'doi', null, true, 'false', [3, 'patru']];
+
 console.log(random);
+console.log(random.length);
 console.log(random[0]);
 console.log(random[3]);
 console.log(random[5]);
@@ -128,15 +130,20 @@ const person = {
 };
 
 console.log(person);
-console.log(person.fullName);
+console.log(person.fullName)
+console.log(person['fullName']);
 console.log(person.address.zip);
 console.log(person["residence-permit"]);
 
 person.fullName = 'Brad Pitt';
-console.log(person.fullName)
+console.log(person.fullName);
 
-//person = {
-//     fullName: 'Tom Cruise' // !!! Error assignment to constant variabile
+// person = {
+//     fullName: 'Tom Cruise' // !!! Error assignment to constant variable
+// };
+
+// let person = {
+//     fullName: 'Sergiu' //!!! Error pt redeclarare
 // };
 
 const testString = 'Valoare de copiat';
@@ -148,9 +155,3 @@ const anotherPerson = person;
 
 console.log(anotherPerson);
 console.log(anotherPerson.address.city);
-
-
-
-
-
-

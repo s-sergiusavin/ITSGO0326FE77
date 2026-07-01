@@ -20,15 +20,22 @@
     <span>test display</span>
 
     <div class="layer1">
-      <div class="layer2">text</div>
+      <div class="layer2">test</div>
     </div>
 
     <img
-      src="responsive.image.avif"
+      src="responsive-image.avif"
       alt="city image"
       class="responsive-image"
     />
-    <img src="pixel.image.avif" alt="pixel image" class="low-res" />
+    <img src="low-res.png" alt="low resolution city" class="low-res" />
+
+    <picture class="picture-tag">
+      <source srcset="low-res.png" media="(max-width: 600px)" />
+      <source srcset="responsive-image.avif" media="(max-width: 1500px)" />
+      <source srcset="flowers.jpg" />
+      <img src="low-res.png" alt="city" />
+    </picture>
 
     <div class="box"></div>
 

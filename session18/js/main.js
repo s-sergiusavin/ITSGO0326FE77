@@ -141,3 +141,6 @@ const innnerHtmlMessageElem = document.getElementById('innerHtmlMessage');
 const styleThisText = () => {
     innnerHtmlMessageElem.innerHTML = 'This text was <strong>styled</strong> by <u>JS</u>';
 }
+
+
+

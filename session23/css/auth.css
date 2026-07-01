@@ -11,7 +11,6 @@ a {
   width: 95%;
   max-width: 30rem;
   background-color: white;
-  border-radius: 0.5rem;
   box-shadow: 0 3px 20px #0fb;
   padding: 2rem 4rem;
   text-align: center;
@@ -44,7 +43,7 @@ a {
 .login-button {
   background-color: cadetblue;
   font-size: large;
-  font-weight: 90;
+  font-weight: bold;
   color: white;
   border: 1px solid #0fb;
   box-shadow: 0 1px 5px #0fb;
@@ -65,7 +64,7 @@ a {
   color: black;
 }
 
-.registr-btn {
+.register-btn {
   background-color: turquoise;
   border: 1px solid cadetblue;
   padding: 0.5rem 2.5rem;
