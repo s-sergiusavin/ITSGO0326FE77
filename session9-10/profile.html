@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil – Travel Japan</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+    <div class="header">Profil – Travel Japan</div>
+
+    <div class="profile-container">
+
+        <!-- Profil top -->
+        <div class="profile-top">
+            <div id="avatar" class="avatar" style="background-image: url('https://i.imgur.com/8Km9tLL.png');"></div>
+
+            <div>
+                <div id="username" class="username" contenteditable="true">Ionut Explorer</div>
+                <div id="bio" class="bio" contenteditable="true">
+                    Pasionat de Japonia, temple și mâncare tradițională.
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistici -->
+        <div class="stats">
+            <div class="stat-box">
+                <span id="posts-count" contenteditable="true">34</span>
+                Postări
+            </div>
+            <div class="stat-box">
+                <span id="followers-count" contenteditable="true">1303</span>
+                Urmăritori
+            </div>
+            <div class="stat-box">
+                <span id="countries-count" contenteditable="true">13</span>
+                Țări vizitate
+            </div>
+        </div>
+
+        <!-- Galerie cu like-uri și comentarii -->
+        <div class="gallery">
+            <h3>Galerie Japonia</h3>
+
+            <div class="gallery-grid" id="gallery">
+
+                <!-- Poză 1 -->
+                <div class="photo-card">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Kyoto">
+
+                    <div class="photo-actions">
+                        <button class="like-btn">❤️</button>
+                        <span class="like-count">0</span>
+                    </div>
+
+                    <div class="comments">
+                        <div class="comment-list"></div>
+                        <input class="comment-input" type="text" placeholder="Adaugă un comentariu...">
+                    </div>
+                </div>
+
+                <!-- Poză 2 -->
+                <div class="photo-card">
+                    <img src="https://images.unsplash.com/photo-1554797589-7241bb691973" alt="Mount Fuji">
+
+                    <div class="photo-actions">
+                        <button class="like-btn">❤️</button>
+                        <span class="like-count">0</span>
+                    </div>
+
+                    <div class="comments">
+                        <div class="comment-list"></div>
+                        <input class="comment-input" type="text" placeholder="Adaugă un comentariu...">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Interese -->
+        <div class="interests">
+            <h3>Interese</h3>
+            <div id="interests-list">
+                <span class="tag" contenteditable="true">Temple</span>
+                
+                <span class="tag" contenteditable="true">Mâncare japoneză</span>
+                <span class="tag" contenteditable="true">Fotografie</span>
+                <span class="tag" contenteditable="true">Tokyo</span>
+            </div>
+        </div>
+
+        <!-- Acțiuni -->
+        <div class="actions">
+            <button class="btn" id="change-avatar-btn">Schimbă avatar</button>
+        </div>
+
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

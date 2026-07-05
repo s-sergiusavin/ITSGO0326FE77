@@ -1,0 +1,51 @@
+.photo-card {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: $shadow;
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .photo-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+
+        .like-btn {
+            @include button($bg: #ff4d4d, $hover: #cc0000);
+            padding: 6px 12px;
+        }
+
+        .like-count {
+            font-size: 18px;
+            color: #d60000;
+            font-weight: bold;
+        }
+    }
+
+    .comments {
+        margin-top: 10px;
+
+        .comment-list {
+            margin-bottom: 10px;
+
+            .comment {
+                background: #ffe6ec;
+                padding: 6px 10px;
+                border-radius: 6px;
+                margin-bottom: 5px;
+            }
+        }
+
+        .comment-input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+    }
+}
