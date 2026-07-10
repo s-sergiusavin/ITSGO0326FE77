@@ -19,22 +19,18 @@ header {
   z-index: 10;
   background-color: lightblue;
 }
-
 header .main-search {
   display: flex;
   align-items: center;
 }
-
 header .main-search .logo {
   padding: 1rem;
   font-size: 3rem;
   color: royalblue;
 }
-
 header .main-search .logo:hover {
   color: darkblue;
 }
-
 header .main-search .search-input {
   height: 3rem;
   border-radius: 0.5rem;
@@ -43,7 +39,6 @@ header .main-search .search-input {
   border: 1px solid #0fb;
   box-shadow: 0 1px 5px #0fb;
 }
-
 header .main-search .search-input:focus {
   border: 0.25rem solid #0fb;
   outline: none;
@@ -59,7 +54,6 @@ header .main-search .search-input:focus {
   color: royalblue;
   margin: 0 0.5rem;
 }
-
 .nav-icons:hover {
   color: darkblue;
 }
@@ -68,7 +62,6 @@ header .main-search .search-input:focus {
   position: relative;
   display: block;
 }
-
 .bell-icon span {
   position: absolute;
   top: 0;
@@ -85,6 +78,32 @@ header .main-search .search-input:focus {
   height: 1.5rem;
 }
 
+.accountSettings {
+  position: relative;
+}
+.accountSettings #accountSettingsButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.accountSettings .accountSettingsMenu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  width: 12rem;
+  background-color: lightgray;
+}
+.accountSettings .accountSettingsMenu button {
+  padding: 0.5rem 0;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+.accountSettings .accountSettingsMenu button:hover {
+  background-color: #0fb;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -97,7 +116,11 @@ main {
   width: 17%;
   overflow: auto;
   height: calc(100vh - 5rem);
-  border: 5px solid black;
+  border: none !important;
+  background-color: #18191a;
+  padding: 8px 4px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .left-content {
@@ -111,7 +134,6 @@ main {
 .main-content {
   width: 40%;
 }
-
 .main-content .post {
   box-shadow: 5px 5px 5px 5px #ccc;
   margin: 3rem 0;
@@ -123,10 +145,44 @@ main {
   justify-content: space-between;
   align-items: center;
 }
-
 .post-header .profile-user-info {
   display: flex;
   align-items: center;
+}
+.post-header .profile-options {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.post-header .profile-options:hover {
+  background-color: #0fb;
+}
+
+.profileOptionsWrapper {
+  position: relative;
+}
+.profileOptionsWrapper .profileOptionsDropdown {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  right: 0.5rem;
+  width: 10rem;
+  flex-direction: column;
+  background-color: lightgray;
+}
+.profileOptionsWrapper .profileOptionsDropdown button {
+  padding: 0.2rem;
+  cursor: pointer;
+}
+.profileOptionsWrapper .profileOptionsDropdown button:hover {
+  border: 1px solid #0fb;
+  background-color: whitesmoke;
 }
 
 .profile-image {
@@ -146,21 +202,6 @@ main {
   max-width: 100%;
 }
 
-.content .img-wrapper .info-icon {
-  position: absolute;
-  right: 1rem;
-  bottom: -1rem;
-  font-size: 2rem;
-  background-color: gray;
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  cursor: pointer;
-  color: white;
-  border: 1px solid black;
-}
-
 .post-title {
   padding: 1rem;
 }
@@ -174,26 +215,26 @@ main {
   display: flex;
   justify-content: space-between;
 }
-
 .post .reacts .reacts-icons {
   color: blue;
 }
-
 .post .actions {
   display: flex;
   justify-content: space-between;
   margin: 0;
   padding: 0;
 }
-
 .post .actions .reaction {
   color: blue;
   cursor: pointer;
   padding: 0.5rem 1rem;
 }
-
 .post .actions .reaction:hover {
   color: royalblue;
+}
+.post .actions .reaction.touched {
+  font-weight: bold;
+  color: #1877f2;
 }
 
 .comment-section {
@@ -203,19 +244,16 @@ main {
   align-items: center;
   gap: 0.5rem;
 }
-
 .comment-section .new-comment-filed {
   width: 80%;
   border-radius: 0.5rem;
   padding: 0.5rem;
   background-color: lightcyan;
 }
-
 .comment-section .new-comment-filed::placeholder {
   color: royalblue;
   font-weight: 600;
 }
-
 .comment-section .new-comment-filed:hover {
   background-color: #cafdfd;
   width: 85%;
@@ -228,7 +266,6 @@ main {
   cursor: pointer;
   padding: 0.5rem 0.7rem;
 }
-
 .insert-comment-button:hover {
   color: #0fb;
 }
@@ -238,7 +275,6 @@ main {
   flex-direction: column;
   gap: 1rem;
 }
-
 .user-comments .profile-user-comment {
   display: flex;
   align-items: flex-start;
@@ -254,33 +290,30 @@ main {
   background-color: #f3eeee;
   position: relative;
 }
-
 .user-comment-text:hover {
-    animation-name: comment-animation;
-    animation-duration: 1s;
+  animation-name: comment-animation;
+  animation-duration: 1s;
 }
 
 .emoji-reaction {
-    position: absolute;
-    bottom: 0;
-    right: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  right: 0.5rem;
 }
 
 .comment-reaction-button:hover {
-    cursor: pointer;
-    text-decoration: underline;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 @keyframes comment-animation {
-    from {
-        left: 2rem;
-    }
-
-    to {
-        left: 0rem;
-    }
+  from {
+    left: 2rem;
+  }
+  to {
+    left: 0rem;
+  }
 }
-
 .wrap {
   height: 100%;
   display: flex;
@@ -292,7 +325,7 @@ main {
   min-width: 30px;
   min-height: 6px;
   display: inline-flex;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 22px;
   align-items: center;
   justify-content: center;
@@ -302,46 +335,34 @@ main {
   font-weight: 700;
   color: #313133;
   background: #4FD1C5;
-background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  background: linear-gradient(90deg, rgb(129, 230, 217) 0%, rgb(79, 209, 197) 100%);
   border: none;
   border-radius: 1000px;
-  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
   transition: all 0.3s ease-in-out 0s;
   cursor: pointer;
   outline: none;
   position: relative;
   padding: 10px;
-  }
-
+}
 .button::before {
-content: '';
+  content: "";
   border-radius: 1000px;
-  min-width: calc(30px + 12px);
-  min-height: calc(6px + 12px);
+  min-width: 42px;
+  min-height: 18px;
   border: 6px solid #00FFCB;
-  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  box-shadow: 0 0 60px rgba(0, 255, 203, 0.64);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: all .3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
-
-.button:hover, 
-.button:focus {
-  color: #313133;
-  transform: translateY(-6px);
-}
-
-.button:hover::before, 
-.button:focus::before {
-  opacity: 1;
-}
-
 .button::after {
-  content: '';
-  width: 30px; height: 30px;
+  content: "";
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
   border: 6px solid #00FFCB;
   position: absolute;
@@ -351,9 +372,14 @@ content: '';
   transform: translate(-50%, -50%);
   animation: ring 1.5s infinite;
 }
-
-.button:hover::after, 
-.button:focus::after {
+.button:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+.button:hover::before, .button:focus::before {
+  opacity: 1;
+}
+.button:hover::after, .button:focus::after {
   animation: none;
   display: none;
 }
@@ -370,17 +396,6 @@ content: '';
     opacity: 0;
   }
 }
-
-/* ===== SIDEBAR OVERRIDES ===== */
-.left-content,
-.right-content {
-  border: none !important;
-  background-color: #18191a;
-  padding: 8px 4px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
 /* ===== FB NAV ITEMS ===== */
 .fb-nav-item {
   display: flex;
@@ -396,7 +411,6 @@ content: '';
   transition: background 0.15s;
   margin-bottom: 2px;
 }
-
 .fb-nav-item:hover {
   background: #3a3b3c;
   color: #e4e6eb;
@@ -421,13 +435,40 @@ content: '';
   flex-shrink: 0;
 }
 
-.fb-icon-purple { background: linear-gradient(135deg, #8b5cf6, #a855f7); color: white; }
-.fb-icon-blue   { background: #1877f2; color: white; }
-.fb-icon-clock  { background: linear-gradient(135deg, #3b82f6, #06b6d4); color: white; }
-.fb-icon-save   { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; }
-.fb-icon-reels  { background: linear-gradient(135deg, #ec4899, #f97316); color: white; }
-.fb-icon-market { background: linear-gradient(135deg, #0ea5e9, #06b6d4); color: white; }
-.fb-icon-gray   { background: #3a3b3c; color: #e4e6eb; }
+.fb-icon-purple {
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  color: white;
+}
+
+.fb-icon-blue {
+  background: #1877f2;
+  color: white;
+}
+
+.fb-icon-clock {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: white;
+}
+
+.fb-icon-save {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+}
+
+.fb-icon-reels {
+  background: linear-gradient(135deg, #ec4899, #f97316);
+  color: white;
+}
+
+.fb-icon-market {
+  background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+  color: white;
+}
+
+.fb-icon-gray {
+  background: #3a3b3c;
+  color: #e4e6eb;
+}
 
 .fb-sidebar-hr {
   border: none;
@@ -448,7 +489,7 @@ content: '';
   color: #e4e6eb;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .fb-icon-action-btn {
@@ -474,8 +515,9 @@ content: '';
   align-items: flex-start;
   margin-bottom: 4px;
 }
-
-.fb-sponsored-ad:hover { background: #3a3b3c; }
+.fb-sponsored-ad:hover {
+  background: #3a3b3c;
+}
 
 .fb-ad-thumb {
   width: 100px;
@@ -490,24 +532,26 @@ content: '';
   padding: 6px;
   flex-shrink: 0;
   font-weight: 600;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.fb-ad-info { flex: 1; }
+.fb-ad-info {
+  flex: 1;
+}
 
 .fb-ad-title {
   font-size: 13px;
   font-weight: 600;
   color: #e4e6eb;
   margin-bottom: 2px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.3;
 }
 
 .fb-ad-domain {
   font-size: 12px;
   color: #b0b3b8;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 /* ===== CONTACTS ===== */
@@ -521,8 +565,9 @@ content: '';
   transition: background 0.15s;
   margin-bottom: 2px;
 }
-
-.fb-contact-item:hover { background: #3a3b3c; }
+.fb-contact-item:hover {
+  background: #3a3b3c;
+}
 
 .fb-contact-avatar-wrap {
   position: relative;
@@ -564,7 +609,7 @@ content: '';
   font-size: 15px;
   font-weight: 600;
   color: #e4e6eb;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .fb-verified-icon {
@@ -600,7 +645,6 @@ content: '';
   border-radius: 8px;
   overflow: hidden;
 }
-
 .photo-grid-2x2 img {
   width: 100%;
   height: 200px;
@@ -608,7 +652,6 @@ content: '';
   display: block;
   cursor: pointer;
 }
-
 .photo-grid-2x2 img:hover {
   opacity: 0.92;
 }

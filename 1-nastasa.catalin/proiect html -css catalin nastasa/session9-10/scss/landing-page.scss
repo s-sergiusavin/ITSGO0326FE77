@@ -1,0 +1,117 @@
+@use 'variables' as *;
+
+header {
+  background: gray
+    url("https://mshanken.imgix.net/wso/bolt/2025-06/restaurant-guide-chains-fogo-de-chao-dining-061225_1600.jpg");
+    background-size: cover;
+    height: 35rem;
+    color: white;
+
+    h1 {
+        font-size: 2.5rem;
+        margin: 2rem 5rem 1.2rem;
+
+        span {
+            text-transform: uppercase;
+            display: block;
+            font-size: 3rem;
+            color: orange;
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                content: ' ';
+                position: absolute;
+                width: 9rem;
+                height: 1rem;
+                background-color: $accent;
+                bottom: 0;
+                left: -3rem;
+            }
+        }
+    }
+}
+
+.back-image {
+    width: 3rem;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+}
+
+.header-description {
+    font-weight: bold;
+    padding: 2rem;
+    max-width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5rem;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem $accent;
+}
+
+.form-container {
+    label {
+        color: $accent;
+    }
+
+    p {
+        color: #888;
+    }
+
+    form {
+        input[type="text"] {
+            border: 1px solid $accent;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        input[type="button"] {
+            background-color: orange;
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            padding: 1rem 0;
+            width: 30%;
+            font-size: 1.2rem;
+            align-self: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #cc8501;
+            }
+        }
+    }
+}
+
+.call-to-action {
+    display: flex;
+    flex-direction: column;
+
+    .call-to-action-message {
+        padding: 5rem;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                content: ' ';
+                position: absolute;
+                width: 9rem;
+                height: 1rem;
+                background-color: $accent;
+                bottom: 0;
+                left: -3rem;
+                z-index: -1;
+            }
+        }
+    }
+}
