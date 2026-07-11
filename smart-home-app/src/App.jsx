@@ -42,4 +42,28 @@ function App() {
   );
 }
 
+function App() {
+  const [ACOn, setACOn] = useState(false);
+
+  const toggleActionHandler = (name) => {
+    if (name === "Toggle AC") {
+      setACOn(!ACOn)
+    }
+  };
+
+
+  return (
+    <div>
+      <div className="ui-features">
+        <Ac ACOn={ACOn} />
+        <Room status={0.2}/>
+      </div>
+
+      <Features toggleAction={toggleActionHandler} />
+    </div>
+  );
+}
+
+
+
 export default App;
