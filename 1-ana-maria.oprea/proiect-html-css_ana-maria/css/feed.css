@@ -55,6 +55,90 @@ header .navigation,
 header .links {
   display: flex;
 }
+header .messages {
+  position: relative;
+  display: block;
+  top: 0.3rem;
+}
+header .messages .messagesNumber {
+  position: absolute;
+  top: -0.5rem;
+  right: 1.5rem;
+  background-color: red;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+}
+header .messages #messagesButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+header .messages .messagesMenu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 2.5rem;
+  right: -3rem;
+  width: 12rem;
+  border-radius: 1rem 1rem 0 0;
+}
+header .messages .messagesMenu p {
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+header .messages .messagesMenu button {
+  padding: 0.5rem 0;
+  border: 1px solid transparent;
+  border-top: 1px solid lightblue;
+  border-radius: 0 0 1rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: lightblue;
+}
+header .messages .messagesMenu button:hover {
+  background-color: blue;
+  color: white;
+}
+header .accountSettings {
+  position: relative;
+  top: 0.3rem;
+}
+header .accountSettings #accountSettingsButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+header .accountSettings .accountSettingsMenu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  width: 12rem;
+}
+header .accountSettings .accountSettingsMenu #logoutButton {
+  border-radius: 0 0 0 1rem;
+}
+header .accountSettings .accountSettingsMenu button {
+  padding: 0.5rem 0;
+  border: 1px solid lightblue;
+  cursor: pointer;
+  background-color: white;
+}
+header .accountSettings .accountSettingsMenu button:hover {
+  background-color: blue;
+  color: white;
+}
 header .nav-icons {
   font-size: 2rem;
   color: royalblue;
@@ -222,11 +306,40 @@ main .right-content {
   display: flex;
   flex-direction: column;
 }
+.right-content .messenger .first {
+  width: 100%;
+  border: 1px solid transparent;
+  background-color: transparent;
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+}
+.right-content .messenger .first:hover {
+  background-color: rgba(255, 255, 255, 0.9019607843);
+}
 .right-content .messenger .second .status {
   background-color: green;
 }
 .right-content .messenger .third .status {
   background: orange;
+}
+.right-content .messenger .sendMessage {
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+}
+.right-content .messenger .sendMessage input {
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  margin: 0.2rem;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 2rem;
+}
+.right-content .messenger .sendMessage button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  margin: 0.2rem;
+  color: royalblue;
 }
 .right-content .suggested {
   list-style: none;
@@ -245,6 +358,13 @@ main .right-content {
 }
 .right-content .suggested .follow:hover {
   color: darkblue;
+}
+.right-content .suggested button {
+  display: flex;
+  background-color: transparent;
+  border: transparent;
+  font-family: "Times New Roman", Times, serif;
+  cursor: pointer;
 }
 .right-content .stories ul {
   display: flex;
@@ -274,6 +394,7 @@ main .right-content {
 }
 .friend:hover {
   background-color: rgba(255, 255, 255, 0.9019607843);
+  cursor: pointer;
 }
 .friend .picture-status {
   position: relative;
@@ -366,8 +487,39 @@ main .right-content {
 .main-content .post .profile-options {
   position: absolute;
   right: 0;
-  top: -1rem;
+  top: 0;
   padding: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.main-content .post .profile-options:hover {
+  background-color: lightblue;
+}
+.main-content .post .profileOptionsDropdown {
+  position: absolute;
+  z-index: 1;
+  top: 1.5rem;
+  right: 0rem;
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+.main-content .post .profileOptionsDropdown button {
+  padding: 0.2rem;
+  cursor: pointer;
+  background-color: white;
+  border: 0.5px solid gray;
+}
+.main-content .post .profileOptionsDropdown button:hover {
+  background-color: lightblue;
 }
 .main-content .post .content {
   display: flex;
@@ -387,10 +539,10 @@ main .right-content {
 .main-content .post .content .img-wrapper .img-content {
   max-width: 100%;
 }
-.main-content .post .content .info-icon {
-  position: absolute;
-  right: 2rem;
-  bottom: -0.5rem;
+.main-content .post .content .img-wrapper .info-icon {
+  position: relative;
+  left: 42rem;
+  bottom: 1.5rem;
   font-size: 2rem;
   background-color: gray;
   border-radius: 50%;
@@ -399,10 +551,20 @@ main .right-content {
   display: flex;
   cursor: pointer;
   color: white;
-  border: 1px solid royalblue;
+  border: 2px solid royalblue;
+}
+.main-content .post .content .img-wrapper .infoMessage {
+  position: absolute;
+  display: none;
+  background-color: white;
+  border: 1px solid blue;
+  border-radius: 1rem;
+  top: 23rem;
+  left: 4rem;
+  padding: 0.5rem;
 }
 .main-content .post .content .post-title {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .main-content .post .bottom-section {
   display: flex;
@@ -412,12 +574,14 @@ main .right-content {
   padding: 0.5rem;
   font-style: normal;
 }
-.main-content .post .bottom-section .like:hover {
+.main-content .post .bottom-section .like:hover, .main-content .post .bottom-section .like.touched {
   color: red;
 }
-.main-content .post .bottom-section .comment:hover,
+.main-content .post .bottom-section .comment:hover, .main-content .post .bottom-section .comment.touched,
 .main-content .post .bottom-section .share:hover,
-.main-content .post .bottom-section .save:hover {
+.main-content .post .bottom-section .share.touched,
+.main-content .post .bottom-section .save:hover,
+.main-content .post .bottom-section .save.touched {
   color: royalblue;
 }
 .main-content .post .comment-section {
@@ -486,6 +650,9 @@ main .right-content {
   position: relative;
   left: 1rem;
   bottom: 1rem;
+}
+.main-content .post .user-comments .user-comment-text .removeCommentButton {
+  cursor: pointer;
 }
 .main-content .post .user-comments .comment-reaction {
   position: absolute;

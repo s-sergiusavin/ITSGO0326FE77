@@ -34,7 +34,16 @@
             ></a>
           </li>
           <li class="messenger">
-            <a href=""><i class="bi bi-chat-dots-fill nav-icons"></i></a>
+            <div class="messages">
+              <button id="messagesButton">
+                <i class="bi bi-chat-right-dots-fill nav-icons"></i>
+              </button>
+              <div class="messagesMenu">
+                <p>No new messages</p>
+                <button id="viewAllMessagesButton">View all messages</button>
+              </div>
+              <span class="messagesNumber"></span>
+            </div>
           </li>
           <li class="reels">
             <a href=""><i class="bi bi-camera-video-fill nav-icons"></i></a>
@@ -52,7 +61,15 @@
         <li>
           <i class="bi bi-bell-fill nav-icons bell-icon"><span>12</span></i>
         </li>
-        <li><i class="bi bi-gear-fill nav-icons"></i></li>
+        <div class="accountSettings">
+          <button id="accountSettingsButton">
+            <i class="bi bi-gear-fill nav-icons"></i>
+          </button>
+          <div class="accountSettingsMenu">
+            <button>Profile Settings</button>
+            <button id="logoutButton">Logout</button>
+          </div>
+        </div>
       </ul>
     </header>
 
@@ -157,31 +174,34 @@
             </div>
           </div>
 
-          <a href="" class="profile-options"
-            ><i class="bi bi-three-dots"></i
-          ></a>
+          <div class="profileOptionsWrapper">
+            <button class="profile-options">
+              <i class="bi bi-three-dots"></i>
+            </button>
+
+            <div class="profileOptionsDropdown">
+              <button>Edit this post</button>
+              <button>Remove this post</button>
+            </div>
+          </div>
           <div class="content">
             <img src="../assets/liliac.webp" alt="" />
             <p>Liliac</p>
           </div>
           <div class="bottom-section">
             <div class="like">
-              <a href=""
-                ><i class="bi bi-heart"><span>10</span></i></a
-              >
+              <i class="bi bi-heart"></i>
+              <span id="likesNumber">10</span>
             </div>
             <div class="comment">
-              <a href=""
-                ><i class="bi bi-chat-square-text"><span>20</span></i></a
-              >
+              <i class="bi bi-chat-square-text"></i>
             </div>
             <div class="save">
-              <a href=""
-                ><i class="bi bi-bookmark-heart"><span>5</span></i></a
-              >
+              <i class="bi bi-bookmark-heart"></i>
+              <span id="savesNumber">5</span>
             </div>
             <div class="share">
-              <a href=""><i class="bi bi-share"></i></a>
+              <i class="bi bi-share"></i><span id="sharesNumber">5</span>
             </div>
           </div>
           <hr />
@@ -232,13 +252,24 @@
                 class="img-content"
               />
               <i class="bi bi-info-circle-fill info-icon"></i>
+              <p class="infoMessage">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam eaque placeat culpa commodi minima. Quod quae quisquam
+                ex nulla ut nobis fugit nostrum incidunt eveniet sunt sint sed
+                ducimus, dolorem in, vel veniam. Facilis quos numquam iure,
+                dolorem exercitationem, nesciunt qui laboriosam sunt sint ut
+                iste odio, ducimus cum dolores?
+                <strong><a href="landing-page.html">Read more...</a></strong>
+              </p>
             </div>
             <strong class="post-title">Titlu postare</strong>
             <p class="post-description">
               Aceasta este postarea pentru aplicatia ce am facut-o la cursul de
               web dev.
             </p>
-            <p><a href="landing-page.html">Read more...</a></p>
+            <strong
+              ><p><a href="landing-page.html">Read more...</a></p></strong
+            >
           </div>
           <div class="bottom-section">
             <div class="like">
@@ -246,10 +277,8 @@
                 ><i class="bi bi-heart"><span>10</span></i></a
               >
             </div>
-            <div class="comment">
-              <a href=""
-                ><i class="bi bi-chat-square-text"><span>20</span></i></a
-              >
+            <div class="comment" id="commentButton">
+              <i class="bi bi-chat-square-text"><span>20</span></i>
             </div>
             <div class="save">
               <a href=""
@@ -272,10 +301,16 @@
               type="text"
               placeholder="Adauga un comentariu."
               class="new-comment-filed"
+              id="commentInput"
             />
-            <button class="insert-comment-button button">
-              <i class="bi bi-send-fill"></i>
-            </button>
+            <div class="wrap">
+              <button
+                class="insert-comment-button button"
+                id="commentInputButton"
+              >
+                <i class="bi bi-send-fill"></i>
+              </button>
+            </div>
           </div>
           <div class="user-comments">
             <div class="comment-content">
@@ -289,7 +324,7 @@
                 <span>User name</span>
               </div>
               <div class="user-comment-text">
-                <p>
+                <p id="commentMessage">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Dolorum, fugiat est. Consequuntur a, officia placeat eveniet
                   omnis eaque magni cumque temporibus atque tempora dolore
@@ -298,6 +333,7 @@
                   quod iure enim facilis a impedit id temporibus, assumenda
                   accusantium corporis qui.
                 </p>
+                <span id="removeCommentButton">Remove this comment</span>
               </div>
               <div class="comment-reaction">
                 <span>Like</span>
@@ -359,7 +395,7 @@
           <h3>Messages</h3>
           <ul class="messenger">
             <li>
-              <a href="" class="friend first">
+              <button class="friend first">
                 <div class="picture-status">
                   <img
                     src="../assets/friend_profile.webp"
@@ -369,7 +405,11 @@
                   <span class="status"></span>
                 </div>
                 <span class="name">Alexandra</span>
-              </a>
+              </button>
+              <div class="sendMessage">
+                <input type="text" placeholder="Type message" id="messageContent"/>
+                <button id="messageSendBtn"><i class="bi bi-send-fill"></i></button>
+              </div>
             </li>
             <li>
               <a href="" class="friend second">
@@ -402,7 +442,7 @@
           <h3>Suggested</h3>
           <ul class="suggested">
             <li>
-              <a href="" class="friend first">
+              <div class="friend first">
                 <div class="picture-status">
                   <img
                     src="../assets/friend_profile.webp"
@@ -411,8 +451,8 @@
                   />
                 </div>
                 <span class="name">Alexandra</span>
-                <span class="follow">Follow</span>
-              </a>
+                <button class="follow">Follow</button>
+              </div>
             </li>
             <li>
               <a href="" class="friend second">
@@ -444,5 +484,6 @@
         </div>
       </aside>
     </main>
+    <script src="../js/feed.js"></script>
   </body>
 </html>

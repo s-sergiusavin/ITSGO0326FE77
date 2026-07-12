@@ -52,6 +52,90 @@ header {
   .links {
     display: flex;
   }
+  .messages {
+    position: relative;
+    display: block;
+    top: 0.3rem;
+    .messagesNumber {
+      position: absolute;
+      top: -0.5rem;
+      right: 1.5rem;
+      background-color: red;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.6rem;
+      color: white;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 1rem;
+      height: 1rem;
+    }
+    #messagesButton {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    .messagesMenu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 2.5rem;
+      right: -3rem;
+      width: 12rem;
+      border-radius: 1rem 1rem 0 0;
+      p {
+        padding: 0.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+      }
+      button {
+        padding: 0.5rem 0;
+        border: 1px solid transparent;
+        border-top: 1px solid lightblue;
+        border-radius: 0 0 1rem 1rem;
+        cursor: pointer;
+        font-weight: bold;
+        background-color: lightblue;
+        &:hover {
+          background-color: blue;
+          color: white;
+        }
+      }
+    }
+  }
+  .accountSettings {
+    position: relative;
+    top: 0.3rem;
+    #accountSettingsButton {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    .accountSettingsMenu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 3rem;
+      right: 0;
+      width: 12rem;
+      #logoutButton {
+        border-radius: 0 0 0 1rem;
+      }
+      button {
+        padding: 0.5rem 0;
+        border: 1px solid lightblue;
+        cursor: pointer;
+        background-color: white;
+        &:hover {
+          background-color: blue;
+          color: white;
+        }
+      }
+    }
+  }
   .nav-icons {
     font-size: 2rem;
     color: royalblue;
@@ -234,6 +318,16 @@ main {
     margin: 0;
     display: flex;
     flex-direction: column;
+    .first {
+      width: 100%;
+      border: 1px solid transparent;
+      background-color: transparent;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: large;
+      &:hover {
+        background-color: #ffffffe6;
+      }
+    }
     .second {
       .status {
         background-color: green;
@@ -242,6 +336,25 @@ main {
     .third {
       .status {
         background: orange;
+      }
+    }
+    .sendMessage {
+      display: none;
+      flex-direction: row;
+      justify-content: center;
+      input {
+        width: 100%;
+        padding: 0.2rem 0.5rem;
+        margin: 0.2rem;
+        border: 1px solid rgba(128, 128, 128, 0.5);
+        border-radius: 2rem;
+      }
+      button {
+        background-color: transparent;
+        border: 1px solid transparent;
+        cursor: pointer;
+        margin: 0.2rem;
+        color: royalblue;
       }
     }
   }
@@ -262,6 +375,13 @@ main {
       &:hover {
         color: darkblue;
       }
+    }
+    button {
+      display: flex;
+      background-color: transparent;
+      border: transparent;
+      font-family: "Times New Roman", Times, serif;
+      cursor: pointer;
     }
   }
   .stories {
@@ -292,8 +412,10 @@ main {
   gap: 1rem;
   padding: 0.5rem 0.5rem;
   transition: all 0.3s;
+
   &:hover {
     background-color: #ffffffe6;
+    cursor: pointer;
   }
   .picture-status {
     position: relative;
@@ -382,8 +504,39 @@ main {
     .profile-options {
       position: absolute;
       right: 0;
-      top: -1rem;
+      top: 0;
       padding: 1rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      &:hover {
+        background-color: lightblue;
+      }
+    }
+    .profileOptionsDropdown {
+      position: absolute;
+      z-index: 1;
+      top: 1.5rem;
+      right: 0rem;
+      width: 10rem;
+      display: flex;
+      flex-direction: column;
+      display: none;
+      button {
+        padding: 0.2rem;
+        cursor: pointer;
+        background-color: white;
+        border: 0.5px solid gray;
+        &:hover {
+          background-color: lightblue;
+        }
+      }
     }
 
     .content {
@@ -403,23 +556,34 @@ main {
         .img-content {
           max-width: 100%;
         }
-      }
-      .info-icon {
-        position: absolute;
-        right: 2rem;
-        bottom: -0.5rem;
-        font-size: 2rem;
-        background-color: gray;
-        border-radius: 50%;
-        width: 2rem;
-        height: 2rem;
-        display: flex;
-        cursor: pointer;
-        color: white;
-        border: 1px solid royalblue;
+
+        .info-icon {
+          position: relative;
+          left: 42rem;
+          bottom: 1.5rem;
+          font-size: 2rem;
+          background-color: gray;
+          border-radius: 50%;
+          width: 2rem;
+          height: 2rem;
+          display: flex;
+          cursor: pointer;
+          color: white;
+          border: 2px solid royalblue;
+        }
+        .infoMessage {
+          position: absolute;
+          display: none;
+          background-color: white;
+          border: 1px solid blue;
+          border-radius: 1rem;
+          top: 23rem;
+          left: 4rem;
+          padding: 0.5rem;
+        }
       }
       .post-title {
-        padding: 1rem;
+        padding: 0.5rem;
       }
     }
     .bottom-section {
@@ -430,14 +594,16 @@ main {
         font-style: normal;
       }
       .like {
-        &:hover {
+        &:hover,
+        &.touched {
           color: red;
         }
       }
       .comment,
       .share,
       .save {
-        &:hover {
+        &:hover,
+        &.touched {
           color: royalblue;
         }
       }
@@ -511,6 +677,9 @@ main {
         position: relative;
         left: 1rem;
         bottom: 1rem;
+        .removeCommentButton {
+          cursor: pointer;
+        }
       }
 
       .comment-reaction {
