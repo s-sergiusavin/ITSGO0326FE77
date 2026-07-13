@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media App | Auth</title>
+    <link rel="stylesheet" href="./css/auth.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+
+    <section class="form-container">
+      <h1 id="form-title">Login</h1>
+
+      <form id="auth-form">
+        <div class="form-field">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your user name" required>
+        </div>
+
+        <div class="form-field">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="form-field">
+            <input type="checkbox" id="rememberUser">
+            <label for="rememberUser">Click here to remember me</label>
+        </div>
+
+        <input type="submit" value="Log in" class="login-button">
+        <a href="#" id="forgot-password-btn" class="forgot-password-btn"><strong>Forgot password?</strong></a>
+      </form>
+
+      <hr />
+      <button type="button" id="register-btn" class="register-btn">Create an account</button>
+      <a href="feed.html" class="skip-link">Catre contul meu (Demo)</a>
+    </section>
+
+    <script src="./js/auth.js"></script>
+  </body>
+</html>
