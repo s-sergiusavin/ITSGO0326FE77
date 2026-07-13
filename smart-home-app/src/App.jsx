@@ -1,40 +1,92 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.scss";
 import Features from "./components/logic/Features";
 import Lights from "./components/ui/Lights";
 import Room from "./components/ui/Room";
+import Ac from "./components/ui/Ac";
 
 function App() {
   const [lightsOn, setLightsOn] = useState(false);
+  const [acOn, setAcOn] = useState(false);
+  const [dirtProgress, setDirtProgress] = useState({
+    status: 0,
+    cleaned: 0,
+  });
 
-  const toggleActionHandler = (name) => {
-    if (name === "Toggle lights") {
-      setLightsOn(!lightsOn)
+  /** Use effect model */
+  // useEffect( () => {
+  //   console.log('Effect triggered');
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log("Effect triggered when lightsOn is changed")
+
+  //   return () => {
+  //     console.log('Component unmount')
+  //   }
+  // }, [lightsOn]);
+
+  const dirtInterval = useRef();
+
+  useEffect(() => {
+    dirtInterval.current = setInterval(() => {
+      setDirtProgress((prevState) => {
+        console.log(prevState);
+        console.log("Interval: ", dirtInterval);
+        if (prevState.status > 1) {
+          clearInterval(dirtInterval.current);
+        }
+        return {
+          ...prevState,
+          status: prevState.status + 0.1,
+        };
+      });
+    }, 2000);
+
+    return () => {
+      clearInterval(dirtInterval.current);
     }
+  }, [dirtProgress.cleaned]);
+
+  const toggleLights = () => {
+    setLightsOn(!lightsOn);
   };
 
-  // Destructuring explained
+  const toggleAc = () => {
+    setAcOn(!acOn);
+  };
 
-  // function returnPuppy() {
-  //   const puppy = {
-  //     name: 'Rex'
-  //   }
+  const startCleaning = () => {
+    // clearInterval(dirtInterval.current);
+    setDirtProgress((prevState) => {
+      return {
+        ...prevState,
+        status: 0,
+        cleaned: prevState.cleaned + 1,
+      };
+    });
+  };
 
-  //   const changePuppyName = () => {
-  //     puppy.name = 'Azorel';
-  //   }
-
-  //   return [puppy, changePuppyName];
-  // }
-
-  // const [myPuppy, myFunction] = returnPuppy();
-
+  const toggleActionHandler = (name) => {
+    switch (name) {
+      case "Toggle lights":
+        toggleLights();
+        break;
+      case "Toggle AC":
+        toggleAc();
+        break;
+      case "Clean":
+        startCleaning();
+        break;
+    }
+  };
 
   return (
     <div>
       <div className="ui-features">
         <Lights lightsOn={lightsOn} />
-        <Room status={0.1}/>
+        <Ac acOn={acOn} />
+        <Room status={dirtProgress.status} />
       </div>
 
       <Features toggleAction={toggleActionHandler} />
