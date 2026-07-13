@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media App | Feed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/feed.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="main-search">
+        <a href=""><i class="bi bi-newspaper logo"></i></a>
+        <input
+          type="search"
+          id="search-input"
+          class="search-input"
+          placeholder="Search on social media"
+        />
+      </div>
+      <nav class="main-navigation">
+        <ul class="navigation">
+          <li>
+            <a href="feed.html"><i class="bi bi-house-fill nav-icons"></i></a>
+          </li>
+          <li>
+            <a href="profile.html"
+              ><i class="bi bi-person-circle nav-icons"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-chat-right-dots-fill nav-icons"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-camera-video-fill nav-icons"></i></a>
+          </li>
+        </ul>
+      </nav>
+
+      <ul class="links">
+        <li>
+          <a href="landing-page.html"
+            ><i class="bi bi-plus-circle-fill nav-icons"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" id="bell-icon" class="bell-icon"
+            ><i class="bi bi-bell-fill nav-icons"></i>
+            <span id="notification-count">12</span></a
+          >
+        </li>
+        <li>
+          <a href="#"><i class="bi bi-gear-fill nav-icons"></i></a>
+        </li>
+      </ul>
+    </header>
+
+    <main>
+      <aside class="left-content">
+        <div class="card-options">
+          <div class="card">
+            <a href=""><h1>News</h1></a>
+          </div>
+
+          <div class="card">
+            <a href=""
+              ><h1><i class="bi bi-heart"></i> Favorite</h1></a
+            >
+          </div>
+
+          <div class="card">
+            <a href=""><h1>REVIEWS</h1></a>
+          </div>
+        </div>
+      </aside>
+
+      <section class="main-content" id="posts-container">
+        <!-- Post 1 -->
+        <div class="post" data-post-id="1">
+          <div class="post-header">
+            <div class="profile-user-info">
+              <a href=""
+                ><img src="assets/logoIT.jpg" alt="" class="profile-image"
+              /></a>
+              <span>Zona IT <span class="date">11.05.2026</span></span>
+            </div>
+
+            <a href="#" class="profile-options"
+              ><i class="bi bi-three-dots"></i
+            ></a>
+          </div>
+
+          <div class="content">
+            <div class="img-wrapper">
+              <img
+                src="./assets/Galaxy-S25-OneUI-8.5.jpg"
+                alt="post"
+                class="img-content"
+              />
+              <i class="bi bi-info-circle-fill info-icon"></i>
+            </div>
+
+            <strong class="post-title"
+              >Aceste funcții One UI 8.5 nu ajung la utilizatorii Galaxy S25,
+              chiar dacă au fost testate cu firmware-ul beta</strong
+            >
+
+            <p class="post-description">
+              Prezente în firmware-ul One UI 8.5 distribuit utilizatorilor
+              Galaxy S25 înrolați în programul de testare beta, patru funcții
+              disponibile utilizatorilor…
+            </p>
+            <a href="landing-page.html">Read more...</a>
+          </div>
+
+          <div class="reacts">
+            <div class="likes-info">
+              <i class="bi bi-hand-thumbs-up-fill reacts-icons"></i>
+              <span class="like-count">10</span> likes
+            </div>
+
+            <div class="comments-info">
+              <span class="comment-count">15</span> comments
+              <i class="bi bi-chat-left-text-fill reacts-icons"></i>
+            </div>
+          </div>
+
+          <div class="react-actions">
+            <ul class="actions">
+              <li class="reaction like-btn">
+                <i class="bi bi-hand-thumbs-up-fill"></i>
+                <span>Like</span>
+              </li>
+              <li class="reaction comment-btn">
+                <i class="bi bi-chat-left-text-fill"></i>
+                <span>Comment</span>
+              </li>
+              <li class="reaction share-btn">
+                <i class="bi bi-share-fill"></i>
+                <span>Share</span>
+              </li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <div class="comment-section">
+            <a href="#">
+              <img src="./assets/profile.webp" alt="" class="profile-image"
+            /></a>
+            <input
+              type="text"
+              placeholder="Adauga un comentariu"
+              class="new-comment-field"
+            />
+            <div class="wrap">
+              <button class="insert-comment-button button">
+                <i class="bi bi-send-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="user-comments">
+            <!-- Comments will be added here via JS -->
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="post" data-post-id="2">
+          <div class="post-header">
+            <div class="profile-user-info">
+              <a href=""
+                ><img src="assets/logoIT.jpg" alt="" class="profile-image"
+              /></a>
+              <span>Zona IT <span class="date">11.05.2026</span></span>
+            </div>
+
+            <a href="#" class="profile-options"
+              ><i class="bi bi-three-dots"></i
+            ></a>
+          </div>
+
+          <div class="content">
+            <div class="img-wrapper">
+              <img
+                src="./assets/HealthApp-1-Overview-2048x1155.png"
+                alt="post"
+                class="img-content"
+              />
+              <i class="bi bi-info-circle-fill info-icon"></i>
+            </div>
+
+            <strong class="post-title"
+              >Google Health – noul asistent personal de sănătate și fitness de
+              la Google</strong
+            >
+
+            <p class="post-description">
+              Google prezintă Google Health, noua platformă care înlocuiește
+              aplicația Fitbit și funcționează ca un asistent de sănătate și
+              fitness, dar…
+            </p>
+            <a href="landing-page.html">Read more...</a>
+          </div>
+
+          <div class="reacts">
+            <div class="likes-info">
+              <i class="bi bi-hand-thumbs-up-fill reacts-icons"></i>
+              <span class="like-count">10</span> likes
+            </div>
+
+            <div class="comments-info">
+              <span class="comment-count">15</span> comments
+              <i class="bi bi-chat-left-text-fill reacts-icons"></i>
+            </div>
+          </div>
+
+          <div class="react-actions">
+            <ul class="actions">
+              <li class="reaction like-btn">
+                <i class="bi bi-hand-thumbs-up-fill"></i>
+                <span>Like</span>
+              </li>
+              <li class="reaction comment-btn">
+                <i class="bi bi-chat-left-text-fill"></i>
+                <span>Comment</span>
+              </li>
+              <li class="reaction share-btn">
+                <i class="bi bi-share-fill"></i>
+                <span>Share</span>
+              </li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <div class="comment-section">
+            <a href="#">
+              <img src="./assets/profile.webp" alt="" class="profile-image"
+            /></a>
+            <input
+              type="text"
+              placeholder="Adauga un comentariu"
+              class="new-comment-field"
+            />
+            <div class="wrap">
+              <button class="insert-comment-button button">
+                <i class="bi bi-send-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="user-comments">
+            <!-- Comments will be added here via JS -->
+          </div>
+        </div>
+
+        <!-- Post 3 & 4 (kept similar structure) -->
+        <div class="post" data-post-id="3">
+          <div class="post-header">
+            <div class="profile-user-info">
+              <a href=""
+                ><img src="assets/profile.webp" alt="" class="profile-image"
+              /></a>
+              <span>Sergiu Savin <span class="date">08 Apr 2026</span></span>
+            </div>
+
+            <a href="#" class="profile-options"
+              ><i class="bi bi-three-dots"></i
+            ></a>
+          </div>
+
+          <div class="content">
+            <div class="img-wrapper">
+              <img src="./assets/post2.webp" alt="post" class="img-content" />
+              <i class="bi bi-info-circle-fill info-icon"></i>
+            </div>
+
+            <strong class="post-title">Titlul postarii</strong>
+
+            <p class="post-description">
+              Aceasta este prima mea postare facuta pe reteaua de socializare
+              creata de mine in timpul cursului de Front End Development
+            </p>
+            <a href="landing-page.html">Read more...</a>
+          </div>
+
+          <div class="reacts">
+            <div class="likes-info">
+              <i class="bi bi-hand-thumbs-up-fill reacts-icons"></i>
+              <span class="like-count">10</span> likes
+            </div>
+
+            <div class="comments-info">
+              <span class="comment-count">15</span> comments
+              <i class="bi bi-chat-left-text-fill reacts-icons"></i>
+            </div>
+          </div>
+
+          <div class="react-actions">
+            <ul class="actions">
+              <li class="reaction like-btn">
+                <i class="bi bi-hand-thumbs-up-fill"></i>
+                <span>Like</span>
+              </li>
+              <li class="reaction comment-btn">
+                <i class="bi bi-chat-left-text-fill"></i>
+                <span>Comment</span>
+              </li>
+              <li class="reaction share-btn">
+                <i class="bi bi-share-fill"></i>
+                <span>Share</span>
+              </li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <div class="comment-section">
+            <a href="#">
+              <img src="./assets/profile.webp" alt="" class="profile-image"
+            /></a>
+            <input
+              type="text"
+              placeholder="Adauga un comentariu"
+              class="new-comment-field"
+            />
+            <div class="wrap">
+              <button class="insert-comment-button button">
+                <i class="bi bi-send-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="user-comments"></div>
+        </div>
+
+        <div class="post" data-post-id="4">
+          <div class="post-header">
+            <div class="profile-user-info">
+              <a href=""
+                ><img src="assets/profile.webp" alt="" class="profile-image"
+              /></a>
+              <span>Sergiu Savin <span class="date">08 Apr 2026</span></span>
+            </div>
+
+            <a href="#" class="profile-options"
+              ><i class="bi bi-three-dots"></i
+            ></a>
+          </div>
+
+          <div class="content">
+            <div class="img-wrapper">
+              <img src="./assets/post2.webp" alt="post" class="img-content" />
+              <i class="bi bi-info-circle-fill info-icon"></i>
+            </div>
+
+            <strong class="post-title">Titlul postarii</strong>
+
+            <p class="post-description">
+              Aceasta este prima mea postare facuta pe reteaua de socializare
+              creata de mine in timpul cursului de Front End Development
+            </p>
+            <a href="landing-page.html">Read more...</a>
+          </div>
+
+          <div class="reacts">
+            <div class="likes-info">
+              <i class="bi bi-hand-thumbs-up-fill reacts-icons"></i>
+              <span class="like-count">10</span> likes
+            </div>
+
+            <div class="comments-info">
+              <span class="comment-count">15</span> comments
+              <i class="bi bi-chat-left-text-fill reacts-icons"></i>
+            </div>
+          </div>
+
+          <div class="react-actions">
+            <ul class="actions">
+              <li class="reaction like-btn">
+                <i class="bi bi-hand-thumbs-up-fill"></i>
+                <span>Like</span>
+              </li>
+              <li class="reaction comment-btn">
+                <i class="bi bi-chat-left-text-fill"></i>
+                <span>Comment</span>
+              </li>
+              <li class="reaction share-btn">
+                <i class="bi bi-share-fill"></i>
+                <span>Share</span>
+              </li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <div class="comment-section">
+            <a href="#">
+              <img src="./assets/profile.webp" alt="" class="profile-image"
+            /></a>
+            <input
+              type="text"
+              placeholder="Adauga un comentariu"
+              class="new-comment-field"
+            />
+            <div class="wrap">
+              <button class="insert-comment-button button">
+                <i class="bi bi-send-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="user-comments"></div>
+        </div>
+      </section>
+
+      <aside class="right-content">
+
+  <!-- Suggested Friends -->
+  <div class="widget suggested-friends">
+    <h3>Suggested for you</h3>
+    <ul id="suggested-friends-list"></ul>
+  </div>
+
+  <!-- Trending Topics -->
+  <div class="widget trending-topics">
+    <h3>Trending Now 🔥</h3>
+    <ul id="trending-topics-list"></ul>
+  </div>
+
+  <!-- Online Friends -->
+  <div class="widget online-friends">
+    <h3>Online Friends <span id="online-count" class="online-count">(12)</span></h3>
+    <ul id="online-friends-list"></ul>
+  </div>
+
+</aside>
+    </main>
+
+    <script src="./js/feed.js"></script>
+  </body>
+</html>
