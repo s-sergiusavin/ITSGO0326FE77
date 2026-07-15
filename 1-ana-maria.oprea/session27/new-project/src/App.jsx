@@ -4,6 +4,8 @@ import Features from "./components/logic/Features";
 import Lights from "./components/ui/Lights";
 import Room from "./components/ui/Room";
 import Ac from "./components/ui/Ac";
+import FeaturesForm from "./components/logic/FeaturesForm";
+import { nanoid } from "nanoid";
 
 function App() {
   const [lightsOn, setLightsOn] = useState(false);
@@ -13,26 +15,20 @@ function App() {
     cleaned: 0,
   });
 
-  /** Use effect model */
-  // useEffect( () => {
-  //   console.log('Effect triggered');
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log("Effect triggered when lightsOn is changed")
-
-  //   return () => {
-  //     console.log('Component unmount')
-  //   }
-  // }, [lightsOn]);
+  const [feature, setFeature] = useState({
+    name: "",
+    action: "",
+    state: false,
+    id: nanoid(),
+  });
 
   const dirtInterval = useRef();
 
   useEffect(() => {
     dirtInterval.current = setInterval(() => {
       setDirtProgress((prevState) => {
-        console.log(prevState);
-        console.log("Interval: ", dirtInterval);
+        // console.log(prevState);
+        // console.log("Interval: ", dirtInterval);
         if (prevState.status > 1) {
           clearInterval(dirtInterval.current);
         }
@@ -81,6 +77,10 @@ function App() {
     }
   };
 
+  const updateFeaturesHandler = (feature) => {
+    setFeature(feature);
+  };
+
   return (
     <div>
       <div className="ui-features">
@@ -89,7 +89,8 @@ function App() {
         <Room status={dirtProgress.status} />
       </div>
 
-      <Features toggleAction={toggleActionHandler} />
+      <Features toggleAction={toggleActionHandler} newFeature={feature} />
+      <FeaturesForm updateFeatures={updateFeaturesHandler} />
     </div>
   );
 }

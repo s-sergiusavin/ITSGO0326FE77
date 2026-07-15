@@ -1,20 +1,20 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { nanoid } from "nanoid";
 
 const FeaturesForm = ({ updateFeatures }) => {
   const [isFormValid, setIsFormValid] = useState(true);
 
-  const titleInputRef = useRef();
-  const stateInputRef = useRef();
-  const actionInputRef = useRef();
-  const descriptionInputRef = useRef();
+  const [nameField, setNameField] = useState("");
+  const [actionField, setActionField] = useState("");
+  const [stateField, setStateField] = useState("");
+  const [descriptionField, setDescriptionField] = useState("");
 
   const checkValid = () => {
     if (
-      titleInputRef.current.value === "" ||
-      actionInputRef.current.value === "" ||
-      stateInputRef.current.value === "" ||
-      descriptionInputRef.current.value === ""
+      nameField === "" ||
+      actionField === "" ||
+      stateField === "" ||
+      descriptionField === ""
     ) {
       setIsFormValid(false);
       return false;
@@ -25,10 +25,10 @@ const FeaturesForm = ({ updateFeatures }) => {
   };
 
   const resetFields = () => {
-    titleInputRef.current.value = "";
-    actionInputRef.current.value = "";
-    stateInputRef.current.value = "";
-    descriptionInputRef.current.value = "";
+    setNameField("");
+    setActionField("");
+    setStateField("");
+    setDescriptionField("");
   };
 
   const submitHandler = (event) => {
@@ -37,10 +37,11 @@ const FeaturesForm = ({ updateFeatures }) => {
 
     if (!checkValidForm) return;
 
-    const nameValue = titleInputRef.current.value;
-    const actionValue = actionInputRef.current.value;
-    const stateValue = stateInputRef.current.value;
-    const description = descriptionInputRef.current.value;
+    const nameValue = nameField;
+    const actionValue = actionField;
+    const stateValue = stateField;
+    // eslint-disable-next-line no-unused-vars
+    const description = descriptionField;
 
     const newFeature = {
       name: nameValue,
@@ -54,6 +55,11 @@ const FeaturesForm = ({ updateFeatures }) => {
     resetFields();
   };
 
+  const nameChangeHandler = (e) => {
+    console.log(e);
+    setNameField(e.target.value);
+  };
+
   return (
     <form
       className={`form ${isFormValid ? "valid" : "invalid"}`}
@@ -62,17 +68,35 @@ const FeaturesForm = ({ updateFeatures }) => {
     >
       <div className="control">
         <label htmlFor="title">Feature title</label>
-        <input type="text" id="title" required ref={titleInputRef} />
+        <input
+          type="text"
+          id="title"
+          required
+          value={nameField}
+          onChange={nameChangeHandler}
+        />
       </div>
 
       <div className="control">
         <label htmlFor="action">Feature action</label>
-        <input type="text" id="action" required ref={actionInputRef} />
+        <input
+          type="text"
+          id="action"
+          required
+          value={actionField}
+          onChange={(e) => setActionField(e.target.value)}
+        />
       </div>
 
       <div className="control">
         <label htmlFor="state">Feature state</label>
-        <input type="text" id="state" required ref={stateInputRef} />
+        <input
+          type="text"
+          id="state"
+          required
+          value={stateField}
+          onChange={(e) => setStateField(e.target.value)}
+        />
       </div>
 
       <div className="control">
@@ -80,8 +104,10 @@ const FeaturesForm = ({ updateFeatures }) => {
         <textarea
           id="description"
           rows={5}
+          cols={16}
           required
-          ref={descriptionInputRef}
+          value={descriptionField}
+          onChange={(e) => setDescriptionField(e.target.value)}
         ></textarea>
       </div>
 
