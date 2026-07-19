@@ -13,6 +13,19 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    const interval = setInterval
+    console.log('effect triggered when lights on is changed');
+
+    return () => {
+      console.log('component unmount')
+    }
+  }, [lightsOn]);
+
+  useEffect(() => {
+
+  })
+
   // Destructuring explained
 
   // function returnPuppy() {
@@ -40,6 +53,31 @@ function App() {
       <Features toggleAction={toggleActionHandler} />
     </div>
   );
+}
+console.log('Test')
+
+setInterval(() => {
+  setDirtProgress((prevState) => {
+    return prevState +0.1
+  })
+}, 2000
+)
+const toggleLights = () => {
+  setLightsOn(!LightsOn);
+};
+
+const toggleAc = () => {
+  setAcOn(!acOn);
+  useEffect(()=> {
+    
+  })
+
+};
+
+
+
+const startCleaning = () => {
+  setDirtProgress(0);
 }
 
 function App() {
