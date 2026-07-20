@@ -1,8 +1,8 @@
-import './AC.scss'
+import './Ac.scss'
 
-function AC({acOn}) {
+function Ac({acOn}) {
 
     return <div className={`AC ${acOn ? 'blue' : ''}`}></div>
 }
 
-export default AC;
+export default Ac;
