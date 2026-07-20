@@ -1,0 +1,17 @@
+{
+  "name": "demo-npm",
+  "version": "1.0.0",
+  "description": "acesta este primul meu proiect",
+  "license": "ISC",
+  "author": "diana ioana",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^1.18.1",
+    "bootstrap": "^5.3.8",
+    "moment": "^2.30.1"
+  }
+}

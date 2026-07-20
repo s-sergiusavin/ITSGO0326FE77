@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media App | Feed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../css/feed.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="main-search">
+        <a href=""><i class="bi bi-box-seam-fill logo"></i></a>
+        <input
+          type="search"
+          class="search-input"
+          placeholder="Search on social media"
+        />
+      </div>
+      <nav class="main-navigation">
+        <ul class="navigation">
+          <li>
+            <a href="feed.html"><i class="bi bi-house-fill nav-icons"></i></a>
+          </li>
+          <li>
+            <a href="profile.html"
+              ><i class="bi bi-person-circle nav-icons"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-chat-right-dots-fill nav-icons"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-camera-video-fill nav-icons"></i></a>
+          </li>
+        </ul>
+      </nav>
+
+      <ul class="links">
+        <li>
+          <a href="landing-page.html"
+            ><i class="bi bi-plus-circle-fill nav-icons"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" class="bell-icon"
+            ><i class="bi bi-bell-fill nav-icons"></i> <span>12</span></a
+          >
+        </li>
+        <li>
+         
+          <div class="accountSetting">
+            <button id="accountSettingsButton">
+              <i class="bi bi-gear-fill nav-icons"></i>
+            </button>
+            <div class="accountSettingsMenu">
+              <button>Profile Settings</button>
+              <button id="logoutButton">LogOut</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </header>
+
+    <main>
+      <aside class="left-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex amet natus
+        ea pariatur quasi, aspernatur laudantium eligendi quas maxime dolore
+        esse numquam, optio dolorem, molestias consectetur impedit! Accusantium
+        animi cumque suscipit deleniti explicabo officia natus vero maiores?
+        Dolorum illum vero molestias beatae, consequatur eligendi ex sint
+        deserunt repellat natus incidunt veritatis quos voluptates fuga
+        laudantium deleniti possimus iusto! Cum eligendi atque ipsam! Natus
+        pariatur culpa tempore quo, sapiente consectetur cupiditate ipsum dicta
+        illum. Dolorem magni tenetur cum in, aperiam dolorum praesentium, dolore
+        deleniti voluptatibus excepturi animi! Cumque quidem adipisci ipsam modi
+        a quia quibusdam eveniet quis illum, quam in numquam minima debitis
+        voluptatem officiis mollitia ipsum suscipit magni possimus totam facere
+        reiciendis. Dolorum impedit, voluptatum iure esse quis temporibus
+        laboriosam obcaecati laborum inventore molestias hic corrupti dolor eius
+        dolorem iusto amet quod quia repudiandae explicabo perspiciatis nam!
+        Fugiat adipisci, ducimus voluptates et at omnis voluptas porro
+        perferendis, iure quod ad odio vero harum explicabo reiciendis earum
+        unde magnam expedita eaque quaerat laborum cumque veritatis sed.
+        Doloremque itaque omnis dolor perspiciatis nihil quidem quod voluptas
+        eaque optio sunt expedita nulla necessitatibus corrupti, veritatis
+        facere delectus, consequuntur culpa est eveniet deserunt! Unde magni
+        quidem ratione libero, tenetur voluptas vero dicta magnam esse.
+      </aside>
+
+      <section class="main-content">
+        <div class="post">
+          <div class="post-header">
+            <div class="profile-user-info">
+              <a href=""
+                ><img src="../assets/profile.webp" alt="" class="profile-image"
+              /></a>
+              <span>Sergiu Savin</span>
+              <span>08 Apr 2026</span>
+            </div>
+
+            <a href="#" class="profile-options"
+              ><i class="bi bi-three-dots"></i
+            ></a>
+          </div>
+
+          <div class="content">
+            <div class="img-wrapper">
+              <img src="../assets/post2.webp" alt="post" class="img-content" />
+              <i class="bi bi-info-circle-fill info-icon"></i>
+            </div>
+
+            <strong class="post-title">Titlul postarii</strong>
+
+            <p class="post-description">
+              Aceasta este prima mea postare facuta pe reteaua de socializare
+              creata de mine in timpul cursului de Front End Development
+            </p>
+            <a href="landing-page.html">Read more...</a>
+          </div>
+
+          <div class="reacts">
+            <div class="likes-info">
+              <i class="bi bi-hand-thumbs-up-fill reacts-icons"></i>
+              <span id="likesNumber"></span><span> likes</span>
+            </div>
+
+            <div class="comments-info">
+              <span id="sharesNumber"></span><span> shares</span>
+              <i class="bi bi-chat-left-text-fill reacts-icons"></i>
+            </div>
+          </div>
+
+          <div class="react-actions">
+            <ul class="actions">
+              <li class="reaction" id="likeButton">
+                <i class="bi bi-hand-thumbs-up-fill"></i>
+                <span>Like</span>
+              </li>
+              <li class="reaction" id="commentButton">
+                <i class="bi bi-chat-left-text-fill"></i>
+                <span>Comment</span>
+              </li>
+              <li class="reaction" id="shareButton">
+                <i class="bi bi-share-fill"></i>
+                <span>Share</span>
+              </li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <div class="comment-section">
+            <a href="#">
+              <img src="../assets/profile.webp" alt="" class="profile-image"
+            /></a>
+            <input
+              type="text"
+              placeholder="Adauga un comentariu"
+              class="new-comment-filed"
+              id="commentInput"
+            />
+            <div class="wrap">
+              <button class="insert-comment-button button" id="commentInputButton">
+                <i class="bi bi-send-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="user-comments">
+            <div class="comment-content">
+              <div class="profile-user-comment">
+                <a href="#"
+                  ><img
+                    src="../assets/profile.webp"
+                    alt=""
+                    class="profile-image"
+                /></a>
+                <span>User name</span>
+              </div>
+              <div class="user-comment-text">
+                <div id="commentMessage">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Deleniti fugiat, iure consequuntur ex dolores eius culpa eaque
+                voluptatibus soluta eum.</div>
+                
+                <div class="emoji-reaction">😎</div>
+                <span id="removeCommentButton">Remove this comment</span>
+              </div>
+              <div class="comment-reaction">
+                <strong class="comment-reaction-button">Like</strong>
+                <strong class="comment-reaction-button">Comment</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="post-header">
+            <div class="profile-user-info">
+              <a href=""
+                ><img src="../assets/profile.webp" alt="" class="profile-image"
+              /></a>
+              <span>Sergiu Savin</span>
+              <span>08 Apr 2026</span>
+            </div>
+
+            <a href="#" class="profile-options"
+              ><i class="bi bi-three-dots"></i
+            ></a>
+          </div>
+
+          <div class="content">
+            <div class="img-wrapper">
+              <img src="../assets/post2.webp" alt="post" class="img-content" />
+              <i class="bi bi-info-circle-fill info-icon"></i>
+            </div>
+
+            <strong class="post-title">Titlul postarii</strong>
+
+            <p class="post-description">
+              Aceasta este prima mea postare facuta pe reteaua de socializare
+              creata de mine in timpul cursului de Front End Development
+            </p>
+            <a href="landing-page.html">Read more...</a>
+          </div>
+
+          <div class="reacts">
+            <div class="likes-info">
+              <i class="bi bi-hand-thumbs-up-fill reacts-icons"></i>
+              <span>10 likes</span>
+            </div>
+
+            <div class="comments-info">
+              <span>15 comments</span>
+              <i class="bi bi-chat-left-text-fill reacts-icons"></i>
+            </div>
+          </div>
+
+          <div class="react-actions">
+            <ul class="actions">
+              <li class="reaction">
+                <i class="bi bi-hand-thumbs-up-fill"></i>
+                <span>Like</span>
+              </li>
+              <li class="reaction">
+                <i class="bi bi-chat-left-text-fill"></i>
+                <span>Comment</span>
+              </li>
+              <li class="reaction">
+                <i class="bi bi-share-fill"></i>
+                <span>Share</span>
+              </li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <div class="comment-section">
+            <a href="#">
+              <img src="../assets/profile.webp" alt="" class="profile-image"
+            /></a>
+            <input
+              type="text"
+              placeholder="Adauga un comentariu"
+              class="new-comment-filed"
+            />
+            <div class="wrap">
+              <button class="insert-comment-button button">
+                <i class="bi bi-send-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="user-comments">
+            <div class="comment-content">
+              <div class="profile-user-comment">
+                <a href="#"
+                  ><img
+                    src="../assets/profile.webp"
+                    alt=""
+                    class="profile-image"
+                /></a>
+                <span>User name</span>
+              </div>
+              <div class="user-comment-text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Deleniti fugiat, iure consequuntur ex dolores eius culpa eaque
+                voluptatibus soluta eum.
+                <div class="emoji-reaction">😎</div>
+              </div>
+              <div class="comment-reaction">
+                <strong class="comment-reaction-button">Like</strong>
+                <strong class="comment-reaction-button">Comment</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="post-header">
+            <div class="profile-user-info">
+              <a href=""
+                ><img src="../assets/profile.webp" alt="" class="profile-image"
+              /></a>
+              <span>Sergiu Savin</span>
+              <span>08 Apr 2026</span>
+            </div>
+
+            <a href="#" class="profile-options"
+              ><i class="bi bi-three-dots"></i
+            ></a>
+          </div>
+
+          <div class="content">
+            <div class="img-wrapper">
+              <img src="../assets/post2.webp" alt="post" class="img-content" />
+              <i class="bi bi-info-circle-fill info-icon"></i>
+            </div>
+
+            <strong class="post-title">Titlul postarii</strong>
+
+            <p class="post-description">
+              Aceasta este prima mea postare facuta pe reteaua de socializare
+              creata de mine in timpul cursului de Front End Development
+            </p>
+            <a href="landing-page.html">Read more...</a>
+          </div>
+
+          <div class="reacts">
+            <div class="likes-info">
+              <i class="bi bi-hand-thumbs-up-fill reacts-icons"></i>
+              <span>10 likes</span>
+            </div>
+
+            <div class="comments-info">
+              <span>15 comments</span>
+              <i class="bi bi-chat-left-text-fill reacts-icons"></i>
+            </div>
+          </div>
+
+          <div class="react-actions">
+            <ul class="actions">
+              <li class="reaction">
+                <i class="bi bi-hand-thumbs-up-fill"></i>
+                <span>Like</span>
+              </li>
+              <li class="reaction">
+                <i class="bi bi-chat-left-text-fill"></i>
+                <span>Comment</span>
+              </li>
+              <li class="reaction">
+                <i class="bi bi-share-fill"></i>
+                <span>Share</span>
+              </li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <div class="comment-section">
+            <a href="#">
+              <img src="../assets/profile.webp" alt="" class="profile-image"
+            /></a>
+            <input
+              type="text"
+              placeholder="Adauga un comentariu"
+              class="new-comment-filed"
+            />
+            <div class="wrap">
+              <button class="insert-comment-button button">
+                <i class="bi bi-send-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="user-comments">
+            <div class="comment-content">
+              <div class="profile-user-comment">
+                <a href="#"
+                  ><img
+                    src="../assets/profile.webp"
+                    alt=""
+                    class="profile-image"
+                /></a>
+                <span>User name</span>
+              </div>
+              <div class="user-comment-text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Deleniti fugiat, iure consequuntur ex dolores eius culpa eaque
+                voluptatibus soluta eum.
+                <div class="emoji-reaction">😎</div>
+              </div>
+              <div class="comment-reaction">
+                <strong class="comment-reaction-button">Like</strong>
+                <strong class="comment-reaction-button">Comment</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="right-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+        recusandae sed iusto neque vero et nam voluptatum quibusdam laudantium,
+        deserunt, molestiae in tempore iure optio, quia praesentium quo ratione
+        dignissimos fugit ullam eaque! Explicabo, perspiciatis eius? Asperiores
+        eveniet alias qui error molestias, dolore porro, corporis totam
+        reprehenderit et architecto impedit, ea optio doloribus. Nihil vitae
+        eius inventore beatae amet voluptatum quibusdam aspernatur maiores
+        sapiente ut repudiandae pariatur quos explicabo, architecto eum veniam
+        magni modi aut et sint. Voluptatum, voluptate aliquid assumenda non
+        dolore maiores hic eaque ipsa ut, vel eligendi optio ab praesentium
+        perspiciatis aliquam rerum et laboriosam dicta! Autem vitae possimus
+        fugit quos quaerat molestias voluptas sunt! Labore, earum repudiandae.
+        Fuga magnam laboriosam enim earum, maiores totam voluptatum? Id modi non
+        debitis animi? Odio quam perspiciatis asperiores id recusandae omnis, ex
+        deserunt, beatae aliquid explicabo similique maiores optio facilis
+        dignissimos! Modi, ea distinctio quo accusantium reprehenderit, vel
+        rerum quod omnis culpa eveniet rem esse dignissimos earum fuga
+        cupiditate, repellendus dolore aspernatur officia necessitatibus quis.
+        Iste officia optio odio nulla earum vero accusantium commodi eveniet
+        quod, a aut porro? Voluptatibus, libero inventore expedita eaque quas
+        voluptates suscipit quae sit reprehenderit rerum alias facere nihil odio
+        voluptas laborum officiis. Ipsa, tempora.
+      </aside>
+    </main>
+    <script src="../js/feed.js"></script>
+  </body>
+</html>

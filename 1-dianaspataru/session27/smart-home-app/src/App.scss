@@ -1,0 +1,19 @@
+@use './scss/mixins';
+
+.ui-features{
+    @include mixins.flexbox();
+}
+
+.features-container{
+    .features{
+        @include mixins.flexbox();
+        flex-wrap:wrap;
+    }
+    @include mixins.flexbox();
+    flex-direction: column;
+    margin-top:5rem;
+    border: 3px solid blue;
+    padding: 1.5rem;
+    gap: 2rem;
+    
+}
