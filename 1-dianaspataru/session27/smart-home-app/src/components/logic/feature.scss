@@ -1,7 +1,7 @@
 .feature{
     border: 1px solid black;
     width: 8rem;
-    height: 8rem;
+    min-height: 12rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,5 +11,12 @@
     button {
         padding:0.5rem;
         
+    }
+    .buttonImg{
+        width: 5rem;
+
+    }
+    .acButtonImg{
+        width: 7rem;
     }
 }

@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import { nanoid } from "nanoid";
 import "./App.scss";
 import Features from "./components/logic/features";
 import Lights from "./components/ui/lights";
 import Room from "./components/ui/room";
 import Airco from "./components/ui/airCo";
+import FeaturesForm from "./components/logic/featuresForm";
 
 function App() {
   const [lightsOn, setLightsOn] = useState(false);
@@ -13,41 +15,34 @@ function App() {
     cleaned: 0,
   });
 
-  //useEffect model
+ const [feature,setFeature]=useState({
+  name:'',
+  action:'',
+  state:false,
+  id: nanoid()
 
-  // useEffect(() => {
-  //   console.log("effect triggered");
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log("effect triggerd when lights is changed");
-
-  //   return () =>{
-  //     console.log('component unmount')
-  //   }
-
-  // }, [lightsOn]);
+ })
 
   const dirtInterval = useRef();
 
   useEffect(() => {
-   dirtInterval.current = setInterval(() => {
+    dirtInterval.current = setInterval(() => {
       setDirtProgress((prevState) => {
-        console.log(prevState);
-        console.log("interval: ", dirtInterval);
+        // console.log(prevState);
+        // console.log("interval: ", dirtInterval);
         if (prevState.status > 1) {
           clearInterval(dirtInterval.current);
         }
         return {
           ...prevState,
-          status: prevState.status + 0.1
-        }
+          status: prevState.status + 0.1,
+        };
       });
     }, 2000);
 
-    return ()=>{
-      clearInterval(dirtInterval.current)
-    }
+    return () => {
+      clearInterval(dirtInterval.current);
+    };
   }, [dirtProgress.cleaned]);
 
   const toggleLights = () => {
@@ -64,7 +59,7 @@ function App() {
       return {
         ...prevState,
         status: 0,
-        cleaned: prevState.cleaned + 1
+        cleaned: prevState.cleaned + 1,
       };
     });
   };
@@ -81,6 +76,10 @@ function App() {
         startCleaning();
         break;
     }
+  };
+
+  const updateFeaturesHandler = (feature) => {
+    setFeature(feature);
   };
 
   //destructuring explained
@@ -106,7 +105,8 @@ function App() {
         <Airco acOn={acOn} />
         <Room status={dirtProgress.status} />
       </div>
-      <Features toggleAction={toggleActionHandler} />
+      <Features toggleAction={toggleActionHandler} newFeature = {feature}/>
+      <FeaturesForm updateFeatures={updateFeaturesHandler} />
     </div>
   );
 }
