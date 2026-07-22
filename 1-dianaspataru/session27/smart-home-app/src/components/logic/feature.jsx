@@ -3,7 +3,13 @@ import buttonIconOn from "../../assets/buttonIconOn.png";
 import buttonIconOff from "../../assets/buttonIconOff.jpeg";
 import acIconOn from "../../assets/acOn.png";
 import acIconOff from "../../assets/acOff.png";
+import defaultImage from "../../assets/device.jpeg";
 import { useEffect, useState } from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import CardActionArea from "@mui/material/CardActionArea";
 
 function Feature({ name, action, toggleAction, state }) {
   const [lightsIcon, setLightsIcon] = useState(null);
@@ -15,6 +21,8 @@ function Feature({ name, action, toggleAction, state }) {
       state ? setLightsIcon(buttonIconOn) : setLightsIcon(buttonIconOff);
     } else if (name === "Toggle AC") {
       state ? setAcIcon(acIconOn) : setAcIcon(acIconOff);
+    } else {
+      setAcIcon(defaultImage) 
     }
   }, [state]);
 
@@ -24,14 +32,25 @@ function Feature({ name, action, toggleAction, state }) {
 
   return (
     <div className="feature">
-      {name === "Toggle lights" && (
-        <img src={lightsIcon} alt="bulb" className="buttonImg" />
-      )}
-      {name === "Toggle AC" && (
-        <img src={acIcon} alt="ac" className="acButtonImg" />
-      )}
-      <h2>{name}</h2>
-      <button onClick={featureButtonHandler}>{action}</button>
+      <Card sx={{ maxWidth: 250}} onClick={featureButtonHandler}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="140"
+            image={name === "Toggle lights" ? lightsIcon : acIcon}
+            alt="feature button"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+           {name}
+            </Typography>
+            <Typography variant="body2" sx={{ color: "text.secondary" }}>
+              {action}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+
     </div>
   );
 }

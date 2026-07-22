@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
+import { useNavigate } from "react-router-dom";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 const featuresForm = ({ updateFeatures }) => {
   const [isFormValid, setIsFormValid] = useState(true);
@@ -8,6 +11,8 @@ const featuresForm = ({ updateFeatures }) => {
   const [stateField, setStateField] = useState("");
   const [actionField, setActionField] = useState("");
   const [descriptionField, setdDescriptionField] = useState("");
+
+  const navigate = useNavigate();
 
   const checkValid = () => {
     if (
@@ -53,6 +58,7 @@ const featuresForm = ({ updateFeatures }) => {
     };
     updateFeatures(newFeature);
     resetfields();
+    navigate('/smart-home')
   };
 
   const nameChangeHandler = (e) => {
@@ -63,54 +69,56 @@ const featuresForm = ({ updateFeatures }) => {
   return (
     <form
       className={`form ${isFormValid ? "valid" : "invalid"}`}
-      noValidate
-      onSubmit={Submithandler}
-    >
+      noValidate>
       <div className="control">
-        <label htmlFor="title">Feature Title</label>
-        <input
-          type="text"
-          id="title"
-          required
+        <TextField
+          id="nameField"
+          fullWidth
+          label="Feature Title"
           value={nameField}
+          helperText="Some important text"
           onChange={nameChangeHandler}
         />
       </div>
       <div className="control">
-        <label htmlFor="action">Feature Action</label>
-        <input
-          type="text"
-          id="action"
-          required
+        <TextField
+          id="actionField"
+          fullWidth
+          label="Feature Action"
           value={actionField}
+          helperText="Action description"
           onChange={(e) => setActionField(e.target.value)}
         />
+        
       </div>
 
       <div className="control">
-        <label htmlFor="state">Feature State</label>
-        <input
-          type="text"
-          id="state"
-          required
+        <TextField
+          id="stateField"
+          fullWidth
+          label="Feature State"
           value={stateField}
+          defaultValue="Default Value"
+          helperText="State description"
           onChange={(e) => setStateField(e.target.value)}
         />
+        
       </div>
 
       <div className="control">
-        <label htmlFor="description">Feature Description</label>
-        <textarea
-          id="description"
-          rows={5}
-          cols={21}
-          required
+          <TextField
+          id="descriptionField"
+          fullWidth
+          label="Feature Description"
           value={descriptionField}
+          helperText="Description"
           onChange={(e) => setdDescriptionField(e.target.value)}
-        ></textarea>
+        />
+        
       </div>
       <div className="actions">
-        <button>add feature</button>
+        <Button variant="contained" onClick={Submithandler}>Add feature</Button>
+       
       </div>
     </form>
   );

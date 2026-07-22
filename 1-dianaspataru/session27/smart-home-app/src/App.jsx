@@ -6,15 +6,16 @@ import Lights from "./components/ui/lights";
 import Room from "./components/ui/room";
 import Airco from "./components/ui/airCo";
 import FeaturesForm from "./components/logic/featuresForm";
+import { Link, NavLink, Route, Routes } from "react-router-dom";
+import SmartHome from "./components/logic/smartHome";
+import Welcome from "./components/logic/welcome";
+import NotFound from "./components/logic/notFound";
+import HomeFilledIcon from '@mui/icons-material/HomeFilled';
+import DevicesIcon from '@mui/icons-material/Devices';
+import AddToQueueIcon from '@mui/icons-material/AddToQueue';
 
 function App() {
-  const [lightsOn, setLightsOn] = useState(false);
-  const [acOn, setAcOn] = useState(false);
-  const [dirtProgress, setDirtProgress] = useState({
-    status: 0,
-    cleaned: 0,
-  });
-
+ 
  const [feature,setFeature]=useState({
   name:'',
   action:'',
@@ -23,60 +24,7 @@ function App() {
 
  })
 
-  const dirtInterval = useRef();
-
-  useEffect(() => {
-    dirtInterval.current = setInterval(() => {
-      setDirtProgress((prevState) => {
-        // console.log(prevState);
-        // console.log("interval: ", dirtInterval);
-        if (prevState.status > 1) {
-          clearInterval(dirtInterval.current);
-        }
-        return {
-          ...prevState,
-          status: prevState.status + 0.1,
-        };
-      });
-    }, 2000);
-
-    return () => {
-      clearInterval(dirtInterval.current);
-    };
-  }, [dirtProgress.cleaned]);
-
-  const toggleLights = () => {
-    setLightsOn(!lightsOn);
-  };
-
-  const toggleAc = () => {
-    setAcOn(!acOn);
-  };
-
-  const startCleaning = () => {
-    //clearInterval(dirtInterval.current);
-    setDirtProgress((prevState) => {
-      return {
-        ...prevState,
-        status: 0,
-        cleaned: prevState.cleaned + 1,
-      };
-    });
-  };
-
-  const toggleActionHandler = (name) => {
-    switch (name) {
-      case "Toggle lights":
-        toggleLights();
-        break;
-      case "Toggle AC":
-        toggleAc();
-        break;
-      case "Clean":
-        startCleaning();
-        break;
-    }
-  };
+  
 
   const updateFeaturesHandler = (feature) => {
     setFeature(feature);
@@ -100,13 +48,35 @@ function App() {
 
   return (
     <div>
-      <div className="ui-features">
-        <Lights lightsOn={lightsOn} />
-        <Airco acOn={acOn} />
-        <Room status={dirtProgress.status} />
-      </div>
-      <Features toggleAction={toggleActionHandler} newFeature = {feature}/>
-      <FeaturesForm updateFeatures={updateFeaturesHandler} />
+      <header>
+        <ul>
+          <li>
+            <HomeFilledIcon/>
+            <Link to={'/welcome'}>Welcome</Link>
+          </li>
+          <li>
+            <DevicesIcon/>
+            <NavLink to={'/smart-home'}>Smart Home</NavLink>
+          </li>
+          <li>
+            <AddToQueueIcon/>
+            <NavLink to={'/features-form'}>Form</NavLink>
+          </li>
+        </ul>
+      </header>
+      
+      {/* <div className="lights yellow">App</div> */}
+      
+
+      <Routes>
+        <Route path="/" element={<SmartHome newFeature={feature}/>}></Route>
+        <Route path="/welcome" element={<Welcome/>}></Route>
+        <Route path="/smart-home" element={<SmartHome newFeature={feature}/>}></Route>
+        <Route path="/features-form" element={<FeaturesForm updateFeatures={updateFeaturesHandler} />}></Route>
+        <Route path="*" element={<NotFound/>}></Route>
+      </Routes>
+
+
     </div>
   );
 }
