@@ -4,35 +4,17 @@ import Lights from "../ui/lights";
 import Room from "../ui/room";
 import Features from "./features";
 import { useRef } from "react";
+import useInterval from "../../hooks/use-interval";
 
 const SmartHome = ({newFeature}) => {
   const [lightsOn, setLightsOn] = useState(false);
   const [acOn, setAcOn] = useState(false);
-  const [dirtProgress, setDirtProgress] = useState({
-    status: 0,
-    cleaned: 0,
-  });
+ const [roomActions,resetRoomActions] = useInterval(4000,0)
+ const [childRoomActions, resetChildRoomActions] = useInterval(2000,0.3)
 
-  const dirtInterval = useRef();
 
-  useEffect(() => {
-    dirtInterval.current = setInterval(() => {
-      setDirtProgress((prevState) => {
-        
-        if (prevState.status > 1) {
-          clearInterval(dirtInterval.current);
-        }
-        return {
-          ...prevState,
-          status: prevState.status + 0.1,
-        };
-      });
-    }, 2000);
 
-    return () => {
-      clearInterval(dirtInterval.current);
-    };
-  }, [dirtProgress.cleaned]);
+
 
   const toggleLights = () => {
     setLightsOn(!lightsOn);
@@ -43,14 +25,11 @@ const SmartHome = ({newFeature}) => {
   };
 
   const startCleaning = () => {
-    //clearInterval(dirtInterval.current);
-    setDirtProgress((prevState) => {
-      return {
-        ...prevState,
-        status: 0,
-        cleaned: prevState.cleaned + 1,
-      };
-    });
+    
+   resetRoomActions()
+   resetChildRoomActions()
+
+    
   };
 
   const toggleActionHandler = (name) => {
@@ -72,7 +51,9 @@ const SmartHome = ({newFeature}) => {
       <div className="ui-features">
         <Lights lightsOn={lightsOn} />
         <Airco acOn={acOn} />
-        <Room status={dirtProgress.status} />
+        <Room status={roomActions.dirtProgress} />
+        <Room status={childRoomActions.dirtProgress} />
+       
       </div>
       <Features toggleAction={toggleActionHandler} newFeature={newFeature} />
     </div>
