@@ -1,5 +1,24 @@
 @use "./scss/mixins";
 
+header {
+  ul {
+    list-style: none;
+    @include mixins.flexbox();
+    gap: 1.5rem;
+    
+    li {
+      @include mixins.flexbox();
+      gap: 0.5rem;
+
+      a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
 .ui-features {
   @include mixins.flexbox;
 }
@@ -33,6 +52,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 20rem;
+    width: 45rem;
   }
 }
