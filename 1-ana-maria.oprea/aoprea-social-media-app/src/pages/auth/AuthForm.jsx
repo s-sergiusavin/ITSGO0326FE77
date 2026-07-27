@@ -1,5 +1,6 @@
 import { useState } from "react";
-import styles from "./AuthForm.modules.scss";
+import styles from "./AuthForm.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -8,9 +9,21 @@ const AuthForm = () => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
 
-    const actionIsNotLoading =()
-    
-  const submitHandler = () => {};
+  const navigate = useNavigate();
+
+  const toggleAuthState = () => {
+    setIsLogin((prevState) => !prevState);
+  };
+
+  const submitHandler = (e) => {
+    event.preventDefault();
+
+    navigate("/");
+  };
+
+  const actionIsNotLoading = (
+    <button>{isLogin ? "Login" : "Create new account"}</button>
+  );
 
   return (
     <div className={styles.auth}>
@@ -36,13 +49,16 @@ const AuthForm = () => {
             placeholder="Enter your password"
             onChange={(e) => setPassword(e.target.value)}
           />
-              </div>
-              
-              <div className={styles.actions}>
-                  {isError && <p>Pleae try again...</p>}
-                  {isLoading && <p>Sending request</p>}
-                  {!isLoading && }
-              </div>
+        </div>
+
+        <div className={styles.actions}>
+          {isError && <p>Please try again...</p>}
+          {isLoading && <p>Sending request...</p>}
+          {!isLoading && actionIsNotLoading}
+          <button className={styles.toggle} onClick={toggleAuthState}>
+            {isLogin ? "Create new account" : "Login with an existing account"}
+          </button>
+        </div>
       </form>
     </div>
   );

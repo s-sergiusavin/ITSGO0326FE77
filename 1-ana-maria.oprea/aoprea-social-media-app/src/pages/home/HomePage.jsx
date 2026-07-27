@@ -1,18 +1,22 @@
 import useFetch from "../../hooks/useFetch";
 import Newsfeed from "../feed/newsfeed/Newsfeed";
-import styles from "./HomePage.modules.scss";
+import styles from "./HomePage.module.scss";
 
 const HomePage = () => {
-  const posts = useFetch();
+
+    const posts = useFetch('https://jsonplaceholder.typicode.com/posts');
+
   return (
     <div className={styles.mainContainer}>
-      <aside></aside>
+      <aside>Left Side (folosim componenta LeftSide)</aside>
       <section>
-        {posts.map((post) => {
-          return <Newsfeed></Newsfeed>;
+        {posts?.map( post => {
+            return <Newsfeed key={post.id} postData={post}/>
         })}
       </section>
-      <aside></aside>
+      <aside>Right Side</aside>
     </div>
   );
 };
+
+export default HomePage;
