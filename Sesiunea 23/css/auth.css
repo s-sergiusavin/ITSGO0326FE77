@@ -1,0 +1,82 @@
+body {
+  background-image: url("../assets/background-image.jpg");
+}
+
+a {
+  text-decoration: none;
+}
+
+.form-container {
+  margin: 5rem auto;
+  width: 95%;
+  max-width: 30rem;
+  background-color: white;
+  box-shadow: 0 3px 20px #0fb;
+  padding: 2rem 4rem;
+  text-align: center;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container form .form-field {
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.form-field input:not([type="checkbox"]) {
+  background-color: lightblue;
+  color: darkblue;
+  border-radius: 0.5rem;
+  border: 1px solid darkblue;
+  padding: 0.5rem;
+  width: 80%;
+}
+
+.form-field input::placeholder {
+  color: black;
+}
+
+.login-button {
+  background-color: cadetblue;
+  font-size: large;
+  font-weight: bold;
+  color: white;
+  border: 1px solid #0fb;
+  box-shadow: 0 1px 5px #0fb;
+  padding: 0.5rem 2.5rem;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: turquoise;
+  border: 1px solid cadetblue;
+  box-shadow: 0 1px 5px cadetblue;
+  font-weight: bolder;
+}
+
+.forgot-password-btn {
+  color: black;
+}
+
+.register-btn {
+  background-color: turquoise;
+  border: 1px solid cadetblue;
+  padding: 0.5rem 2.5rem;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0.3rem;
+  width: 50%;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  min-height: 50px;
+}
+
+.register-btn:hover {
+  opacity: 0.8;
+}

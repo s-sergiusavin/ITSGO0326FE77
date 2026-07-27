@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe | Feed</title>
+    <link rel="stylesheet" href="css/feed.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h1 class="logo">Vibe</h1>
+
+        <nav class="nav-links">
+            <button id="home-btn" class="nav-icon">
+                <img src="assets/icons/Home.png" alt="Home">
+            </button>
+
+            <button id="message-btn" class="nav-icon">
+                <img src="assets/icons/Messages.png" alt="Messages">
+            </button>
+
+            <button id="account-btn" class="nav-icon">
+                <img src="assets/icons/Account.png" alt="Account">
+            </button>
+
+            <input type="text" class="search-bar" placeholder="Search...">
+        </nav>
+    </header>
+
+
+    <section id="create-post">
+        <textarea id="post-text" placeholder="What's on your mind?"></textarea>
+        <button id="post-btn">Post</button>
+    </section>
+
+    <section id="feed"></section>
+
+    <script src="js/feed.js"></script>
+</body>
+</html>

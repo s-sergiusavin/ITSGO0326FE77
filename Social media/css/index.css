@@ -1,0 +1,112 @@
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/*Buttons*/
+.nav-buttons .btn {
+    margin-left: 1rem;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    font-weight: bold;
+}
+
+.login-btn {
+    background-color: transparent;
+    border: 2px solid #333;
+    color: #333;
+}
+
+.login-btn:hover{
+    background: #ccc;
+}
+
+.signup-btn {
+    background-color: #333;
+    color: white;
+}
+
+.signup-btn:hover{
+    background-color: #222;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem;
+}
+
+/*Text*/
+.hero-text {
+    max-width: 40%;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/*Button-Image*/
+.hero-btn {
+    background-color: #333;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    font-weight: bold;
+}
+
+.hero-btn:hover{
+    background: #222;
+}
+.hero-image img {
+    width: 450px;
+    border-radius: 1rem;
+}
+
+/* FEATURES */
+.features {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 2rem;
+    width: 250px;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+    background-color: #eee;
+}

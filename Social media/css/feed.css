@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #1e1e1e; /* dark background */
+    color: #ffffff; /* text alb */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1e1e1e; /* navbar same as body */
+    color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #3a3a3a; /* subtle border */
+}
+
+.navbar {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.nav-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-icon img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1); /* iconițe albe */
+}
+
+.search-bar {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: #fff;
+    width: 15rem;
+}
+
+#account-btn{
+    position: relative;
+    height: 40px;
+    width: 40px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+#account-btn img{
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Tooltip alb cu text negru */
+#account-btn::after{
+    content: 'Account';
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #000;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+#account-btn:hover::after {
+    opacity: 1;
+}
+
+#create-post {
+    background: #2a2a2a; /* card dark */
+    width: 30rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 1px solid #3a3a3a;
+}
+
+#post-text {
+    width: 100%;
+    height: 5rem;
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    background: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #3a3a3a;
+}
+
+#post-btn {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.7rem;
+    background: #3b82f6; /* accent modern */
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+#post-btn:hover {
+    background: #2563eb; /* hover accent */
+}
+
+.post {
+    background: #2a2a2a;
+    width: 30rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 1px solid #3a3a3a;
+}
+
+.post h3 {
+    margin: 0;
+    color: #ffffff;
+}
+
+.post p {
+    margin-top: 0.5rem;
+    color: #cfcfcf; /* text secundar */
+}

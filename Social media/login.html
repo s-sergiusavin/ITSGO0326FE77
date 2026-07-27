@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe | Authenticate</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+    
+    <h1>Authenticate</h1>
+
+    <div id="login-form">
+        <h2 class="header-title">Login</h2>
+
+        <form action="">
+            <span id="error"></span>
+
+            <div class="login-form-field">
+                <label for="user-input">Username</label>
+                <input type="text" id="user-input" placeholder="Enter your username">
+            </div>
+
+            <div class="login-form-field">
+                <label for="password-input">Password</label>
+                <input type="password" id="password-input" placeholder="Enter your password">
+            </div>
+
+            <div class="login-form-field">
+                <input type="submit" value="Login" id="login-btn">
+            </div>
+
+            <div class="login-form-field">
+                <a href="#" id="forgot-password">Forgot password?</a>
+            </div>
+
+            <input type="button" value="Create new account" id="toggle-auth-btn">
+        </form>
+    </div>
+
+    <div id="reset-modal" class="modal">
+        <div class="modal-content">
+            <h3>Reset your password</h3>
+            <p>Enter your email to receive a reset link</p>
+
+            <input type="email" id="reset-email" placeholder="Your email">
+
+            <button id="send-reset-btn">Send reset link</button>
+            <button id="close-reset-btn" class="close-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
