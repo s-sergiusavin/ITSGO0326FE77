@@ -3,31 +3,32 @@ import styles from "./Navigation.module.scss";
 import { useState } from "react";
 
 const Navigation = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const toggleAuth = () => {
-        
-        setIsLoggedIn(prevState => !prevState)
-    }
+  const toggleAuth = () => {
+    setIsLoggedIn((prevState) => !prevState);
+  };
   return (
     <header>
-        <Link to='/'>
-            <div className={styles.logo}>My Social Media App</div>
-        </Link>
+      <Link to="/">
+        <div className={styles.logo}>My Social Media App</div>
+      </Link>
 
-        <nav>
-            <ul className={styles.menu}>
-                <li className={styles.menuItem}>
-                    <NavLink to='/my-profile'>My Profile</NavLink>
-                </li>
-                <li className={styles.menuItem}>
-                    <NavLink to='/friends'>Friends</NavLink>
-                </li>
-                <li className={styles.menuItem} onClick={toggleAuth}>
-                    <NavLink to={isLoggedIn ? '/auth' : '/'}>{isLoggedIn ? 'Logout' : 'Login'}</NavLink>
-                </li>
-            </ul>
-        </nav>
+      <nav>
+        <ul className={styles.menu}>
+          <li className={styles.menuItem}>
+            <NavLink to="/my-profile">My Profile</NavLink>
+          </li>
+          <li className={styles.menuItem}>
+            <NavLink to="/friends">Friends</NavLink>
+          </li>
+          <li className={styles.menuItem} onClick={toggleAuth}>
+            <NavLink to={isLoggedIn ? "/auth" : "/"}>
+              {isLoggedIn ? "Logout" : "Login"}
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };
