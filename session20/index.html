@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session 20 | Form Validations</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>Form validations</h1>
+
+    <h2 class="loginTitle">Login</h2>
+    <button class="toggleLogin">Switch to sign up</button>
+    <form action="" novalidate>
+      <span id="error"></span>
+      <input type="email" id="email" placeholder="Email address" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="submit" name="login" id="login" value="Login" />
+    </form>
+
+    <br /><br /><br />
+
+    <hr />
+    <hr />
+    <hr />
+
+    <br><br><br>
+
+    <form action="">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" placeholder="Enter your first name" value="Sergiu">
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" placeholder="Enter your last name">
+
+        <label for="age">Age</label>
+        <input type="text" id="age">
+    </form>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

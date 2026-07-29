@@ -1,0 +1,22 @@
+.feature {
+    border: 1px solid black;
+    width: 8rem;
+    min-height: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 1rem;
+    button {
+        padding: 0.5rem;
+    }
+
+    .buttonImg {
+        width: 3rem;
+    }
+
+    .acButtonImg {
+        width: 6rem;
+    }
+}
