@@ -1,0 +1,20 @@
+.sidebar {
+  background: #fff3e6;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid #f7d3a8;
+
+  ul {
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 8px 12px;
+    background: #ffb84d;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
