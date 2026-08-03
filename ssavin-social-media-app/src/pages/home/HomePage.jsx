@@ -1,20 +1,40 @@
+import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import Newsfeed from "../feed/newsfeed/Newsfeed";
 import styles from "./HomePage.module.scss";
+import feedService from "../../services/feedService";
 
 const HomePage = () => {
+  // folositi logica aceasta daca vreti sa folositi datele de pe requestul vechi
+  // dar va trebui sa schimbati proprietatea description din Newsfeed
+  // {postData.body.charAt(0).toUpperCase() + postData.body.slice(1)}
+  // in loc de {postData.description.charAt(0).toUpperCase() + postData.description.slice(1)}
+  // si de folosit posts in loc de postList mai jos in template
+  const posts = useFetch("https://jsonplaceholder.typicode.com/posts");
 
-    const posts = useFetch('https://jsonplaceholder.typicode.com/posts');
+  const [postList, setPostList] = useState([]);
+
+  useEffect(() => {
+    async function getPosts() {
+      const response = await feedService.get();
+      setPostList(response);
+      return response;
+    }
+
+    getPosts().catch((error) => {
+      console.log(error);
+    });
+  }, []);
 
   return (
     <div className={styles.mainContainer}>
-      <aside>Left Side (folosim componenta LeftSide)</aside>
+      <aside className={styles.leftSide}>Left Side (folosim componenta LeftSide)</aside>
       <section>
-        {posts?.map( post => {
-            return <Newsfeed key={post.id} postData={post}/>
+        {postList?.map((post) => {
+          return <Newsfeed key={post.id} postData={post} />;
         })}
       </section>
-      <aside>Right Side</aside>
+      <aside className={styles.rightSide}>Right Side</aside>
     </div>
   );
 };

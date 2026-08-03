@@ -12,6 +12,7 @@ import ReplyIcon from "@mui/icons-material/Reply";
 import SendIcon from "@mui/icons-material/Send";
 import { useState } from "react";
 import CommentsSection from "./comments/CommentsSection";
+import { useNavigate } from "react-router-dom";
 
 const Newsfeed = ({ postData }) => {
   const [isLiked, setIsLiked] = useState(false);
@@ -20,6 +21,8 @@ const Newsfeed = ({ postData }) => {
   const [shares, setShares] = useState(Math.floor(Math.random() * 100));
 
   const postImages = [post1, post2];
+
+  const navigate = useNavigate();
 
   const handleLike = () => {
     if (!isLiked) {
@@ -36,13 +39,15 @@ const Newsfeed = ({ postData }) => {
     setIsShared(true);
   };
 
-  console.log("Click");
+  const goToProfilePage = () => {
+    navigate(`/profile/${postData.id}`);
+  }
 
   return (
     <div className={styles.mainPost}>
       <div className={styles.post}>
         <div className={styles.postHeader}>
-          <div className={styles.profileUserInfo}>
+          <div className={styles.profileUserInfo} onClick={goToProfilePage}>
             <a href="">
               <img src={profile} alt="" className={styles.profileImage} />
             </a>
@@ -92,7 +97,7 @@ const Newsfeed = ({ postData }) => {
           </strong>
 
           <p className={styles.postDescription}>
-            {postData.body.charAt(0).toUpperCase() + postData.body.slice(1)}
+            {postData.description.charAt(0).toUpperCase() + postData.description.slice(1)}
           </p>
           <a href="landing-page.html">Read more...</a>
         </div>

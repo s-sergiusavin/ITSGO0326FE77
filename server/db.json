@@ -4,7 +4,37 @@
       "id": "1",
       "title": "Modificare recenta",
       "description": "lorem ipsum dasjfhskdfajh hdkjas hfas",
-      "image": "https://media.istockphoto.com/id/1419410282/photo/silent-forest-in-spring-with-beautiful-bright-sun-rays.jpg?s=612x612&w=0&k=20&c=UHeb1pGOw6ozr6utsenXHhV19vW6oiPIxDqhKCS2Llk="
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWK1SLXNFDq-dihuPhJRz4ouXsjSS47ZI0HbQBY2GpV8sEylIl7XCgNxA&s=10"
+    },
+    {
+      "id": "2",
+      "title": "My second title post",
+      "description": "lorem ipsum dasjfhskdfajh hdkjas hfas",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHfUbdJy9or38yzg5VnJAERNswsFdSGN56Dz6T5gdsACTAauCDIudKraU&s=10"
+    },
+    {
+      "id": "3",
+      "title": "My third title post",
+      "description": "lorem ipsum dasjfhskdfajh hdkjas hfas",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0sWhYYC_7hZLByaBxIj-eT5X-M8a1HLOXkMA1e8wZ8fZbtSEo7prIdwQy&s=10"
+    },
+    {
+      "id": "4",
+      "title": "Modificare recenta",
+      "description": "lorem ipsum dasjfhskdfajh hdkjas hfas",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWK1SLXNFDq-dihuPhJRz4ouXsjSS47ZI0HbQBY2GpV8sEylIl7XCgNxA&s=10"
+    },
+    {
+      "id": "5",
+      "title": "My second title post",
+      "description": "lorem ipsum dasjfhskdfajh hdkjas hfas",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHfUbdJy9or38yzg5VnJAERNswsFdSGN56Dz6T5gdsACTAauCDIudKraU&s=10"
+    },
+    {
+      "id": "600",
+      "title": "My third title post",
+      "description": "lorem ipsum dasjfhskdfajh hdkjas hfas",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0sWhYYC_7hZLByaBxIj-eT5X-M8a1HLOXkMA1e8wZ8fZbtSEo7prIdwQy&s=10"
     }
   ],
   "users": [
@@ -12,6 +42,16 @@
       "email": "safdsf@dsaf.cdsa",
       "password": "$2a$10$ZPerR9DZX46JWWubUixfZ.VRaUvHTLIgpj.irMtvGkFFo64lhOJ2G",
       "id": 1
+    },
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$.ysTrD5iSDYssUXUuYdnU./BkZ2jZAwqtcx9oXNlndXiUL6Zmhbp.",
+      "id": 2
+    },
+    {
+      "email": "test2@test.com",
+      "password": "$2a$10$tM5wDt5ELiG8RTZdDj18XuUTCkDQuT1I6xWK0o/Tdjvw/8MCMwmkG",
+      "id": 3
     }
   ]
 }
