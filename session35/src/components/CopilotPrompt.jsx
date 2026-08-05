@@ -11,7 +11,7 @@ const TextItem = ({ text }) => (
 );
 
 const CopilotPrompt = () => {
-  const posts = useFetch("https://jsonplaceholder.typicode.com/posts";
+  const posts = useFetch("https://jsonplaceholder.typicode.com/posts");
 
   const handleClick = () => {
     console.log("Userul a dat click");

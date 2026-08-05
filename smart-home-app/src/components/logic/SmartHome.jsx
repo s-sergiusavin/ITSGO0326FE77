@@ -5,7 +5,7 @@ import Room from "../ui/Room";
 import Features from "./Features";
 import useInterval from "../../hooks/use-interval";
 
-const SmartHome = ({newFeature}) => {
+const SmartHome = ({ features, setFeatures }) => {
   const [lightsOn, setLightsOn] = useState(false);
   const [acOn, setAcOn] = useState(false);
   const [roomActions, resetRoomActions] = useInterval(4000, 0);
@@ -46,7 +46,7 @@ const SmartHome = ({newFeature}) => {
         <Room status={childRoomActions.dirtProgress} />
       </div>
 
-      <Features toggleAction={toggleActionHandler} newFeature={newFeature} />
+      <Features toggleAction={toggleActionHandler} features={features} setFeatures={setFeatures} />
     </>
   );
 };

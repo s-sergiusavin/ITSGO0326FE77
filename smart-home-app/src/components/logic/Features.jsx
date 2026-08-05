@@ -1,41 +1,8 @@
-import { useEffect, useState } from "react";
 import Feature from "./Feature";
 
-function Features({ toggleAction, newFeature }) {
-  const FEATURES = [
-    {
-      name: "Toggle lights",
-      action: "Turn the lights on",
-      state: false,
-      id: 0,
-    },
-    {
-      name: "Toggle AC",
-      action: "Turn on the AC",
-      state: false,
-      id: 1,
-    },
-    {
-      name: "Clean",
-      action: "Turn on the vacuum",
-      state: false,
-      id: 2,
-    },
-    {
-      name: "Coffee time",
-      action: "Make a coffee",
-      state: false,
-      id: 3,
-    },
-  ];
-
-  const [features, setFeatures] = useState(FEATURES);
-
-  useEffect(() => {
-    if (newFeature.name !== "") {
-      setFeatures((prevState) => [newFeature, ...prevState]);
-    }
-  }, [newFeature]);
+function Features({ toggleAction, features, setFeatures }) {
+  // `features` and `setFeatures` are controlled by parent (App).
+  // Avoid calling setState inside useEffect by adding new features in the parent handler.
 
   const toggleLights = () => {
     setFeatures((prevState) => {
