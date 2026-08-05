@@ -122,11 +122,10 @@
     display: flex;
     justify-content: space-between;
 
-    .likesInfo,
-    .commentsInfo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    .likesInfo, .commentsInfo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
 
     .reactsIcons {

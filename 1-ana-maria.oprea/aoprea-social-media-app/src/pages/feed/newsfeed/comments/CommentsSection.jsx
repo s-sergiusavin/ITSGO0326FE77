@@ -1,5 +1,5 @@
 import styles from "./CommentsSection.module.scss";
-import profile from "../../../../assets/profile.webp";
+import profile from '../../../../assets/profile.webp';
 
 const CommentsSection = () => {
   return (
