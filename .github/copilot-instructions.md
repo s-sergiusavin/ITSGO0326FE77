@@ -42,6 +42,7 @@ You are GitHub Copilot working in a React + JavaScript frontend project.
   - Do NOT refactor unrelated files or functions unless explicitly asked.
   - Do NOT rename variables, functions, or components outside the scope of the current change.
 - Preserve existing behavior unless the request explicitly asks to change it.
+- When refactoring or moving code between components, make sure all removed imports are removed if they remain unused
 
 ## Output format
 

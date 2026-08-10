@@ -1,16 +1,66 @@
-# React + Vite
+# SsavIN Social Media App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite social media app prototype with authentication, a post feed, and basic routing.
 
-Currently, two official plugins are available:
+## Main features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Authentication flow
+  - Login and register via `AuthPage`
+  - Auth state managed with Redux Toolkit async thunks
+  - User session persisted with `redux-persist`
+- Navigation
+  - Header navigation adapts to logged-in state
+  - Login/Logout toggle button in the navigation
+- Post feed
+  - `HomePage` fetches posts through `feedService`
+  - Posts are rendered with the `Newsfeed` component
+- Routing
+  - `/` renders the home feed
+  - `/auth` renders the authentication page
+  - `/profile/:id` renders a profile page placeholder
+  - `*` renders the not-found page
+- State management
+  - Redux Toolkit slices for auth
+  - Async login/register thunks using `createAsyncThunk`
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite
+- React Router DOM
+- Redux Toolkit
+- Redux Persist
+- Material UI
+- Axios
+- Sass
 
-## Expanding the ESLint configuration
+## Local development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+3. Open the URL Vite provides in your browser.
+
+## Backend / API
+
+- Auth requests are sent to `http://localhost:3000`
+- Posts are fetched from `/posts` via `feedService`
+- Ensure a backend or JSON server is running to handle `/login`, `/register`, and `/posts`
+
+## Project structure
+
+- `src/main.jsx` — app entry point with router and Redux provider
+- `src/App.jsx` — app routes and main layout
+- `src/pages/home/HomePage.jsx` — home feed page
+- `src/pages/auth/AuthPage.jsx` — auth page wrapper
+- `src/pages/auth/AuthForm.jsx` — login/register form
+- `src/pages/profile/ProfilePage.jsx` — profile route placeholder
+- `src/components/Layout.jsx` — page layout wrapper
+- `src/components/Navigation.jsx` — header navigation
+- `src/redux` — store, slices, and selectors
+- `src/services` — API service layer

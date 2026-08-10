@@ -1,8 +1,8 @@
 import useFetch from "../hooks/useFetch";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import ClickLoggerButton from "./ClickLoggerButton";
 
 const TextItem = ({ text }) => (
   <Typography variant="body1" component="p">
@@ -12,10 +12,6 @@ const TextItem = ({ text }) => (
 
 const CopilotPrompt = () => {
   const posts = useFetch("https://jsonplaceholder.typicode.com/posts");
-
-  const handleClick = () => {
-    console.log("Userul a dat click");
-  };
 
   return (
     <Container maxWidth="md" sx={{ py: 3 }}>
@@ -29,15 +25,7 @@ const CopilotPrompt = () => {
           </Typography>
         </Stack>
 
-        <Button
-          variant="contained"
-          type="button"
-          onClick={handleClick}
-          aria-label="Log this action"
-          sx={{ alignSelf: "center" }}
-        >
-          Log this
-        </Button>
+        <ClickLoggerButton />
 
         <Stack spacing={1}>
           {posts?.map((post) => (
