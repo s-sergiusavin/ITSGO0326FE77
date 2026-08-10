@@ -122,10 +122,11 @@
     display: flex;
     justify-content: space-between;
 
-    .likesInfo, .commentsInfo {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
+    .likesInfo,
+    .commentsInfo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .reactsIcons {
@@ -207,6 +208,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .mainPost {
+    width: 100%;
+    max-width: calc(100% - 1.5rem);
+    margin: 1rem 0;
+    padding-right: 1.5rem;
+  }
 }
 
 .button {

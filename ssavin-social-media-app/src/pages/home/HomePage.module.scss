@@ -35,6 +35,11 @@
   .mainContainer .rightSide {
     display: none;
   }
+
+  .mainContainer section {
+    margin-left: calc(20rem + 1.5rem);
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -52,5 +57,9 @@
     position: static;
     width: 100%;
     min-height: auto;
+  }
+
+  .mainContainer section {
+    margin-left: 0;
   }
 }
