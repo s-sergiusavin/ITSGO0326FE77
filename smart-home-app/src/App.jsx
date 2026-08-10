@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.scss";
 import FeaturesForm from "./components/logic/FeaturesForm";
-import { nanoid } from "nanoid";
 import { Link, NavLink, Route, Routes } from "react-router-dom";
 import SmartHome from "./components/logic/SmartHome";
 import Welcome from "./components/logic/Welcome";
@@ -16,19 +15,29 @@ import useAxios from "./hooks/use-axios";
 import Button from "@mui/material/Button";
 
 function App() {
-  const [feature, setFeature] = useState({
-    name: "",
-    action: "",
-    state: false,
-    id: nanoid(),
-  });
+  // `feature` state removed; new features are added directly to `features` list
+
+  const FEATURES = [
+    {
+      name: "Toggle lights",
+      action: "Turn the lights on",
+      state: false,
+      id: 0,
+    },
+    { name: "Toggle AC", action: "Turn on the AC", state: false, id: 1 },
+    { name: "Clean", action: "Turn on the vacuum", state: false, id: 2 },
+    { name: "Coffee time", action: "Make a coffee", state: false, id: 3 },
+  ];
+
+  const [features, setFeatures] = useState(FEATURES);
 
   const usersUrl = "https://reqres.in/api/users?page=2";
   const users = useFetch(usersUrl);
   const { data, loading, error } = useAxios(usersUrl);
 
   const updateFeaturesHandler = (feature) => {
-    setFeature(feature);
+    // Add new feature directly to the features list
+    if (feature?.name) setFeatures((prev) => [feature, ...prev]);
   };
 
   const testLocalStorage = "Acest text va aparea in local storage";
@@ -87,12 +96,9 @@ function App() {
       {/* <div className="lights yellow">App</div> */}
 
       <Routes>
-        <Route path="/" element={<SmartHome newFeature={feature} />}></Route>
+        <Route path="/" element={<SmartHome features={features} setFeatures={setFeatures} />}></Route>
         <Route path="/welcome" element={<Welcome />}></Route>
-        <Route
-          path="/smart-home"
-          element={<SmartHome newFeature={feature} />}
-        ></Route>
+        <Route path="/smart-home" element={<SmartHome features={features} setFeatures={setFeatures} />}></Route>
         <Route
           path="/features-form"
           element={<FeaturesForm updateFeatures={updateFeaturesHandler} />}
