@@ -1,35 +1,43 @@
-import { Link, NavLink } from "react-router-dom";
-import styles from "./navigation.module.scss";
-import { useState } from "react";
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import styles from './Navigation.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUser } from '../redux/selectors';
+import { toggleLogin } from '../redux/slices/authSlice';
 
 const Navigation = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const user = useSelector(selectUser);
+    const isLoggedIn = user.isAuthenticated;
+    const navigate = useNavigate()
+
+    const dispatch = useDispatch();
 
     const toggleAuth = () => {
-        
-        setIsLoggedIn(prevState => !prevState)
+        dispatch(toggleLogin());
+        isLoggedIn ? navigate('/auth') : navigate('/');
     }
-  return (
-    <header>
+    return <header>
         <Link to='/'>
-            <div className={styles.logo}>My Social Media App</div>
+            <div className={styles.logo}>Social Media App</div>
         </Link>
 
         <nav>
             <ul className={styles.menu}>
-                <li className={styles.menuItem}>
-                    <NavLink to='/my-profile'>My Profile</NavLink>
-                </li>
-                <li className={styles.menuItem}>
-                    <NavLink to='/friends'>Friends</NavLink>
-                </li>
+                {isLoggedIn &&
+                    <>
+                        <li className={styles.menuItem}>
+                            <NavLink to='/my-profile'> My Profile</NavLink>
+                        </li>
+                        <li className={styles.menuItem}>
+                            <NavLink to='/friends'> Friends</NavLink>
+                        </li>
+                    </>}
                 <li className={styles.menuItem} onClick={toggleAuth}>
-                    <NavLink to={isLoggedIn ? '/auth' : '/'}>{isLoggedIn ? 'Logout' : 'Login'}</NavLink>
+                    <NavLink to='/auth'> {isLoggedIn ? 'Logout' : 'Login'}</NavLink>
                 </li>
+                <li>{user.email}</li>
             </ul>
         </nav>
     </header>
-  );
-};
+}
 
 export default Navigation;
