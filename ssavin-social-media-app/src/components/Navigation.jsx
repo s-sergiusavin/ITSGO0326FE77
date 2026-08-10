@@ -8,6 +8,11 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import GroupIcon from "@mui/icons-material/Group";
+import MovieIcon from "@mui/icons-material/Movie";
+import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const Navigation = () => {
   const user = useSelector(selectUser);
@@ -46,19 +51,35 @@ const Navigation = () => {
           {isLoggedIn && (
             <>
               <li className={styles.menuItem}>
-                <NavLink to="/my-profile">My Profile</NavLink>
+                <NavLink to="/my-profile">
+                  <AccountCircleIcon fontSize="small" /> My Profile
+                </NavLink>
               </li>
               <li className={styles.menuItem}>
-                <NavLink to="/friends">Friends</NavLink>
+                <NavLink to="/friends">
+                  <GroupIcon fontSize="small" /> Friends
+                </NavLink>
               </li>
               <li className={styles.menuItem}>
-                <NavLink to="/reels">Reels</NavLink>
+                <NavLink to="/reels">
+                  <MovieIcon fontSize="small" /> Reels
+                </NavLink>
               </li>
             </>
           )}
 
           <li className={styles.menuItem} onClick={toggleAuth}>
-            <NavLink to="/auth">{isLoggedIn ? "Logout" : "Login"}</NavLink>
+            <NavLink to="/auth">
+              {isLoggedIn ? (
+                <>
+                  <LogoutIcon fontSize="small" /> Logout
+                </>
+              ) : (
+                <>
+                  <LoginIcon fontSize="small" /> Login
+                </>
+              )}
+            </NavLink>
           </li>
           <li className={styles.userEmail}>{user.email}</li>
         </ul>
@@ -82,18 +103,26 @@ const Navigation = () => {
           {isLoggedIn && (
             <>
               <MenuItem onClick={() => handleNavigate("/my-profile")}>
-                My Profile
+                <AccountCircleIcon fontSize="small" sx={{ mr: 1 }} /> My Profile
               </MenuItem>
               <MenuItem onClick={() => handleNavigate("/friends")}>
-                Friends
+                <GroupIcon fontSize="small" sx={{ mr: 1 }} /> Friends
               </MenuItem>
               <MenuItem onClick={() => handleNavigate("/reels")}>
-                Reels
+                <MovieIcon fontSize="small" sx={{ mr: 1 }} /> Reels
               </MenuItem>
             </>
           )}
           <MenuItem onClick={toggleAuth}>
-            {isLoggedIn ? "Logout" : "Login"}
+            {isLoggedIn ? (
+              <>
+                <LogoutIcon fontSize="small" sx={{ mr: 1 }} /> Logout
+              </>
+            ) : (
+              <>
+                <LoginIcon fontSize="small" sx={{ mr: 1 }} /> Login
+              </>
+            )}
           </MenuItem>
         </Menu>
       </nav>
