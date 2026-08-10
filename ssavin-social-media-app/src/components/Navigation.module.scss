@@ -9,6 +9,7 @@ header {
   position: fixed;
   z-index: 10;
   top: 0;
+
   .logo {
     color: white;
     font-size: 2rem;
@@ -30,13 +31,39 @@ header {
       white-space: nowrap;
       font-weight: bold;
 
-      &:global.active {
+      &:global(.active) {
         color: yellow;
       }
 
       &:hover {
         color: lightblue;
       }
+    }
+  }
+
+  .burgerButton {
+    display: none;
+    color: white;
+  }
+
+  .userEmail {
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+
+    .menu {
+      display: none;
+    }
+
+    .burgerButton {
+      display: inline-flex;
     }
   }
 }
