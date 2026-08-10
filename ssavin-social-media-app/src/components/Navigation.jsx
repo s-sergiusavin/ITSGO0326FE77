@@ -51,6 +51,9 @@ const Navigation = () => {
               <li className={styles.menuItem}>
                 <NavLink to="/friends">Friends</NavLink>
               </li>
+              <li className={styles.menuItem}>
+                <NavLink to="/reels">Reels</NavLink>
+              </li>
             </>
           )}
 
@@ -83,6 +86,9 @@ const Navigation = () => {
               </MenuItem>
               <MenuItem onClick={() => handleNavigate("/friends")}>
                 Friends
+              </MenuItem>
+              <MenuItem onClick={() => handleNavigate("/reels")}>
+                Reels
               </MenuItem>
             </>
           )}
