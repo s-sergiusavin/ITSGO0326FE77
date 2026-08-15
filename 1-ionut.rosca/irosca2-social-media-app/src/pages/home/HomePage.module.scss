@@ -1,0 +1,38 @@
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  section {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.leftPanel,
+.rightPanel {
+  flex: 0 0 18rem;
+}
+
+
+
+@media (max-width: 1024px) {
+  .mainContainer {
+    flex-direction: column;
+  }
+
+  .leftPanel,
+  .rightPanel,
+  section {
+    width: 100%;
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    gap: 1rem;
+  }
+}

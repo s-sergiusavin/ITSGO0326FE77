@@ -1,0 +1,25 @@
+.layout {
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+  gap: 20px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.left {
+  @media (max-width: 900px) {
+    order: 2;
+  }
+}
+
+.center {
+  order: 1;
+}
+
+.right {
+  @media (max-width: 900px) {
+    order: 3;
+  }
+}

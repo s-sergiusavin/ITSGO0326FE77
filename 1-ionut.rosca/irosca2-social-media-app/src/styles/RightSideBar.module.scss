@@ -1,0 +1,154 @@
+.sidebar {
+  background: linear-gradient(180deg, #edf9ff 0%, #f7fbff 100%);
+  border: 2px solid #bfe7ff;
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 12px 24px rgba(52, 115, 156, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+  color: #25435d;
+}
+
+.headerRow,
+.taskCard,
+.inputRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #3b7db3;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.miniLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4f6e8b;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.reminderList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.taskCard {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #cde9ff;
+  border-radius: 12px;
+  padding: 0.7rem 0.75rem;
+  transition: 0.2s ease;
+}
+
+.taskCard.done {
+  background: #edf8ee;
+  border-color: #a9d6b0;
+}
+
+.taskText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.taskText strong {
+  font-size: 0.95rem;
+}
+
+.taskText span {
+  font-size: 0.75rem;
+  color: #56748c;
+}
+
+.taskCard button,
+.inputRow button {
+  border: none;
+  border-radius: 10px;
+  background: #5cb6ec;
+  color: white;
+  padding: 0.45rem 0.65rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.taskCard button:hover,
+.inputRow button:hover {
+  background: #329fe0;
+}
+
+.inputRow {
+  margin-top: 0.2rem;
+}
+
+.inputRow input {
+  flex: 1;
+  border: 1px solid #bae0f7;
+  border-radius: 10px;
+  padding: 0.6rem 0.7rem;
+  font: inherit;
+  background: #fff;
+}
+
+.inputRow input:focus {
+  outline: 2px solid rgba(92, 182, 236, 0.2);
+  border-color: #5cb6ec;
+}
+
+
+@media (max-width: 1024px) {
+  .taskCard {
+    padding: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerRow,
+  .taskCard,
+  .inputRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .taskCard button,
+  .inputRow button {
+    width: 100%;
+  }
+
+  .taskText {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    border-radius: 14px;
+    padding: 0.8rem;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+  }
+
+  .inputRow input {
+    width: 100%;
+  }
+}
