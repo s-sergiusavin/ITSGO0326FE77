@@ -1,9 +1,9 @@
-import "./EditProfileModal.module.scss";
+import styles from "./EditProfileModal.module.scss";
 
 export default function EditProfileModal({ onClose }) {
   return (
-    <div className="modalBackdrop">
-      <div className="modalCard">
+    <div className={styles.modalBackdrop}>
+      <div className={styles.modalCard}>
         <h3>Edit Profile</h3>
 
         <label>Name</label>
@@ -12,9 +12,11 @@ export default function EditProfileModal({ onClose }) {
         <label>Bio</label>
         <textarea />
 
-        <div className="modalActions">
-          <button className="saveBtn">Save</button>
-          <button className="cancelBtn" onClick={onClose}>Cancel</button>
+        <div className={styles.modalActions}>
+          <button className={styles.saveBtn}>Save</button>
+          <button className={styles.cancelBtn} onClick={onClose}>
+            Cancel
+          </button>
         </div>
       </div>
     </div>

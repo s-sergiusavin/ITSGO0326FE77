@@ -1,4 +1,4 @@
-import "./ProfileTabs.module.scss";
+import styles from "./ProfileTabs.module.scss";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import PeopleIcon from "@mui/icons-material/People";
@@ -8,39 +8,39 @@ export default function ProfileTabs({
   activeTab,
   setActiveTab,
   hideAbout = false,
-  hideNotifications = false
+  hideNotifications = false,
 }) {
   return (
-    <nav className="profileNavTabs">
+    <nav className={styles.profileNavTabs}>
       <button
-        className={`tabBtn ${activeTab === "timeline" ? "active" : ""}`}
+        className={`${styles.tabBtn} ${activeTab === "timeline" ? "active" : ""}`}
         onClick={() => setActiveTab("timeline")}
       >
-        <CalendarTodayIcon className="tabIcon" /> Timeline
+        <CalendarTodayIcon className={styles.tabIcon} /> Timeline
       </button>
 
       {!hideAbout && (
         <button
-          className={`tabBtn ${activeTab === "about" ? "active" : ""}`}
+          className={`${styles.tabBtn} ${activeTab === "about" ? "active" : ""}`}
           onClick={() => setActiveTab("about")}
         >
-          <PersonOutlinedIcon className="tabIcon" /> About
+          <PersonOutlinedIcon className={styles.tabIcon} /> About
         </button>
       )}
 
       <button
-        className={`tabBtn ${activeTab === "friends" ? "active" : ""}`}
+        className={`${styles.tabBtn} ${activeTab === "friends" ? "active" : ""}`}
         onClick={() => setActiveTab("friends")}
       >
-        <PeopleIcon className="tabIcon" /> Friends
+        <PeopleIcon className={styles.tabIcon} /> Friends
       </button>
 
       {!hideNotifications && (
         <button
-          className={`tabBtn ${activeTab === "notifications" ? "active" : ""}`}
+          className={`${styles.tabBtn} ${activeTab === "notifications" ? "active" : ""}`}
           onClick={() => setActiveTab("notifications")}
         >
-          <NotificationsNoneIcon className="tabIcon" /> Notifications
+          <NotificationsNoneIcon className={styles.tabIcon} /> Notifications
         </button>
       )}
     </nav>

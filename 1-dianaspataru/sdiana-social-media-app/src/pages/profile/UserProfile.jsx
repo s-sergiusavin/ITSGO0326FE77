@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react"
+import { useState, useEffect } from "react";
 import ProfileHeader from "../../components/ProfileHeader";
 import ProfileTabs from "../../components/ProfileTabs";
 import FriendsSection from "../../components/FriendsSection";
@@ -7,7 +7,6 @@ import TimelineSection from "../../components/TimelineSection";
 import useFetch from "../../hooks/useFetch";
 
 import styles from "./UserProfile.module.scss";
-
 
 const UserProfile = () => {
   const { id } = useParams(); // luăm ID-ul userului din URL
@@ -18,13 +17,13 @@ const UserProfile = () => {
 
   const pers = useFetch(`http://localhost:3000/posts/${id}`);
 
-  if (!pers) {
-    return (
-      <div className={styles.profileContainer}>
-        <h1>User #{id} not found</h1>
-      </div>
-    );
-  }
+  useEffect(() => {
+    // When the fetch hook returns (including an empty result), update state
+    if (typeof pers !== "undefined") {
+      setUser(pers);
+      setLoading(false);
+    }
+  }, [pers]);
 
   if (loading) {
     return (
@@ -56,8 +55,8 @@ const UserProfile = () => {
 
   return (
     <div className={styles.profileContainer}>
-        <main className={styles.mainContainer}>
-          <div className={styles.mainContent}>
+      <main className={styles.mainContainer}>
+        <div className={styles.mainContent}>
           {/* HEADER */}
           <ProfileHeader user={user} editable={false} />
 

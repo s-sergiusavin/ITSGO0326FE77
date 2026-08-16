@@ -6,10 +6,9 @@ import FriendsSection from "../../components/FriendsSection";
 import TimelineSection from "../../components/TimelineSection";
 import NotificationsSection from "../../components/NotificationsSection";
 import EditProfileModal from "../../components/EditProfileModal";
+import LeftSide from "../feed/leftside/LeftSide";
+import styles from "./MyProfile.module.scss";
 
-
-
-import "./MyProfile.module.scss";
 
 const MOCK_FRIENDS = [
   { id: 1, name: 'Andrei Popescu', role: 'UI/UX Designer', mutual: 14, avatar: 'https://i.pravatar.cc/150?img=11' },
@@ -44,10 +43,11 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="profileContainer">
+
+    <div className={styles.profileContainer}>
       <LeftSide />
-      <main className="mainContainer">
-        <div className="mainContent">
+      <main className={styles.mainContainer}>
+        <div className={styles.mainContent}>
           <ProfileHeader
             user={user}
             onEditAvatar={() => setShowEdit(true)}
@@ -66,6 +66,8 @@ const MyProfile = () => {
       </main>
     </div>
   );
+
+    
 };
 
 export default MyProfile;
