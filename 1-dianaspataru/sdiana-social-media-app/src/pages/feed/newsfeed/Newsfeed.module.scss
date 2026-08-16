@@ -1,239 +1,578 @@
+// .mainPost {
+//   width: 30rem;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin: 1rem 0;
+
+//   .post {
+//     box-shadow: 5px 5px 5px 5px #ccc;
+//     margin: 1rem 0;
+//     padding: 1rem;
+
+//     .postHeader {
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: center;
+//       .profileUserInfo {
+//         display: flex;
+//         align-items: center;
+//       }
+
+//       .profileOptions {
+//         width: 2rem;
+//         height: 2rem;
+//         border-radius: 50%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         cursor: pointer;
+//         border: none;
+//         background-color: transparent;
+
+//         &:hover {
+//           background-color: #0fb;
+//         }
+//       }
+
+//       .profileOptionsWrapper {
+//         position: relative;
+
+//         .profileOptionsDropdown {
+//           position: absolute;
+//           z-index: 1;
+//           right: 0.5rem;
+//           width: 10rem;
+//           display: flex;
+//           flex-direction: column;
+//           display: none;
+
+//           button {
+//             padding: 0.2rem;
+//             cursor: pointer;
+
+//             &:hover {
+//               border: 1px solid #00ffcb;
+//               background-color: lightgray;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   .profileImage {
+//     width: 3rem;
+//     border-radius: 50%;
+//   }
+
+//   .content {
+//     .imgWrapper {
+//       position: relative;
+
+//       .imgContent {
+//         max-width: 100%;
+//       }
+
+//       .infoIcon {
+//         position: absolute;
+//         right: 1rem;
+//         bottom: -0.5rem;
+//         font-size: 2rem;
+//         background-color: gray;
+//         border-radius: 50%;
+//         width: 2rem;
+//         height: 2rem;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         cursor: pointer;
+//         color: white;
+//         border: 1px solid black;
+//       }
+
+//       .infoIconWrapper {
+//         position: relative;
+
+//         .infoMessage {
+//           position: absolute;
+//           display: none;
+//           background-color: white;
+//           border: 3px solid black;
+//           top: -0.5rem;
+//           left: 5rem;
+//           padding: 0.5rem;
+//         }
+//       }
+//     }
+
+//     .postTitle {
+//       padding: 1rem 0;
+//       display: inline-block;
+//       margin-top: 0.5rem;
+//     }
+
+//     .postDescription {
+//       padding: 1rem;
+//       margin: 0;
+//     }
+//   }
+
+//   .reacts {
+//     display: flex;
+//     justify-content: space-between;
+
+//     .likesInfo, .commentsInfo {
+//         display: flex;
+//         align-items: center;
+//         gap: 0.5rem;
+//     }
+
+//     .reactsIcons {
+//       color: blue;
+//     }
+//   }
+
+//   .reactActions {
+//     .actions {
+//       display: flex;
+//       justify-content: space-between;
+//       margin: 0;
+//       padding: 0;
+
+//       .reaction {
+//         color: black;
+//         cursor: pointer;
+//         padding: 0.5rem 1rem;
+//         display: flex;
+//         align-items: center;
+
+//         &.touched {
+//           color: blue;
+//         }
+
+//         &:hover {
+//           color: royalblue;
+//         }
+//       }
+//     }
+//   }
+
+//   .commentSection {
+//     display: flex;
+//     gap: 0.5rem;
+
+//     .newCommentField {
+//       width: 80%;
+//       border-radius: 0.5rem;
+//       padding: 0.5rem;
+//       background-color: lightcyan;
+
+//       &:placeholder {
+//         color: royalblue;
+//         font-weight: 600;
+//       }
+
+//       :hover {
+//         background-color: #cafdfd;
+//         width: 85%;
+//       }
+//     }
+//   }
+
+//   .insertCommentButton {
+//     border: none;
+//     background-color: transparent;
+//     font-size: 1.2rem;
+//     cursor: pointer;
+//     padding: 0.5rem 0.7rem;
+//     &:hover {
+//       color: #0fb;
+//     }
+//   }
+// }
+
+// @keyframes commentAnimation {
+//   from {
+//     left: 2rem;
+//   }
+
+//   to {
+//     left: 0rem;
+//   }
+// }
+
+// .wrap {
+//   height: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .button {
+//   min-width: 30px;
+//   min-height: 6px;
+//   display: inline-flex;
+//   font-family: "Nunito", sans-serif;
+//   font-size: 22px;
+//   align-items: center;
+//   justify-content: center;
+//   text-transform: uppercase;
+//   text-align: center;
+//   letter-spacing: 1.3px;
+//   font-weight: 700;
+//   color: #313133;
+//   background: #4fd1c5;
+//   background: linear-gradient(
+//     90deg,
+//     rgba(129, 230, 217, 1) 0%,
+//     rgba(79, 209, 197, 1) 100%
+//   );
+//   border: none;
+//   border-radius: 1000px;
+//   box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+//   transition: all 0.3s ease-in-out 0s;
+//   cursor: pointer;
+//   outline: none;
+//   position: relative;
+//   padding: 10px;
+// }
+
+
+// ==========================================
+// 1. Variabile
+// ==========================================
+$ice-melt: #cbdceb;
+$nimbus-cloud: #c5c5c5;
+$cloud-dancer: #f0eee9;
+$almost-aqua: #c8d3be;
+$raindrops-on-roses: #e8d0d3;
+$white: #ffffff;
+$text-dark: #444444;
+$text-muted: #555555;
+$danger: #e74c3c;
+
+// ==========================================
+// 2. Structură Principală Postare
+// ==========================================
 .mainPost {
-  width: 30rem;
+  max-width: 50rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 1rem 0;
+  
+
+
+}
+
+.post {
+  background-color: $white;
+  border: 1px solid $ice-melt;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+// ==========================================
+// 3. Header Postare & Meniu Opțiuni
+// ==========================================
+.postHeader {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
+}
 
-  .post {
-    box-shadow: 5px 5px 5px 5px #ccc;
-    margin: 1rem 0;
-    padding: 1rem;
+.profileUserInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 
-    .postHeader {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .profileUserInfo {
-        display: flex;
-        align-items: center;
-      }
+  span {
+    &:nth-of-type(1) {
+      font-weight: 600;
+      color: $text-dark;
+    }
 
-      .profileOptions {
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        border: none;
-        background-color: transparent;
-
-        &:hover {
-          background-color: #0fb;
-        }
-      }
-
-      .profileOptionsWrapper {
-        position: relative;
-
-        .profileOptionsDropdown {
-          position: absolute;
-          z-index: 1;
-          right: 0.5rem;
-          width: 10rem;
-          display: flex;
-          flex-direction: column;
-          display: none;
-
-          button {
-            padding: 0.2rem;
-            cursor: pointer;
-
-            &:hover {
-              border: 1px solid #00ffcb;
-              background-color: lightgray;
-            }
-          }
-        }
-      }
+    &:nth-of-type(2) {
+      font-size: 0.85rem;
+      color: $nimbus-cloud;
     }
   }
+}
 
-  .profileImage {
-    width: 3rem;
+.profileImage {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+// Meniu Dropdown pentru opțiuni (Edit / Remove)
+.profileOptionsWrapper {
+  position: relative;
+
+  &:hover  .profileOptionsDropdown{
+    display: flex;
+  }
+
+  .profileOptions {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: $nimbus-cloud;
+    padding: 6px;
     border-radius: 50%;
-  }
-
-  .content {
-    .imgWrapper {
-      position: relative;
-
-      .imgContent {
-        max-width: 100%;
-      }
-
-      .infoIcon {
-        position: absolute;
-        right: 1rem;
-        bottom: -0.5rem;
-        font-size: 2rem;
-        background-color: gray;
-        border-radius: 50%;
-        width: 2rem;
-        height: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        color: white;
-        border: 1px solid black;
-      }
-
-      .infoIconWrapper {
-        position: relative;
-
-        .infoMessage {
-          position: absolute;
-          display: none;
-          background-color: white;
-          border: 3px solid black;
-          top: -0.5rem;
-          left: 5rem;
-          padding: 0.5rem;
-        }
-      }
-    }
-
-    .postTitle {
-      padding: 1rem 0;
-      display: inline-block;
-      margin-top: 0.5rem;
-    }
-
-    .postDescription {
-      padding: 1rem;
-      margin: 0;
-    }
-  }
-
-  .reacts {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
 
-    .likesInfo, .commentsInfo {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .reactsIcons {
-      color: blue;
+    &:hover {
+      background-color: $cloud-dancer;
+      color: $text-dark;
     }
   }
 
-  .reactActions {
-    .actions {
-      display: flex;
-      justify-content: space-between;
-      margin: 0;
-      padding: 0;
+  .profileOptionsDropdown {
+    position: absolute;
+    right: 0;
+    top: 95%;
+    background-color: $white;
+    border: 1px solid $ice-melt;
+    border-radius: 0.6rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    flex-direction: column;
+    z-index: 10;
+    overflow: hidden;
+    min-width: 150px;
+    display: none;
 
-      .reaction {
-        color: black;
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-        display: flex;
-        align-items: center;
+    button {
+      background: transparent;
+      border: none;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: $text-dark;
+      transition: background-color 0.2s ease;
 
-        &.touched {
-          color: blue;
-        }
+      &:hover {
+        
+         background-color: $cloud-dancer;
+       
+      }
 
-        &:hover {
-          color: royalblue;
-        }
+      &:last-child {
+        color: $danger;
       }
     }
   }
+}
 
-  .commentSection {
+// ==========================================
+// 4. Conținut Postare (Imagine + Text)
+// ==========================================
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+
+  a {
+    color: $almost-aqua;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.imgWrapper {
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  .imgContent {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    display: block;
+  }
+}
+
+.infoIconWrapper {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 0.8rem 1rem;
+  background-color: $cloud-dancer;
+  border-radius: 0.6rem;
+  margin-top: 0.5rem;
+
+  .infoIcon {
+    color: $almost-aqua;
     display: flex;
-    gap: 0.5rem;
+    align-items: center;
+  }
 
-    .newCommentField {
-      width: 80%;
-      border-radius: 0.5rem;
-      padding: 0.5rem;
-      background-color: lightcyan;
+  .infoMessage {
+    font-size: 0.85rem;
+    color: $text-muted;
+    line-height: 1.4;
 
-      &:placeholder {
-        color: royalblue;
-        font-weight: 600;
-      }
+    a {
+      margin-left: 5px;
+    }
+  }
+}
 
-      :hover {
-        background-color: #cafdfd;
-        width: 85%;
+.postTitle {
+  font-size: 1.1rem;
+  color: $text-dark;
+  font-weight: 600;
+}
+
+.postDescription {
+  font-size: 0.95rem;
+  color: $text-muted;
+  line-height: 1.5;
+}
+
+// ==========================================
+// 5. Statistici Reacții (Like-uri, Shares)
+// ==========================================
+.reacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-top: 1px solid $cloud-dancer;
+  border-bottom: 1px solid $cloud-dancer;
+  color: $nimbus-cloud;
+  font-size: 0.85rem;
+
+  .likesInfo,
+  .commentsInfo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    svg {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// ==========================================
+// 6. Butoane Acțiuni (Like, Comment, Share)
+// ==========================================
+.reactActions {
+  padding: 0.4rem 0;
+
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .reaction {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: $text-muted;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $cloud-dancer;
+    }
+
+    // Stare activă (când ai dat Like/Share)
+    &.touched {
+      color: $almost-aqua;
+      font-weight: 600;
+
+      svg {
+        fill: $almost-aqua;
       }
     }
+
+    svg {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $cloud-dancer;
+  margin: 0.4rem 0 1rem 0;
+}
+
+// ==========================================
+// 7. Adăugare Comentariu Nou
+// ==========================================
+.commentSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .newCommentField {
+    flex: 1;
+    background-color: $cloud-dancer;
+    border: 1px solid transparent;
+    border-radius: 1.5rem;
+    padding: 0.6rem 1rem;
+    outline: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+
+    &:focus {
+      background-color: $white;
+      border-color: $almost-aqua;
+      box-shadow: 0 0 0 3px rgba($almost-aqua, 0.2);
+    }
+
+    &::placeholder {
+      color: $nimbus-cloud;
+    }
+  }
+
+  .wrap {
+    display: flex;
+    align-items: center;
   }
 
   .insertCommentButton {
+    background: transparent;
     border: none;
-    background-color: transparent;
-    font-size: 1.2rem;
+    color: $almost-aqua;
     cursor: pointer;
-    padding: 0.5rem 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    transition: transform 0.2s ease, color 0.2s ease;
+
     &:hover {
-      color: #0fb;
+      color: $raindrops-on-roses;
+      transform: scale(1.1);
     }
   }
-}
-
-@keyframes commentAnimation {
-  from {
-    left: 2rem;
-  }
-
-  to {
-    left: 0rem;
-  }
-}
-
-.wrap {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.button {
-  min-width: 30px;
-  min-height: 6px;
-  display: inline-flex;
-  font-family: "Nunito", sans-serif;
-  font-size: 22px;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 1.3px;
-  font-weight: 700;
-  color: #313133;
-  background: #4fd1c5;
-  background: linear-gradient(
-    90deg,
-    rgba(129, 230, 217, 1) 0%,
-    rgba(79, 209, 197, 1) 100%
-  );
-  border: none;
-  border-radius: 1000px;
-  box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
-  transition: all 0.3s ease-in-out 0s;
-  cursor: pointer;
-  outline: none;
-  position: relative;
-  padding: 10px;
 }

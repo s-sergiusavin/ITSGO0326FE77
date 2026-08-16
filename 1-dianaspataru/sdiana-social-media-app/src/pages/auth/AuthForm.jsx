@@ -82,7 +82,7 @@ const AuthForm = () => {
           {user.error && <p>Please try again...</p>}
           {user.loading && <p>Sending request...</p>}
           {!user.loading && actionIsNotLoading}
-          <button className={styles.toggle} onClick={toggleAuthState}>
+          <button type="button" className={styles.toggle} onClick={toggleAuthState}>
             {isLogin ? "Create new account" : "Login with an existing account"}
           </button>
         </div>

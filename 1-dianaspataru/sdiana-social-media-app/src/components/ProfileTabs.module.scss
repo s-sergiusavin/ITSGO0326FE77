@@ -1,0 +1,41 @@
+$ice-melt: #cbdceb;
+$nimbus-cloud: #c5c5c5;
+$almost-aqua: #c8d3be;
+$lemon-icing: #f4e9bc;
+$cloud-dancer: #f0eee9;
+$white: #ffffff;
+$text-dark: #444444;
+$text-muted: #666666;
+$orchid-tint: #dbd7e1;
+
+.profileNavTabs {
+  display: flex;
+  border-top: 1px solid $cloud-dancer;
+  padding: 0 1rem;
+
+  .tabBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 1.2rem 1.5rem;
+    color: $nimbus-cloud;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+
+    .tabIcon {
+      font-size: 1.2rem;
+    }
+
+    &.active,
+    &:hover {
+      color: $almost-aqua;
+      border-bottom-color: $almost-aqua;
+    }
+  }
+}

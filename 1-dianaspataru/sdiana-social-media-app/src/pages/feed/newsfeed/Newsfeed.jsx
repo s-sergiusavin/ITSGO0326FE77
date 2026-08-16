@@ -20,6 +20,7 @@ const Newsfeed = ({ postData }) => {
   const [isShared, setIsShared] = useState(false);
   const [shares, setShares] = useState(Math.floor(Math.random() * 100));
 
+
   const postImages = [post1, post2];
 
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ const Newsfeed = ({ postData }) => {
   };
 
   const goToProfilePage = () => {
-    navigate(`/profile/${postData.id}`);
+    navigate(`/user/${postData.id}`);
   }
 
   return (
@@ -75,22 +76,18 @@ const Newsfeed = ({ postData }) => {
               className={styles.imgContent}
             />
 
-            <div className={styles.infoIconWrapper}>
+             {/* <div className={styles.infoIconWrapper}>
               <div className={styles.infoIcon}>
                 <InfoIcon fontSize="large" />
               </div>
 
               <p className={styles.infoMessage}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam eaque placeat culpa commodi minima. Quod quae quisquam
-                ex nulla ut nobis fugit nostrum incidunt eveniet sunt sint sed
-                ducimus, dolorem in, vel veniam. Facilis quos numquam iure,
-                dolorem exercitationem, nesciunt qui laboriosam sunt sint ut
-                iste odio, ducimus cum dolores?
+                
                 <a href="landing-page.html">Read more...</a>
               </p>
-            </div>
-          </div>
+            </div> */}
+          </div> 
 
           <strong className={styles.postTitle}>
             {postData.title.charAt(0).toUpperCase() + postData.title.slice(1)}

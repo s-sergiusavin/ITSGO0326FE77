@@ -3,6 +3,8 @@ import useFetch from "../../hooks/useFetch";
 import Newsfeed from "../feed/newsfeed/Newsfeed";
 import styles from "./HomePage.module.scss";
 import feedService from "../../services/feedService";
+import LeftSide from "../feed/leftside/LeftSide";
+import RightSide from "../feed/rightside/RightSide";
 
 const HomePage = () => {
   // folositi logica aceasta daca vreti sa folositi datele de pe requestul vechi
@@ -28,13 +30,17 @@ const HomePage = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <aside className={styles.leftSide}>Left Side (folosim componenta LeftSide)</aside>
+      <aside className={styles.leftSide}>
+        <LeftSide />
+      </aside>
       <section>
         {postList?.map((post) => {
           return <Newsfeed key={post.id} postData={post} />;
         })}
       </section>
-      <aside className={styles.rightSide}>Right Side</aside>
+      <aside className={styles.rightSide}>
+        <RightSide />
+      </aside>
     </div>
   );
 };

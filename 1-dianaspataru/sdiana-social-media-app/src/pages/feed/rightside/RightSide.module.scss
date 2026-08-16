@@ -1,0 +1,116 @@
+// ==========================================
+// 1. Variabile
+// ==========================================
+$ice-melt: #e3edf7;
+$cloud-dancer: #f0eee9;
+$nimbus-cloud: #c5c5c5;
+$peach-dust: #f5d6ce;
+$raindrops-on-roses: #e8a2a8;
+$text-dark: #444444;
+$text-muted: #555555;
+$white: #ffffff;
+
+// ==========================================
+// 2. Container Principal Right Sidebar
+// ==========================================
+.rightContent {
+    width: 22rem;
+    top: 5rem;
+    height: fit-content; 
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+}
+
+// Card Generic
+.sideCard {
+  background: $white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid $ice-melt;
+
+  .cardTitle {
+    font-size: 1.1rem;
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $cloud-dancer;
+    color: $text-dark;
+  }
+
+  .noActivity {
+    color: $nimbus-cloud;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+
+// Listă de Activități
+.activityList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activityItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid $cloud-dancer;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .activityInfo {
+    p {
+      font-size: 0.9rem;
+      margin: 0;
+      color: $text-muted;
+
+      strong {
+        color: $text-dark;
+      }
+    }
+
+    span {
+      font-size: 0.8rem;
+      color: $nimbus-cloud;
+    }
+  }
+}
+
+// Banner Publicitar
+.adBanner {
+  background: linear-gradient(135deg, $peach-dust, $raindrops-on-roses);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  .adLogo {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 600;
+  }
+}

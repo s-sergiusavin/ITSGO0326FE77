@@ -1,0 +1,157 @@
+// ==========================================
+// 1. Variabile
+// ==========================================
+$ice-melt: #cbdceb;
+$nimbus-cloud: #c5c5c5;
+$almost-aqua: #c8d3be;
+$lemon-icing: #f4e9bc;
+$cloud-dancer: #f0eee9;
+$white: #ffffff;
+$text-dark: #444444;
+$text-muted: #666666;
+
+// ==========================================
+// 2. Container Principal Sidebar
+// ==========================================
+.leftContent {
+    width: 18rem; 
+    background: white; 
+    border: 1px solid var(--ice-melt); 
+    padding: 20px;
+    border-radius: 12px;
+}
+
+// User Profile
+.userProfileSidebar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+
+  .sidebarAvatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+
+    .userName {
+      font-weight: 600;
+      color: $text-dark;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      .verifiedBadge {
+        color: $ice-melt; // Culoare albastră gen Twitter/Facebook
+        font-size: 1.1rem;
+    }
+    
+  }
+
+    .userHandle {
+      color: $nimbus-cloud;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $cloud-dancer;
+  margin: 20px 0;
+}
+
+// ==========================================
+// 3. Meniu & Secțiuni
+// ==========================================
+.menuSection {
+  .menuTitle {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: $nimbus-cloud;
+    margin: 20px 0 10px 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+
+.sidebarMenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  li {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 15px;
+      color: $text-muted;
+      font-weight: 500;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      svg {
+        font-size: 1.3rem;
+      }
+
+      &:hover {
+        background-color: $lemon-icing;
+        color: $text-dark;
+      }
+    }
+
+    // Elementul selectat (Active)
+    &.active > a {
+      background-color: $almost-aqua;
+      color: $white;
+
+      &:hover {
+        background-color: $almost-aqua;
+        color: $white;
+      }
+    }
+
+    // Gestionare Submeniu
+    &.hasSubmenu {
+      .arrowIcon {
+        margin-left: auto;
+        font-size: 0.8rem;
+        transition: transform 0.3s ease;
+      }
+
+      // Când submeniul este deschis din React
+      &.open {
+        .arrowIcon {
+          transform: rotate(180deg);
+        }
+
+        .submenu {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Stiluri pentru submeniu
+.submenu {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+
+  li a {
+    padding-left: 40px;
+  }
+}

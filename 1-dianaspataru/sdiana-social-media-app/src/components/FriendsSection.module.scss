@@ -1,0 +1,124 @@
+$ice-melt: #cbdceb;
+$nimbus-cloud: #c5c5c5;
+$almost-aqua: #c8d3be;
+$lemon-icing: #f4e9bc;
+$cloud-dancer: #f0eee9;
+$white: #ffffff;
+$text-dark: #444444;
+$text-muted: #666666;
+
+.friendsSection {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+
+  .friendsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: $text-dark;
+    }
+
+    span {
+      font-size: 0.85rem;
+      color: $nimbus-cloud;
+      font-weight: 500;
+    }
+  }
+}
+
+.friendsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.friendCard {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid $cloud-dancer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .friendAvatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .friendInfo {
+    flex: 1;
+
+    h4 {
+      margin: 0 0 4px 0;
+      font-size: 0.95rem;
+      color: $text-dark;
+    }
+
+    .friendRole {
+      margin: 0 0 4px 0;
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    .mutualCount {
+      font-size: 0.75rem;
+      color: $nimbus-cloud;
+      display: block;
+    }
+  }
+
+  .friendActions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    button {
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &.msgBtn {
+        background-color: $cloud-dancer;
+        color: $text-dark;
+
+        &:hover {
+          background-color: $almost-aqua;
+          color: #ffffff;
+        }
+      }
+
+      &.removeBtn {
+        background-color: #fff0f0;
+        color: #e53935;
+
+        &:hover {
+          background-color: #e53935;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}

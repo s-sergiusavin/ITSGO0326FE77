@@ -1,0 +1,26 @@
+$ice-melt: #cbdceb;
+$nimbus-cloud: #c5c5c5;
+$almost-aqua: #c8d3be;
+$lemon-icing: #f4e9bc;
+$cloud-dancer: #f0eee9;
+$white: #ffffff;
+$text-dark: #444444;
+$text-muted: #666666;
+
+.emptyTabCard {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 50px 30px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+
+  h3 {
+    margin: 0 0 10px 0;
+    color: $text-dark;
+  }
+
+  p {
+    color: $nimbus-cloud;
+    margin: 0;
+  }
+}

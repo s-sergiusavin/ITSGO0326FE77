@@ -1,0 +1,85 @@
+$ice-melt: #cbdceb;
+$nimbus-cloud: #c5c5c5;
+$almost-aqua: #c8d3be;
+$lemon-icing: #f4e9bc;
+$cloud-dancer: #f0eee9;
+$white: #ffffff;
+$text-dark: #444444;
+$text-muted: #666666;
+
+.profileGridDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+
+.detailsCard {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+
+  h3 {
+    margin: 0 0 25px 0;
+    font-size: 1.2rem;
+    color: $text-dark;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+  }
+}
+
+.editBtnSmall {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background-color: $almost-aqua;
+  color: #ffffff;
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0.8;
+  text-decoration: none;
+
+  &:hover {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.infoList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px 40px;
+}
+
+.infoItem {
+  span {
+    display: block;
+    font-size: 0.75rem;
+    color: #999;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    color: $text-dark;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+}
+
+.hobbies .infoItem:first-child {
+  grid-column: 1 / -1;
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 15px;
+}

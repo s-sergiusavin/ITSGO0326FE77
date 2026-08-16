@@ -1,67 +1,200 @@
+// .auth {
+//   margin: 3rem auto;
+//   width: 95%;
+//   max-width: 25rem;
+//   border-radius: 5px;
+//   background-color: teal;
+//   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+//   padding: 2rem;
+//   text-align: center;
+//   color: white;
+
+//   form {
+//     .control {
+//       margin-bottom: 0.5rem;
+//     }
+
+//     label {
+//       display: block;
+//       font-weight: bold;
+//       margin-bottom: 0.5rem;
+//     }
+
+//     input {
+//       background-color: lightgray;
+//       border-radius: 5px;
+//       color: teal;
+//       border: 1px solid teal;
+//       outline: 1px solid teal;
+//       width: 100%;
+//       text-align: left;
+//       padding: 0.5rem;
+//     }
+
+//     .actions {
+//         margin-top: 1.5rem;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         gap: 1rem;
+
+//         button {
+//             width: 100%;
+//             cursor: pointer;
+//             color: white;
+//             background-color: cadetblue;
+//             border: 1px solid white;
+//             border-radius: 5px;
+//             padding: 0.5rem 2.5rem;
+
+//             &:hover {
+//                 font-weight: bold;
+//                 border: cadetblue;
+//             }
+
+//             &.toggle {
+//                 background-color: transparent;
+//                 border: none;
+//                 padding: 0.5rem 1.5rem;
+
+//                 &:hover {
+//                     outline: 1px solid white;
+//                 }
+//             }
+//         }
+//     }
+//   }
+// }
+
+
+// ==========================================
+// 1. Variabile
+// ==========================================
+$lemon-icing: #f4e9bc;
+$nimbus-cloud: #c5c5c5;
+$raindrops-on-roses: #e8d0d3;
+$cloud-dancer: #f0eee9;
+$ice-melt: #cbdceb;
+$peach-dust: #e8d1c5;
+$almost-aqua: #c8d3be;
+$white: #ffffff;
+$text-dark: #444444;
+
+// ==========================================
+// 2. Placeholder pentru Butoane
+// ==========================================
+%btn-base {
+  padding: 0.9rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  width: 100%;
+}
+
+// ==========================================
+// 3. Componenta Auth Main Container
+// ==========================================
 .auth {
-  margin: 3rem auto;
-  width: 95%;
-  max-width: 25rem;
-  border-radius: 5px;
-  background-color: teal;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-  padding: 2rem;
+  background-color: $white;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  padding: 3rem 2rem;
+  border: 1px solid $ice-melt;
   text-align: center;
-  color: white;
+  margin: 0 auto;
+
+  h2 {
+    margin-bottom: 2rem;
+    color: $text-dark;
+    font-weight: 600;
+  }
 
   form {
-    .control {
-      margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
+
+// ==========================================
+// 4. Form Controls (Input-uri & Label-uri)
+// ==========================================
+.control {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 0.5rem;
+
+  label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $nimbus-cloud;
+    padding-left: 0.5rem;
+  }
+
+  input {
+    background-color: $cloud-dancer;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 0.8rem 1rem;
+    width: 100%;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: $almost-aqua;
+      background-color: $white;
+      box-shadow: 0 0 0 4px rgba($almost-aqua, 0.2);
     }
 
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+    &::placeholder {
+      color: $nimbus-cloud;
     }
+  }
+}
 
-    input {
-      background-color: lightgray;
-      border-radius: 5px;
-      color: teal;
-      border: 1px solid teal;
-      outline: 1px solid teal;
-      width: 100%;
-      text-align: left;
-      padding: 0.5rem;
+// ==========================================
+// 5. Zonă de Acțiuni & Butoane
+// ==========================================
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+
+  p {
+    font-size: 0.9rem;
+    color: $nimbus-cloud;
+    margin: 0.2rem 0;
+  }
+
+  // Butonul principal de Submit (Login / Create Account)
+  button:not(.toggle) {
+    @extend %btn-base;
+    background-color: $almost-aqua;
+    color: $white;
+    border: none;
+
+    &:hover {
+      background-color: $ice-melt;
+      transform: translateY(-2px);
     }
+  }
 
-    .actions {
-        margin-top: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+  // Butonul secundar pentru Toggle (Schimbă între Login și Register)
+  .toggle {
+    @extend %btn-base;
+    background-color: transparent;
+    color: $almost-aqua;
+    border: 2px solid $almost-aqua;
 
-        button {
-            width: 100%;
-            cursor: pointer;
-            color: white;
-            background-color: cadetblue;
-            border: 1px solid white;
-            border-radius: 5px;
-            padding: 0.5rem 2.5rem;
-
-            &:hover {
-                font-weight: bold;
-                border: cadetblue;
-            }
-
-            &.toggle {
-                background-color: transparent;
-                border: none;
-                padding: 0.5rem 1.5rem;
-
-                &:hover {
-                    outline: 1px solid white;
-                }
-            }
-        }
+    &:hover {
+      background-color: $almost-aqua;
+      color: $white;
     }
   }
 }
