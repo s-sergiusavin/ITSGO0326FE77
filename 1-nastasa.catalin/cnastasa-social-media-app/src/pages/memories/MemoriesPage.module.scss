@@ -1,0 +1,233 @@
+@use "../../styles/variables" as vars;
+
+.memoriesPage {
+  display: flex;
+  gap: 1.5rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  color: vars.$fb-text;
+  align-items: flex-start;
+
+  h1 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+  }
+}
+
+.sidebar {
+  flex: 0 0 20rem;
+  width: 20rem;
+}
+
+.menuIcon {
+  width: 2.2rem;
+  height: 2.2rem;
+  min-width: 2.2rem;
+  border-radius: 50%;
+  background-color: vars.$fb-blue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+
+  &:hover {
+    background-color: vars.$fb-hover;
+  }
+
+  &.active {
+    background-color: vars.$fb-hover;
+  }
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid vars.$fb-border;
+  margin: 1rem 0;
+}
+
+.sectionTitle {
+  color: vars.$fb-muted;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.settingItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: vars.$fb-hover;
+  }
+
+  .menuIcon {
+    background-color: vars.$fb-hover;
+    color: vars.$fb-muted;
+  }
+}
+
+.settingLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.settingSubtitle {
+  font-size: 0.8rem;
+  color: vars.$fb-muted;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.banner {
+  background-color: vars.$fb-panel;
+  border: 1px solid vars.$fb-border;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bannerArt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, #ff8a65, #ffb08a);
+}
+
+.bannerIconBox {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #d84315;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.bannerText {
+  margin: 0;
+  padding: 1.25rem 2rem;
+  text-align: center;
+  color: vars.$fb-text;
+}
+
+.dayGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dayHeader {
+  h2 {
+    margin: 0.1rem 0 0;
+    font-size: 1.3rem;
+  }
+}
+
+.dayLabel {
+  color: vars.$fb-muted;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.memoryCard {
+  background-color: vars.$fb-panel;
+  border: 1px solid vars.$fb-border;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+}
+
+.cardAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 36%;
+}
+
+.cardHeaderText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-size: 0.95rem;
+}
+
+.cardMeta {
+  color: vars.$fb-muted;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.cardOptions {
+  border: none;
+  background: transparent;
+  color: vars.$fb-muted;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.4rem;
+  display: flex;
+
+  &:hover {
+    background-color: vars.$fb-hover;
+  }
+}
+
+.memoryImage {
+  width: 100%;
+  max-height: 26rem;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .memoriesPage {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .bannerArt {
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .bannerIconBox {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}

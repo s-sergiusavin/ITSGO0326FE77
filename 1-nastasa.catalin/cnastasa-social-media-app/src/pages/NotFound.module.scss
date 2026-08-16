@@ -1,0 +1,25 @@
+@use "../styles/variables" as vars;
+
+.notFound {
+  text-align: center;
+  color: vars.$fb-text;
+  padding: 4rem 1rem;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: vars.$fb-muted;
+  }
+
+  a {
+    color: vars.$fb-blue;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

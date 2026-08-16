@@ -1,0 +1,14 @@
+@use "../../styles/variables" as vars;
+
+.savedPage {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  color: vars.$fb-text;
+}
+
+.emptyHint {
+  color: vars.$fb-muted;
+  text-align: center;
+  padding: 1.5rem 0;
+}

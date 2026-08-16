@@ -1,0 +1,89 @@
+@use "../../../../styles/variables" as vars;
+
+.userComments {
+  padding-top: 0.75rem;
+}
+
+.commentContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.profileUserComment {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: vars.$fb-text;
+  }
+}
+
+.profileImage {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 36%;
+}
+
+.avatarPlaceholder {
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.userCommentText {
+  background-color: vars.$fb-hover;
+  border-radius: 1rem;
+  padding: 0.5rem 0.9rem;
+  margin-left: 2.5rem;
+  width: fit-content;
+  max-width: 90%;
+  color: vars.$fb-text;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.emojiReaction {
+  display: inline-block;
+  margin-top: 0.2rem;
+}
+
+.removeButton {
+  display: block;
+  color: vars.$fb-muted;
+  font-size: 0.75rem;
+  cursor: pointer;
+  margin-top: 0.2rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.commentReaction {
+  margin-left: 2.5rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.commentReactionButton {
+  color: vars.$fb-muted;
+  font-size: 0.8rem;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

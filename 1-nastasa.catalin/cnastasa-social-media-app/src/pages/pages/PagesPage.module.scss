@@ -1,0 +1,52 @@
+@use "../../styles/variables" as vars;
+
+.pagesPage {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  color: vars.$fb-text;
+
+  p {
+    color: vars.$fb-muted;
+  }
+}
+
+.placeholderGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pageCard {
+  background-color: vars.$fb-panel;
+  border: 1px solid vars.$fb-border;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pageThumbnail {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.pageInfo {
+  padding: 0.6rem;
+
+  h3 {
+    margin: 0 0 0.2rem;
+    font-size: 0.95rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: vars.$fb-muted;
+  }
+}

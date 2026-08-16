@@ -1,0 +1,171 @@
+@use "../../styles/variables" as vars;
+
+.groupsPage {
+  display: flex;
+  gap: 1.5rem;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  color: vars.$fb-text;
+  align-items: flex-start;
+
+  h1 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+  }
+}
+
+.sidebar {
+  flex: 0 0 20rem;
+  width: 20rem;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: vars.$fb-muted;
+
+  &:hover {
+    background-color: vars.$fb-hover;
+  }
+
+  &.active {
+    background-color: vars.$fb-blue;
+    color: white;
+  }
+}
+
+.createButton {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: none;
+  background-color: vars.$fb-blue;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+}
+
+.createForm {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.createInput {
+  flex: 1;
+  min-width: 0;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  background-color: vars.$fb-hover;
+  border: none;
+  color: vars.$fb-text;
+  outline: none;
+
+  &::placeholder {
+    color: vars.$fb-muted;
+  }
+}
+
+.createSubmit {
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  background-color: vars.$fb-blue;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid vars.$fb-border;
+  margin: 1rem 0;
+}
+
+.sectionTitle {
+  color: vars.$fb-muted;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.groupItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: vars.$fb-hover;
+  }
+}
+
+.groupAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  border-radius: 8px;
+  background-color: vars.$fb-hover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: vars.$fb-muted;
+}
+
+.groupName {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.groupActivity {
+  font-size: 0.75rem;
+  color: vars.$fb-muted;
+}
+
+.content {
+  flex: 1;
+  background-color: vars.$fb-panel;
+  border: 1px solid vars.$fb-border;
+  border-radius: 8px;
+  padding: 2rem;
+  min-height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyHint {
+  color: vars.$fb-muted;
+}
+
+@media (max-width: 768px) {
+  .groupsPage {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}

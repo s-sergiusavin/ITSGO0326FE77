@@ -1,0 +1,302 @@
+@use "../styles/variables" as vars;
+
+header {
+  background-color: vars.$fb-panel;
+  width: 100%;
+  height: 3.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  border-bottom: 1px solid vars.$fb-border;
+  box-sizing: border-box;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  border-radius: 50%;
+  background-color: vars.$fb-blue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: Georgia, serif;
+}
+
+.searchWrap {
+  position: relative;
+  max-width: 15rem;
+  width: 100%;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: vars.$fb-hover;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  color: vars.$fb-muted;
+
+  input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: vars.$fb-text;
+    font-size: 0.9rem;
+    width: 100%;
+
+    &::placeholder {
+      color: vars.$fb-muted;
+    }
+  }
+}
+
+.searchResults {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  width: 20rem;
+  max-width: 90vw;
+  background-color: vars.$fb-panel;
+  border: 1px solid vars.$fb-border;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 0;
+  max-height: 26rem;
+  overflow-y: auto;
+}
+
+.searchSection {
+  padding: 0.3rem 0;
+
+  & + & {
+    border-top: 1px solid vars.$fb-border;
+  }
+}
+
+.searchSectionTitle {
+  margin: 0.2rem 1rem 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: vars.$fb-muted;
+  text-transform: uppercase;
+}
+
+.searchResultRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: vars.$fb-text;
+
+  &:hover {
+    background-color: vars.$fb-hover;
+  }
+}
+
+.searchEmptyHint {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  color: vars.$fb-muted;
+  font-size: 0.85rem;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.navIcon {
+  width: 6rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: vars.$fb-muted;
+  text-decoration: none;
+
+  &:hover {
+    background-color: vars.$fb-hover;
+  }
+
+  &.active {
+    color: vars.$fb-blue;
+    border-bottom: 3px solid vars.$fb-blue;
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.roundIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: vars.$fb-hover;
+  color: vars.$fb-text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  &:hover {
+    background-color: vars.$fb-border;
+  }
+}
+
+.dropdownHeader {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #050505;
+}
+
+.dropdownRow {
+  display: flex !important;
+  align-items: center;
+  gap: 0.75rem;
+  white-space: normal !important;
+}
+
+.dropdownAvatarWrap {
+  position: relative;
+}
+
+.dropdownAvatar {
+  width: 2.25rem;
+  height: 2.25rem;
+  min-width: 2.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+}
+
+.onlineDot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: #31a24c;
+  border: 2px solid white;
+}
+
+.dropdownText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+
+  span {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  small {
+    color: #65676b;
+    font-size: 0.75rem;
+  }
+}
+
+.accountButton {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: vars.$fb-hover;
+  overflow: hidden;
+
+  &:hover {
+    background-color: vars.$fb-border;
+  }
+}
+
+.accountAvatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 36%;
+}
+
+@media (max-width: 900px) {
+  .searchWrap {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .center {
+    gap: 0.1rem;
+  }
+
+  .navIcon {
+    width: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 0 0.5rem;
+  }
+
+  .left {
+    flex: 0 0 auto;
+  }
+
+  .center {
+    flex: 1;
+    justify-content: space-evenly;
+    gap: 0;
+  }
+
+  .navIcon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .right {
+    flex: 0 0 auto;
+    gap: 0.3rem;
+  }
+
+  .hideOnMobile {
+    display: none;
+  }
+}

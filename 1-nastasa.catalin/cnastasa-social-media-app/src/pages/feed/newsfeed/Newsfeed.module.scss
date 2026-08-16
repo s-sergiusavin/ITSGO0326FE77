@@ -1,0 +1,289 @@
+@use "../../../styles/variables" as vars;
+
+.mainPost {
+  width: 42rem;
+  max-width: 100%;
+}
+
+.post {
+  background-color: vars.$fb-panel;
+  border: 1px solid vars.$fb-border;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  margin: 1rem 0;
+  padding: 1rem;
+  color: vars.$fb-text;
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .profileUserInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+  }
+
+  .postHeaderText {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .postAuthorLine {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+
+  .postMetaLine {
+    font-size: 0.8rem;
+    color: vars.$fb-muted;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .profileOptions {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: vars.$fb-muted;
+
+    &:hover {
+      background-color: vars.$fb-hover;
+    }
+  }
+
+  .profileOptionsWrapper {
+    position: relative;
+
+    .profileOptionsDropdown {
+      position: absolute;
+      z-index: 1;
+      right: 0.5rem;
+      width: 11rem;
+      display: flex;
+      flex-direction: column;
+      background-color: vars.$fb-hover;
+      border: 1px solid vars.$fb-border;
+      border-radius: 6px;
+      overflow: hidden;
+
+      button {
+        padding: 0.5rem;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        color: vars.$fb-text;
+        text-align: left;
+
+        &:hover {
+          background-color: vars.$fb-border;
+        }
+      }
+    }
+  }
+}
+
+.profileImage {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 36%;
+}
+
+.postTitle {
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.imgWrapper {
+  .imgContent {
+    max-width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+}
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  border-radius: 6px;
+  overflow: hidden;
+
+  .imgContent {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+    cursor: pointer;
+  }
+}
+
+.reacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  color: vars.$fb-muted;
+  font-size: 0.9rem;
+
+  .likesInfo,
+  .commentsInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+}
+
+.reactActions {
+  border-top: 1px solid vars.$fb-border;
+  border-bottom: 1px solid vars.$fb-border;
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .reactionWrapper {
+      position: relative;
+      flex: 1;
+      display: flex;
+    }
+
+    .reactionPicker {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-bottom: 0.4rem;
+      z-index: 1;
+    }
+
+    .reactionPickerInner {
+      display: flex;
+      gap: 0.2rem;
+      background-color: vars.$fb-panel;
+      border: 1px solid vars.$fb-border;
+      border-radius: 999px;
+      padding: 0.3rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .reactionOption {
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.1s;
+
+      &:hover {
+        background-color: vars.$fb-hover;
+        transform: scale(1.15);
+      }
+    }
+
+    .reaction {
+      color: vars.$fb-muted;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      border-radius: 6px;
+      flex: 1;
+      justify-content: center;
+
+      &.touched {
+        color: vars.$fb-blue;
+      }
+
+      &:hover {
+        background-color: vars.$fb-hover;
+      }
+    }
+  }
+}
+
+.commentSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+
+  .newCommentField {
+    flex: 1;
+    border-radius: 1rem;
+    padding: 0.5rem 0.9rem;
+    background-color: vars.$fb-hover;
+    border: none;
+    color: vars.$fb-text;
+    outline: none;
+
+    &::placeholder {
+      color: vars.$fb-muted;
+    }
+  }
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insertCommentButton {
+  border: none;
+  background-color: transparent;
+  color: vars.$fb-blue;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+
+  &:hover {
+    color: vars.$accent;
+  }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid vars.$fb-border;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .mainPost {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .postAuthorLine {
+    font-size: 0.85rem;
+  }
+
+  .reacts {
+    font-size: 0.8rem;
+  }
+
+  .reactActions .actions .reaction span {
+    display: none;
+  }
+}

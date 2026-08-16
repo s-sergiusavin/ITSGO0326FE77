@@ -1,0 +1,49 @@
+@use "../../styles/variables" as vars;
+
+.reelsPage {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  color: vars.$fb-text;
+
+  p {
+    color: vars.$fb-muted;
+  }
+}
+
+.placeholderGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.reelCard {
+  background-color: vars.$fb-panel;
+  border: 1px solid vars.$fb-border;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.reelVideo {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  display: block;
+  background-color: vars.$fb-hover;
+}
+
+.reelInfo {
+  padding: 0.6rem;
+
+  h3 {
+    margin: 0 0 0.2rem;
+    font-size: 0.95rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,48 @@
+@use "../../styles/variables" as vars;
+
+.gamingPage {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  color: vars.$fb-text;
+
+  p {
+    color: vars.$fb-muted;
+  }
+}
+
+.placeholderGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gameCard {
+  background-color: vars.$fb-panel;
+  border: 1px solid vars.$fb-border;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gameThumbnail {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  background-color: vars.$fb-hover;
+}
+
+.gameInfo {
+  padding: 0.6rem;
+
+  h3 {
+    margin: 0 0 0.2rem;
+    font-size: 0.95rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.8rem;
+  }
+}
