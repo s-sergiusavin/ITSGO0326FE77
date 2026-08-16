@@ -1,0 +1,157 @@
+.page {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  .header {
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+      url("https://mshanken.imgix.net/wso/bolt/2025-06/restaurant-guide-chains-fogo-de-chao-dining-061225_1600.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 4rem;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    gap: 2rem;
+    .title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+
+      span {
+        display: block;
+        font-size: 4rem;
+        color: #ffb347;
+        text-transform: uppercase;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 10rem;
+          height: 0.8rem;
+          background-color: #0fb;
+          bottom: -0.5rem;
+          left: -2rem;
+          border-radius: 0.4rem;
+        }
+      }
+    }
+    .headerDescription {
+      max-width: 70%;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      backdrop-filter: blur(6px);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      box-shadow: 0 0 20px rgba(15, 255, 187, 0.3);
+      color: white;
+    }
+    .formContainer {
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 25rem;
+        
+
+        label {
+          color: #0fb;
+          font-weight: 600;
+        }
+
+        .name {
+          border: 2px solid #0fb;
+          padding: 0.7rem;
+          border-radius: 0.5rem;
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+          font-size: 1rem;
+          
+        }
+
+        .example {
+          color: #ccc;
+          font-size: 0.9rem;
+        }
+
+        .callToActionButton {
+          background-color: #ffb347;
+          border: none;
+          border-radius: 0.5rem;
+          color: #222;
+          padding: 1rem;
+          font-size: 1.2rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: 0.3s ease;
+          
+
+          &:hover {
+            background-color: #e69a2f;
+            transform: translateY(-3px);
+          }
+        }
+      }
+    }
+  }
+  .callToAction {
+    background: #111;
+    padding: 5rem 3rem;
+    display: flex;
+    justify-content: center;
+    
+
+    .callToActionMessage {
+      max-width: 60rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+      
+
+      h2 {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        position: relative;
+        color: white;
+        padding-top: 2rem;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 8rem;
+          height: 0.7rem;
+          background-color: #0fb;
+          bottom: -0.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+          border-radius: 0.4rem;
+        }
+      }
+
+      p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #ddd;
+      }
+
+      .partyImage {
+        width: 80%;
+        border-radius: 1rem;
+        box-shadow: 0 0 20px rgba(15, 255, 187, 0.3);
+        display: flex;
+        align-self: center;
+      }
+    }
+  }
+}
+
+

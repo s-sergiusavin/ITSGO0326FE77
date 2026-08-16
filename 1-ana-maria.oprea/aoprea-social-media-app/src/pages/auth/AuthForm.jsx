@@ -6,6 +6,7 @@ import { selectUser } from "../../redux/selectors";
 import { loginUser, registerUser } from "../../redux/slices/authSlice";
 
 const AuthForm = () => {
+
   const [isLogin, setIsLogin] = useState(true);
 
   const [username, setUsername] = useState(null);
@@ -26,8 +27,8 @@ const AuthForm = () => {
 
     const payload = {
       email: username,
-      password
-    }
+      password,
+    };
 
     if (isLogin) {
       try {
@@ -38,7 +39,7 @@ const AuthForm = () => {
       } catch (err) {
         console.error(err);
       }
-  } else {
+    } else {
       try {
         await dispatch(registerUser(payload));
         navigate("/auth");
@@ -46,7 +47,7 @@ const AuthForm = () => {
         console.error(err);
       }
     }
-  }
+  };
 
   const actionIsNotLoading = (
     <button>{isLogin ? "Login" : "Create new account"}</button>

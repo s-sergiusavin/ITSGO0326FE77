@@ -1,9 +1,77 @@
+:root {
+  --theme-accent: #1e8e3e;
+  --theme-page-bg: #edf7ee;
+  --theme-panel-tint: rgba(120, 190, 130, 0.18);
+  --theme-text-color: #1f2937;
+}
+
+body,
+main,
+header,
+aside,
+section,
+article,
+button,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+  color: var(--theme-text-color);
+}
+
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
+  background-color: var(--theme-page-bg);
+  background-image: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition:
+    background 0.9s ease,
+    filter 0.9s ease,
+    opacity 0.9s ease;
+  animation: themeFadeIn 0.9s ease;
+}
+
+main,
+header,
+aside,
+section,
+article,
+button,
+li,
+span {
+  transition:
+    background-color 0.8s ease,
+    color 0.8s ease,
+    border-color 0.8s ease,
+    box-shadow 0.8s ease,
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+@keyframes themeFadeIn {
+  from {
+    opacity: 0.7;
+    filter: brightness(0.88);
+  }
+  to {
+    opacity: 1;
+    filter: brightness(1);
+  }
 }
 
 ul {

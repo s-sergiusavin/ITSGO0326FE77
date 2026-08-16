@@ -1,15 +1,21 @@
 .auth {
-  margin: 3rem auto;
+  margin: 10rem auto;
   width: 95%;
   max-width: 25rem;
-  border-radius: 5px;
-  background-color: teal;
+  border-radius: 1rem;
+  background-color: darkblue;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   padding: 2rem;
   text-align: center;
   color: white;
-
+  button, label, h2, p{
+    color: white;
+  }
+  h2{
+    padding-bottom: 1rem;
+  }
   form {
+    
     .control {
       margin-bottom: 0.5rem;
     }
@@ -23,45 +29,43 @@
     input {
       background-color: lightgray;
       border-radius: 5px;
-      color: teal;
-      border: 1px solid teal;
-      outline: 1px solid teal;
+      border: 1px solid gray;
+      outline: 1px solid white;
       width: 100%;
       text-align: left;
       padding: 0.5rem;
     }
 
     .actions {
-        margin-top: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
 
-        button {
-            width: 100%;
-            cursor: pointer;
-            color: white;
-            background-color: cadetblue;
-            border: 1px solid white;
-            border-radius: 5px;
-            padding: 0.5rem 2.5rem;
+      button {
+        width: 100%;
+        cursor: pointer;
+        color: white;
+        background-color: rgb(95, 111, 160);
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 0.5rem 2.5rem;
 
-            &:hover {
-                font-weight: bold;
-                border: cadetblue;
-            }
-
-            &.toggle {
-                background-color: transparent;
-                border: none;
-                padding: 0.5rem 1.5rem;
-
-                &:hover {
-                    outline: 1px solid white;
-                }
-            }
+        &:hover {
+          border: rgb(95, 111, 160);
         }
+
+        &.toggle {
+          background-color: transparent;
+          border: none;
+          padding: 0.5rem 1.5rem;
+
+          &:hover {
+            outline: 1px solid white;
+          }
+        }
+      }
     }
   }
 }
