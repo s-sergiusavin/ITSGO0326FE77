@@ -1,25 +1,20 @@
-// ==========================================
-// 1. Variabile
-// ==========================================
-$ice-melt: #e3edf7;
-$cloud-dancer: #f0eee9;
-$nimbus-cloud: #c5c5c5;
-$peach-dust: #f5d6ce;
-$raindrops-on-roses: #e8a2a8;
-$text-dark: #444444;
-$text-muted: #555555;
-$white: #ffffff;
+@use '../../../styles/variables' as *;
 
-// ==========================================
-// 2. Container Principal Right Sidebar
-// ==========================================
+
 .rightContent {
-    width: 22rem;
-    top: 5rem;
-    height: fit-content; 
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem; 
+  width: 22rem;
+  top: 5rem;
+  height: fit-content; 
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+
+  /* ascunde scrollbar*/
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;   
+  scrollbar-width: none;
 }
 
 // Card Generic
@@ -42,9 +37,36 @@ $white: #ffffff;
     font-size: 0.9rem;
     margin: 0;
   }
+
+  /*  Active Users*/
+  .activeUsersGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .activeUserItem {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
 }
 
-// Listă de Activități
+// Lista Activitati
 .activityList {
   list-style: none;
   padding: 0;
@@ -70,6 +92,12 @@ $white: #ffffff;
     height: 45px;
     border-radius: 50%;
     object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.08);
+    }
   }
 
   .activityInfo {
@@ -80,6 +108,12 @@ $white: #ffffff;
 
       strong {
         color: $text-dark;
+        cursor: pointer;
+        transition: color 0.2s ease;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
@@ -90,7 +124,7 @@ $white: #ffffff;
   }
 }
 
-// Banner Publicitar
+// Banner 
 .adBanner {
   background: linear-gradient(135deg, $peach-dust, $raindrops-on-roses);
   border-radius: 12px;

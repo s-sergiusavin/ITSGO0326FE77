@@ -1,6 +1,7 @@
 import styles from "./NotificationsSection.module.scss";
 
-export default function NotificationsSection() {
+const NotificationsSection = () => {
+
   return (
     <div className={styles.emptyTabCard}>
       <h3>Notifications</h3>
@@ -8,3 +9,5 @@ export default function NotificationsSection() {
     </div>
   );
 }
+
+export default  NotificationsSection;

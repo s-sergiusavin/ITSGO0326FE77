@@ -3,8 +3,11 @@ import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import EditIcon from "@mui/icons-material/Edit";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import ProfileTabs from "./ProfileTabs";
 
-export default function ProfileHeader({ user, onEditAvatar, onEditCover, editable = true }) {
+
+const ProfileHeader = ({ user, onEditAvatar, onEditCover, editable = true }) => {
+
   return (
     <div className={styles.profileHeaderCard}>
       <div className={styles.profileBanner}>
@@ -61,3 +64,5 @@ export default function ProfileHeader({ user, onEditAvatar, onEditCover, editabl
     </div>
   );
 }
+
+export default  ProfileHeader;

@@ -24,20 +24,20 @@ const MyProfile = () => {
   const [showEdit, setShowEdit] = useState(false);
 
   const user = {
-    name: "Some Name",
-    location: "Romania",
+    name: "Stan Maria",
+    location: "Bucharest, Romania",
     posts: 0,
     comments: 2,
     views: 174000,
-    gender: "Male",
+    gender: "Female",
     birthdate: "01/01/1998",
     hobbies: "Web design, gaming, design trends",
     music: "Rock, Indie, Synthwave",
     movies: "Sci-Fi, Thrillers, Anime",
-    facebook: "facebook.com/somename",
-    instagram: "instagram.com/somename",
-    youtube: "youtube.com/@somename",
-    linkedin: "linkedin.com/in/somename",
+    facebook: "facebook.com/",
+    instagram: "instagram.com/",
+    youtube: "youtube.com/",
+    linkedin: "linkedin.com/in/e",
     avatar: "https://i.pravatar.cc/150?img=3",
     cover: "https://images.unsplash.com/photo-1503264116251-35a269479413"
   };
@@ -45,17 +45,18 @@ const MyProfile = () => {
   return (
 
     <div className={styles.profileContainer}>
-      <LeftSide />
+      <LeftSide user={user}/>
       <main className={styles.mainContainer}>
         <div className={styles.mainContent}>
-          <ProfileHeader
-            user={user}
-            onEditAvatar={() => setShowEdit(true)}
-            onEditCover={() => setShowEdit(true)}
-          />
+          <div  className={styles.headerWithTabsWrapper}>
+            <ProfileHeader
+              user={user}
+              onEditAvatar={() => setShowEdit(true)}
+              onEditCover={() => setShowEdit(true)}
+            />
 
-          <ProfileTabs activeTab={activeTab} setActiveTab={setActiveTab} />
-
+            <ProfileTabs activeTab={activeTab} setActiveTab={setActiveTab} /> 
+          </div>
           {activeTab === "about" && <AboutSection user={user} />}
           {activeTab === "friends" && <FriendsSection friends={MOCK_FRIENDS} />}
           {activeTab === "timeline" && <TimelineSection />}

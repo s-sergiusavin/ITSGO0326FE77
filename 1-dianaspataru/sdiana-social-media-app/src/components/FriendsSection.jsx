@@ -2,8 +2,9 @@ import styles from "./FriendsSection.module.scss";
 import MessageIcon from "@mui/icons-material/Message";
 import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
 
-export default function FriendsSection({ friends }) {
-  return (
+const FriendsSection = ({ friends }) => {
+
+ return (
     <div className={styles.friendsSection}>
       <div className={styles.friendsHeader}>
         <h3>Friends List</h3>
@@ -41,3 +42,5 @@ export default function FriendsSection({ friends }) {
     </div>
   );
 }
+
+export default  FriendsSection;

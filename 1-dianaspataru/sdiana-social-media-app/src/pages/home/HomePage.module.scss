@@ -15,7 +15,7 @@
         overflow-y: auto;
         flex-shrink: 0;
 
-    /* Ensure sidebars keep a fixed width so the main section doesn't cover them */
+   
     &.leftSide {
       width: 22rem;
     }
@@ -26,7 +26,6 @@
 
   }
 
-  /* Make the inner content area grow so sidebars remain visible */
   section {
     flex: 1;
   }
@@ -39,7 +38,7 @@
       right: 0; 
     }
 
-    /* Ensure the direct child (component wrapper) fits the aside width */
+   
     > * {
       width: 100%;
       box-sizing: border-box;

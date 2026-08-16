@@ -4,16 +4,18 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import PeopleIcon from "@mui/icons-material/People";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
-export default function ProfileTabs({
+const ProfileTabs = ({
   activeTab,
   setActiveTab,
   hideAbout = false,
   hideNotifications = false,
-}) {
+}) => {
+
+
   return (
     <nav className={styles.profileNavTabs}>
       <button
-        className={`${styles.tabBtn} ${activeTab === "timeline" ? "active" : ""}`}
+        className={`${styles.tabBtn} ${activeTab === "timeline" ? styles.active : ""}`}
         onClick={() => setActiveTab("timeline")}
       >
         <CalendarTodayIcon className={styles.tabIcon} /> Timeline
@@ -21,7 +23,7 @@ export default function ProfileTabs({
 
       {!hideAbout && (
         <button
-          className={`${styles.tabBtn} ${activeTab === "about" ? "active" : ""}`}
+          className={`${styles.tabBtn} ${activeTab === "about" ? styles.active : ""}`}
           onClick={() => setActiveTab("about")}
         >
           <PersonOutlinedIcon className={styles.tabIcon} /> About
@@ -29,7 +31,7 @@ export default function ProfileTabs({
       )}
 
       <button
-        className={`${styles.tabBtn} ${activeTab === "friends" ? "active" : ""}`}
+        className={`${styles.tabBtn} ${activeTab === "friends" ? styles.active : ""}`}
         onClick={() => setActiveTab("friends")}
       >
         <PeopleIcon className={styles.tabIcon} /> Friends
@@ -37,7 +39,7 @@ export default function ProfileTabs({
 
       {!hideNotifications && (
         <button
-          className={`${styles.tabBtn} ${activeTab === "notifications" ? "active" : ""}`}
+          className={`${styles.tabBtn} ${activeTab === "notifications" ? styles.active : ""}`}
           onClick={() => setActiveTab("notifications")}
         >
           <NotificationsNoneIcon className={styles.tabIcon} /> Notifications
@@ -46,3 +48,5 @@ export default function ProfileTabs({
     </nav>
   );
 }
+
+export default ProfileTabs;

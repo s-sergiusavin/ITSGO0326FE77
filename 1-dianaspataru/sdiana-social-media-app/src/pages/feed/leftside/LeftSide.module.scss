@@ -1,18 +1,5 @@
-// ==========================================
-// 1. Variabile
-// ==========================================
-$ice-melt: #cbdceb;
-$nimbus-cloud: #c5c5c5;
-$almost-aqua: #c8d3be;
-$lemon-icing: #f4e9bc;
-$cloud-dancer: #f0eee9;
-$white: #ffffff;
-$text-dark: #444444;
-$text-muted: #666666;
+@use '../../../styles/variables' as *;
 
-// ==========================================
-// 2. Container Principal Sidebar
-// ==========================================
 .leftContent {
     width: 18rem; 
     background: white; 
@@ -21,7 +8,7 @@ $text-muted: #666666;
     border-radius: 12px;
 }
 
-// User Profile
+// user profile
 .userProfileSidebar {
   display: flex;
   align-items: center;
@@ -47,7 +34,7 @@ $text-muted: #666666;
       gap: 6px;
 
       .verifiedBadge {
-        color: $ice-melt; // Culoare albastră gen Twitter/Facebook
+        color: $ice-melt; 
         font-size: 1.1rem;
     }
     
@@ -66,9 +53,7 @@ hr {
   margin: 20px 0;
 }
 
-// ==========================================
-// 3. Meniu & Secțiuni
-// ==========================================
+//menu
 .menuSection {
   .menuTitle {
     font-size: 0.75rem;
@@ -111,7 +96,7 @@ hr {
       }
     }
 
-    // Elementul selectat (Active)
+  
     &.active > a {
       background-color: $almost-aqua;
       color: $white;
@@ -122,7 +107,7 @@ hr {
       }
     }
 
-    // Gestionare Submeniu
+    //sub menu
     &.hasSubmenu {
       .arrowIcon {
         margin-left: auto;
@@ -130,7 +115,7 @@ hr {
         transition: transform 0.3s ease;
       }
 
-      // Când submeniul este deschis din React
+      
       &.open {
         .arrowIcon {
           transform: rotate(180deg);
@@ -144,7 +129,7 @@ hr {
   }
 }
 
-// Stiluri pentru submeniu
+
 .submenu {
   display: none;
   list-style: none;

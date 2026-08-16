@@ -1,17 +1,6 @@
-$break-mobile: 480px;
-$break-tablet: 768px;
-$break-laptop: 1024px;
-$break-desktop: 1280px;
 
-$ice-melt: #cbdceb;
-$nimbus-cloud: #c5c5c5;
-$almost-aqua: #c8d3be;
-$lemon-icing: #f4e9bc;
-$cloud-dancer: #f0eee9;
-$white: #ffffff;
-$text-dark: #444444;
-$text-muted: #666666;
-$orchid-tint: #dbd7e1;
+
+@use '../../styles/variables' as *;
 
 
 .profileContainer {
@@ -40,4 +29,14 @@ $orchid-tint: #dbd7e1;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+
+.headerWithTabsWrapper {
+  background: #ffffff;
+  border-radius: 16px; 
+  overflow: hidden;    
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
 }

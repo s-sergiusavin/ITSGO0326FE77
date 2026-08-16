@@ -1,6 +1,7 @@
 import styles from "./AboutSection.module.scss";
 
-export default function AboutSection({ user }) {
+const AboutSection = ({ user }) => {
+
   return (
     <div className={styles.profileGridDetails}>
       <div className={styles.detailsCard}>
@@ -48,22 +49,24 @@ export default function AboutSection({ user }) {
         <div className={styles.infoList}>
           <div className={styles.infoItem}>
             <span>Facebook</span>
-            <p>{user.facebook}</p>
+            <p>{user.facebook}{user.name}</p>
           </div>
           <div className={styles.infoItem}>
             <span>Instagram</span>
-            <p>{user.instagram}</p>
+            <p>{user.instagram}{user.name}</p>
           </div>
           <div className={styles.infoItem}>
             <span>YouTube</span>
-            <p>{user.youtube}</p>
+            <p>{user.youtube}{user.name}</p>
           </div>
           <div className={styles.infoItem}>
             <span>LinkedIn</span>
-            <p>{user.linkedin}</p>
+            <p>{user.linkedin}{user.name}</p>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+export default  AboutSection;

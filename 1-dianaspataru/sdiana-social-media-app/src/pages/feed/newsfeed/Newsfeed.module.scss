@@ -1,269 +1,14 @@
-// .mainPost {
-//   width: 30rem;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin: 1rem 0;
-
-//   .post {
-//     box-shadow: 5px 5px 5px 5px #ccc;
-//     margin: 1rem 0;
-//     padding: 1rem;
-
-//     .postHeader {
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//       .profileUserInfo {
-//         display: flex;
-//         align-items: center;
-//       }
-
-//       .profileOptions {
-//         width: 2rem;
-//         height: 2rem;
-//         border-radius: 50%;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         cursor: pointer;
-//         border: none;
-//         background-color: transparent;
-
-//         &:hover {
-//           background-color: #0fb;
-//         }
-//       }
-
-//       .profileOptionsWrapper {
-//         position: relative;
-
-//         .profileOptionsDropdown {
-//           position: absolute;
-//           z-index: 1;
-//           right: 0.5rem;
-//           width: 10rem;
-//           display: flex;
-//           flex-direction: column;
-//           display: none;
-
-//           button {
-//             padding: 0.2rem;
-//             cursor: pointer;
-
-//             &:hover {
-//               border: 1px solid #00ffcb;
-//               background-color: lightgray;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   .profileImage {
-//     width: 3rem;
-//     border-radius: 50%;
-//   }
-
-//   .content {
-//     .imgWrapper {
-//       position: relative;
-
-//       .imgContent {
-//         max-width: 100%;
-//       }
-
-//       .infoIcon {
-//         position: absolute;
-//         right: 1rem;
-//         bottom: -0.5rem;
-//         font-size: 2rem;
-//         background-color: gray;
-//         border-radius: 50%;
-//         width: 2rem;
-//         height: 2rem;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         cursor: pointer;
-//         color: white;
-//         border: 1px solid black;
-//       }
-
-//       .infoIconWrapper {
-//         position: relative;
-
-//         .infoMessage {
-//           position: absolute;
-//           display: none;
-//           background-color: white;
-//           border: 3px solid black;
-//           top: -0.5rem;
-//           left: 5rem;
-//           padding: 0.5rem;
-//         }
-//       }
-//     }
-
-//     .postTitle {
-//       padding: 1rem 0;
-//       display: inline-block;
-//       margin-top: 0.5rem;
-//     }
-
-//     .postDescription {
-//       padding: 1rem;
-//       margin: 0;
-//     }
-//   }
-
-//   .reacts {
-//     display: flex;
-//     justify-content: space-between;
-
-//     .likesInfo, .commentsInfo {
-//         display: flex;
-//         align-items: center;
-//         gap: 0.5rem;
-//     }
-
-//     .reactsIcons {
-//       color: blue;
-//     }
-//   }
-
-//   .reactActions {
-//     .actions {
-//       display: flex;
-//       justify-content: space-between;
-//       margin: 0;
-//       padding: 0;
-
-//       .reaction {
-//         color: black;
-//         cursor: pointer;
-//         padding: 0.5rem 1rem;
-//         display: flex;
-//         align-items: center;
-
-//         &.touched {
-//           color: blue;
-//         }
-
-//         &:hover {
-//           color: royalblue;
-//         }
-//       }
-//     }
-//   }
-
-//   .commentSection {
-//     display: flex;
-//     gap: 0.5rem;
-
-//     .newCommentField {
-//       width: 80%;
-//       border-radius: 0.5rem;
-//       padding: 0.5rem;
-//       background-color: lightcyan;
-
-//       &:placeholder {
-//         color: royalblue;
-//         font-weight: 600;
-//       }
-
-//       :hover {
-//         background-color: #cafdfd;
-//         width: 85%;
-//       }
-//     }
-//   }
-
-//   .insertCommentButton {
-//     border: none;
-//     background-color: transparent;
-//     font-size: 1.2rem;
-//     cursor: pointer;
-//     padding: 0.5rem 0.7rem;
-//     &:hover {
-//       color: #0fb;
-//     }
-//   }
-// }
-
-// @keyframes commentAnimation {
-//   from {
-//     left: 2rem;
-//   }
-
-//   to {
-//     left: 0rem;
-//   }
-// }
-
-// .wrap {
-//   height: 100%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-
-// .button {
-//   min-width: 30px;
-//   min-height: 6px;
-//   display: inline-flex;
-//   font-family: "Nunito", sans-serif;
-//   font-size: 22px;
-//   align-items: center;
-//   justify-content: center;
-//   text-transform: uppercase;
-//   text-align: center;
-//   letter-spacing: 1.3px;
-//   font-weight: 700;
-//   color: #313133;
-//   background: #4fd1c5;
-//   background: linear-gradient(
-//     90deg,
-//     rgba(129, 230, 217, 1) 0%,
-//     rgba(79, 209, 197, 1) 100%
-//   );
-//   border: none;
-//   border-radius: 1000px;
-//   box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
-//   transition: all 0.3s ease-in-out 0s;
-//   cursor: pointer;
-//   outline: none;
-//   position: relative;
-//   padding: 10px;
-// }
 
 
-// ==========================================
-// 1. Variabile
-// ==========================================
-$ice-melt: #cbdceb;
-$nimbus-cloud: #c5c5c5;
-$cloud-dancer: #f0eee9;
-$almost-aqua: #c8d3be;
-$raindrops-on-roses: #e8d0d3;
-$white: #ffffff;
-$text-dark: #444444;
-$text-muted: #555555;
-$danger: #e74c3c;
+@use '../../../styles/variables' as *;
 
-// ==========================================
-// 2. Structură Principală Postare
-// ==========================================
+
 .mainPost {
-  max-width: 50rem;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin: 1rem 0;
-  
-
-
+  max-width: 59rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
 }
 
 .post {
@@ -274,9 +19,7 @@ $danger: #e74c3c;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
-// ==========================================
-// 3. Header Postare & Meniu Opțiuni
-// ==========================================
+//header posts
 .postHeader {
   display: flex;
   justify-content: space-between;
@@ -311,11 +54,11 @@ $danger: #e74c3c;
   display: block;
 }
 
-// Meniu Dropdown pentru opțiuni (Edit / Remove)
+// dropdown ...
 .profileOptionsWrapper {
   position: relative;
 
-  &:hover  .profileOptionsDropdown{
+  &:hover .profileOptionsDropdown {
     display: flex;
   }
 
@@ -362,9 +105,7 @@ $danger: #e74c3c;
       transition: background-color 0.2s ease;
 
       &:hover {
-        
-         background-color: $cloud-dancer;
-       
+        background-color: $cloud-dancer;
       }
 
       &:last-child {
@@ -374,9 +115,7 @@ $danger: #e74c3c;
   }
 }
 
-// ==========================================
-// 4. Conținut Postare (Imagine + Text)
-// ==========================================
+// content 
 .content {
   display: flex;
   flex-direction: column;
@@ -388,6 +127,19 @@ $danger: #e74c3c;
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .readMore {
+    color: $almost-aqua;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 0.2rem;
 
     &:hover {
       text-decoration: underline;
@@ -447,9 +199,7 @@ $danger: #e74c3c;
   line-height: 1.5;
 }
 
-// ==========================================
-// 5. Statistici Reacții (Like-uri, Shares)
-// ==========================================
+// like and share stats
 .reacts {
   display: flex;
   justify-content: space-between;
@@ -460,7 +210,38 @@ $danger: #e74c3c;
   color: $nimbus-cloud;
   font-size: 0.85rem;
 
-  .likesInfo,
+  .likesInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .emojiStack {
+      display: flex;
+      align-items: center;
+
+      .emojiBadge {
+        font-size: 1.1rem;
+        margin-right: -4px;
+        user-select: none;
+        line-height: 1;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .reactedText {
+      font-size: 0.85rem;
+      color: $text-muted;
+
+      strong {
+        color: $text-dark;
+        font-weight: 600;
+      }
+    }
+  }
+
   .commentsInfo {
     display: flex;
     align-items: center;
@@ -472,37 +253,48 @@ $danger: #e74c3c;
   }
 }
 
-// ==========================================
-// 6. Butoane Acțiuni (Like, Comment, Share)
-// ==========================================
+// buttons like share etc
 .reactActions {
   padding: 0.4rem 0;
 
   .actions {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style: none;
     padding: 0;
     margin: 0;
+    gap: 8px;
+  }
+
+  .reactionWrapper {
+    position: relative;
+    display: flex;
+    flex: 1;
+    justify-content: center;
   }
 
   .reaction {
+    background: transparent;
+    border: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     cursor: pointer;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
     color: $text-muted;
     font-weight: 500;
     font-size: 0.9rem;
-    transition: all 0.2s ease;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
-      background-color: $cloud-dancer;
+      background-color: transparent;
+      color: $text-dark;
+      transform: translateY(-2px);
     }
 
-    // Stare activă (când ai dat Like/Share)
     &.touched {
       color: $almost-aqua;
       font-weight: 600;
@@ -515,6 +307,100 @@ $danger: #e74c3c;
     svg {
       font-size: 1.2rem;
     }
+
+    .activeEmoji {
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+  }
+
+  
+  li.reaction {
+    flex: 1;
+  }
+
+
+  .reactionsPicker {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 12px;
+    background-color: $white;
+    padding: 6px 12px;
+    border-radius: 30px;
+    border: 1px solid $ice-melt;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    z-index: 20;
+    animation: popupAnimation 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* uneste butonul like cu pop ul emoji */
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 14px;
+      background: transparent;
+    }
+
+    .reactionBtn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      padding: 2px;
+      transition: transform 0.15s ease;
+
+      .emojiIcon {
+        font-size: 1.5rem;
+        display: block;
+        line-height: 1;
+      }
+
+      &:hover {
+        transform: scale(1.35) translateY(-4px);
+
+        .tooltip {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .tooltip {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.75);
+        color: $white;
+        font-size: 0.7rem;
+        padding: 2px 6px;
+        border-radius: 10px;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.15s ease;
+        margin-bottom: 4px;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+// opop up animation
+@keyframes popupAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.8) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) translateX(-50%);
   }
 }
 
@@ -524,9 +410,7 @@ hr {
   margin: 0.4rem 0 1rem 0;
 }
 
-// ==========================================
-// 7. Adăugare Comentariu Nou
-// ==========================================
+//add comment
 .commentSection {
   display: flex;
   align-items: center;

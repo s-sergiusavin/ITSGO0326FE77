@@ -1,6 +1,7 @@
 import styles from "./EditProfileModal.module.scss";
 
-export default function EditProfileModal({ onClose }) {
+const EditProfileModal = ({ onClose }) => {
+
   return (
     <div className={styles.modalBackdrop}>
       <div className={styles.modalCard}>
@@ -22,3 +23,5 @@ export default function EditProfileModal({ onClose }) {
     </div>
   );
 }
+
+export default  EditProfileModal;

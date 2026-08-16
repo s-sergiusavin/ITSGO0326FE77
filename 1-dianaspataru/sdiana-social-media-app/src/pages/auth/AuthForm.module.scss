@@ -1,88 +1,9 @@
-// .auth {
-//   margin: 3rem auto;
-//   width: 95%;
-//   max-width: 25rem;
-//   border-radius: 5px;
-//   background-color: teal;
-//   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-//   padding: 2rem;
-//   text-align: center;
-//   color: white;
-
-//   form {
-//     .control {
-//       margin-bottom: 0.5rem;
-//     }
-
-//     label {
-//       display: block;
-//       font-weight: bold;
-//       margin-bottom: 0.5rem;
-//     }
-
-//     input {
-//       background-color: lightgray;
-//       border-radius: 5px;
-//       color: teal;
-//       border: 1px solid teal;
-//       outline: 1px solid teal;
-//       width: 100%;
-//       text-align: left;
-//       padding: 0.5rem;
-//     }
-
-//     .actions {
-//         margin-top: 1.5rem;
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         gap: 1rem;
-
-//         button {
-//             width: 100%;
-//             cursor: pointer;
-//             color: white;
-//             background-color: cadetblue;
-//             border: 1px solid white;
-//             border-radius: 5px;
-//             padding: 0.5rem 2.5rem;
-
-//             &:hover {
-//                 font-weight: bold;
-//                 border: cadetblue;
-//             }
-
-//             &.toggle {
-//                 background-color: transparent;
-//                 border: none;
-//                 padding: 0.5rem 1.5rem;
-
-//                 &:hover {
-//                     outline: 1px solid white;
-//                 }
-//             }
-//         }
-//     }
-//   }
-// }
 
 
-// ==========================================
-// 1. Variabile
-// ==========================================
-$lemon-icing: #f4e9bc;
-$nimbus-cloud: #c5c5c5;
-$raindrops-on-roses: #e8d0d3;
-$cloud-dancer: #f0eee9;
-$ice-melt: #cbdceb;
-$peach-dust: #e8d1c5;
-$almost-aqua: #c8d3be;
-$white: #ffffff;
-$text-dark: #444444;
 
-// ==========================================
-// 2. Placeholder pentru Butoane
-// ==========================================
+@use '../../styles/variables' as *;
+
+
 %btn-base {
   padding: 0.9rem;
   border-radius: 1rem;
@@ -93,9 +14,7 @@ $text-dark: #444444;
   width: 100%;
 }
 
-// ==========================================
-// 3. Componenta Auth Main Container
-// ==========================================
+//main container
 .auth {
   background-color: $white;
   width: 100%;
@@ -120,9 +39,7 @@ $text-dark: #444444;
   }
 }
 
-// ==========================================
-// 4. Form Controls (Input-uri & Label-uri)
-// ==========================================
+// form controls
 .control {
   display: flex;
   flex-direction: column;
@@ -157,9 +74,7 @@ $text-dark: #444444;
   }
 }
 
-// ==========================================
-// 5. Zonă de Acțiuni & Butoane
-// ==========================================
+// action on buttons
 .actions {
   display: flex;
   flex-direction: column;
@@ -172,7 +87,7 @@ $text-dark: #444444;
     margin: 0.2rem 0;
   }
 
-  // Butonul principal de Submit (Login / Create Account)
+  // submit btn
   button:not(.toggle) {
     @extend %btn-base;
     background-color: $almost-aqua;
@@ -185,7 +100,7 @@ $text-dark: #444444;
     }
   }
 
-  // Butonul secundar pentru Toggle (Schimbă între Login și Register)
+  // toggle btn
   .toggle {
     @extend %btn-base;
     background-color: transparent;

@@ -1,17 +1,11 @@
-$ice-melt: #cbdceb;
-$nimbus-cloud: #c5c5c5;
-$almost-aqua: #c8d3be;
-$lemon-icing: #f4e9bc;
-$cloud-dancer: #f0eee9;
-$white: #ffffff;
-$text-dark: #444444;
-$text-muted: #666666;
-$orchid-tint: #dbd7e1;
+
+@use '../styles/variables' as *;
 
 .profileNavTabs {
   display: flex;
   border-top: 1px solid $cloud-dancer;
   padding: 0 1rem;
+  background-color: white;
 
   .tabBtn {
     display: flex;

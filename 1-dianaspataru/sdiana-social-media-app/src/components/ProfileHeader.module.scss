@@ -1,101 +1,356 @@
-$ice-melt: #cbdceb;
-$nimbus-cloud: #c5c5c5;
-$almost-aqua: #c8d3be;
-$lemon-icing: #f4e9bc;
-$cloud-dancer: #f0eee9;
-$white: #ffffff;
-$text-dark: #444444;
-$text-muted: #666666;
-$orchid-tint: #dbd7e1;
+
+@use '../styles/variables' as *;
+
 
 .profileHeaderCard {
-  width: 100%;
-  background: #fff;
-  border-radius: 12px;
+  background: white;
+  border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* BANNER */
 .profileBanner {
-  width: 100%;
-  height: 200px;
   position: relative;
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+/* BUTOANE EDITARE (COVER & AVATAR) */
+.editCover,
+.editAvatar {
+  position: absolute;
+  color: white;
+  background: var(--orchid-tint);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 5;
+
+  &:hover {
+    background: var(--lemon-icing);
+    transform: scale(1.1);
+  }
+}
+
+.editCover {
+  top: 15px;
+  right: 15px;
+}
+
+.editAvatar {
+  top: -10px;
+  right: -10px;
+}
+
+/* header body /avatar*/
+.profileHeaderBody {
+  display: flex;
+  padding: 0 2rem;
+  margin-top: -50px;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.profileAvatarWrapper {
+  position: relative;
+  border: 1px solid white;
+  border-radius: 20px;
+  background: white;
+}
+
+.mainAvatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.statusBadge {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--almost-aqua);
+  color: white;
+  padding: 3px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  text-transform: uppercase;
+}
+
+//info user
+.profileMainInfo {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.userDisplayName,
+.userLocation {
+  margin: 0.5rem 0;
+  color: #444;
+}
+
+.badge {
+  background: var(--cloud-dancer);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-right: 10px;
+}
+
+.profileStats {
+  display: flex;
+  gap: 2rem;
+  text-align: center;
+
+  .stat {
+    strong {
+      display: block;
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    span {
+      font-size: 0.8rem;
+      color: var(--nimbus-cloud);
+    }
+  }
+}
+
+// nav tabs
+.profileNavTabs {
+  display: flex;
+  border-top: 1px solid var(--cloud-dancer);
+  padding: 0 1rem;
+
+  .tabBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 1.2rem 1.5rem;
+    color: var(--nimbus-cloud);
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+
+    .tabIcon {
+      font-size: 1.2rem;
+    }
+
+    &.active,
+    &:hover {
+      color: var(--almost-aqua);
+      border-bottom-color: var(--almost-aqua);
+    }
+  }
+}
+
+.profileHeaderCard {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  font-family: inherit;
+}
+
+//banner
+.profileBanner {
+  position: relative;
+  width: 100%;
+  height: 220px;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
+  .editCover {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.85);
+      color: #333;
+    }
+
+    svg {
+      font-size: 20px;
+    }
+  }
 }
 
-.editCover {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  cursor: pointer;
-}
-
+//header body
 .profileHeaderBody {
-  padding: 20px;
   display: flex;
-  gap: 20px;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 2.5rem 1.2rem 2.5rem;
+  margin-top: -55px; /* Suprapunere peste banner */
+  position: relative;
+  z-index: 2;
 }
 
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+//avatar
 .profileAvatarWrapper {
   position: relative;
+  width: 140px;
+  height: 140px;
+  
 
   .mainAvatar {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 22px; 
     object-fit: cover;
-    border: 4px solid #fff;
+    border: 2px solid #ffffff;
+    //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: block;
   }
 
   .editAvatar {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    top: -6px;
+    right: -6px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #d0d7de; 
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    //border: 2px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+
+    svg {
+      font-size: 16px;
+    }
   }
 
   .statusBadge {
     position: absolute;
-    bottom: -10px;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    background: #4caf50;
-    color: #fff;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 12px;
+    background-color: #b5c7b2; 
+    color: #ffffff;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
   }
 }
 
+//user info
 .profileMainInfo {
-  flex: 1;
+  padding-bottom: 0.3rem;
+
+  .userDisplayName {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #2d2d2d;
+
+    .verifiedBadge {
+      color: #333333; 
+      font-size: 1.3rem;
+    }
+  }
+
+  .userLocation {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 6px 0 0 0;
+    color: #888888;
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    .locIcon {
+      font-size: 1.1rem;
+      color: #a0a0a0;
+    }
+  }
 }
 
-.userDisplayName {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.userLocation {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #777;
-}
-
+//stats
 .profileStats {
-  margin-top: 20px;
   display: flex;
-  gap: 20px;
+  gap: 2.5rem;
+  align-items: center;
+  padding-bottom: 0.3rem;
 
   .stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+
+    strong {
+      display: block;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #2c2c2c;
+      margin-bottom: 2px;
+    }
+
+    span {
+      font-size: 0.85rem;
+      color: #a0a0a0;
+      font-weight: 500;
+    }
   }
 }
+
+
+

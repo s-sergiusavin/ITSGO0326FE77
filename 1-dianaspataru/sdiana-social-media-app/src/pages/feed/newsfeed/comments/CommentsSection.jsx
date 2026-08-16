@@ -1,5 +1,5 @@
 import styles from "./CommentsSection.module.scss";
-import profile from '../../../../assets/profile.webp';
+import profile from '../../../../assets/noAvatar.jpeg';
 
 const CommentsSection = () => {
   return (
@@ -17,8 +17,8 @@ const CommentsSection = () => {
             fugiat, iure consequuntur ex dolores eius culpa eaque voluptatibus
             soluta eum.
           </div>
-          <div className={styles.emojiReaction}>😎</div>
-          <span>Remove this comment</span>
+          
+          
         </div>
         <div className={styles.commentReaction}>
           <strong className={styles.commentReactionButton}>Like</strong>

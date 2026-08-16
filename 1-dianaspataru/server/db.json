@@ -1,43 +1,44 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "First post",
-      "description": "lorem ipsum dasjfhskdfajh hdkjas hfas",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWK1SLXNFDq-dihuPhJRz4ouXsjSS47ZI0HbQBY2GpV8sEylIl7XCgNxA&s=10"
-    },
-    {
-      "id": "2",
-      "title": "My second title post",
-      "description": "lorem ipsum dasjfhskdfajh hdkjas hfas",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHfUbdJy9or38yzg5VnJAERNswsFdSGN56Dz6T5gdsACTAauCDIudKraU&s=10"
-    },
-    {
-      "id": "3",
-      "title": "My third title post",
-      "description": "lorem ipsum dasjfhskdfajh hdkjas hfas",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0sWhYYC_7hZLByaBxIj-eT5X-M8a1HLOXkMA1e8wZ8fZbtSEo7prIdwQy&s=10"
-    },
-    {
-      "id": "4",
-      "title": "Modificare recenta",
-      "description": "lorem ipsum dasjfhskdfajh hdkjas hfas",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWK1SLXNFDq-dihuPhJRz4ouXsjSS47ZI0HbQBY2GpV8sEylIl7XCgNxA&s=10"
-    },
-    {
-      "id": "5",
-      "title": "My second title post",
-      "description": "lorem ipsum dasjfhskdfajh hdkjas hfas",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHfUbdJy9or38yzg5VnJAERNswsFdSGN56Dz6T5gdsACTAauCDIudKraU&s=10"
-    },
-    {
-      "id": "600",
-      "title": "My third title post",
-      "description": "lorem ipsum dasjfhskdfajh hdkjas hfas",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0sWhYYC_7hZLByaBxIj-eT5X-M8a1HLOXkMA1e8wZ8fZbtSEo7prIdwQy&s=10"
-    }
-  ],
-  "users": [
+"posts": [
+  {
+    "id": "1",
+    "title": "Morning Coffee & Code Session",
+    "description": "Nothing beats a strong espresso and fixing a few bugs before the official workday starts.",
+    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop"
+  },
+  {
+    "id": "2",
+    "title": "Weekend Mountain Getaway",
+    "description": "Fresh air, breathtaking views, and a much-needed break away from all screens.",
+    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop"
+  },
+  {
+    "id": "3",
+    "title": "Top UI/UX Resources for 2026",
+    "description": "A curated list of the best design tools and component libraries to speed up your React workflow.",
+    "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&auto=format&fit=crop"
+  },
+  {
+    "id": "4",
+    "title": "Nature in Motion (Video Test)",
+    "description": "Testing video support in the newsfeed with a nature sample clip.",
+    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+  },
+  {
+    "id": "5",
+    "title": "Urban Night Photography",
+    "description": "Experimenting with long exposure shots and city lights reflecting off wet streets after the rain.",
+    "image": "https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800&auto=format&fit=crop"
+  },
+  {
+    "id": "6",
+    "title": "New Web Project Launch",
+    "description": "After weeks of hard work and refactoring, the app is finally live and ready for users!",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop"
+  }
+],
+
+"users": [
     {
       "email": "safdsf@dsaf.cdsa",
       "password": "$2a$10$ZPerR9DZX46JWWubUixfZ.VRaUvHTLIgpj.irMtvGkFFo64lhOJ2G",
@@ -53,5 +54,128 @@
       "password": "$2a$10$tM5wDt5ELiG8RTZdDj18XuUTCkDQuT1I6xWK0o/Tdjvw/8MCMwmkG",
       "id": 3
     }
-  ]
+  ],
+  "profiles": [
+  {
+    "id": "1",
+    "name": "Alexandru Ionescu",
+    "location": "București, România",
+    "posts": "12",
+    "status": "Online",
+    "comments": 45,
+    "views": 12500,
+    "gender": "Male",
+    "birthdate": "14/03/1995",
+    "hobbies": "Fotografie, Ciclism, UI/UX Design",
+    "music": "Rock, Blues, Jazz",
+    "movies": "Interstellar, Inception, Dark Knight",
+    "facebook": "facebook.com/alex.ionescu",
+    "instagram": "instagram.com/alex_photo",
+    "youtube": "youtube.com/@alexdesign",
+    "linkedin": "linkedin.com/in/alex-ionescu",
+    "avatar": "https://i.pravatar.cc/150?img=11",
+    "cover": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+  },
+  {
+    "id": "2",
+    "name": "Elena Popa",
+    "location": "Cluj-Napoca, România",
+    "posts": "8",
+    "status": "Offline",
+    "comments": 18,
+    "views": 8400,
+    "gender": "Female",
+    "birthdate": "22/07/1999",
+    "hobbies": "Pictură, Călătorii, Yoga",
+    "music": "Pop, Acoustic, Classical",
+    "movies": "Amélie, La La Land, Pride & Prejudice",
+    "facebook": "facebook.com/elena.popa",
+    "instagram": "instagram.com/elena_art",
+    "youtube": "youtube.com/@elenavlogs",
+    "linkedin": "linkedin.com/in/elena-popa",
+    "avatar": "https://i.pravatar.cc/150?img=5",
+    "cover": "https://images.unsplash.com/photo-1519681393784-d120267933ba"
+  },
+  {
+    "id": "3",
+    "name": "Matei Radu",
+    "location": "Timișoara, România",
+    "posts": "24",
+    "status": "Online",
+    "comments": 89,
+    "views": 32000,
+    "gender": "Male",
+    "birthdate": "05/11/1992",
+    "hobbies": "Programare, Gaming, Fitness",
+    "music": "Synthwave, EDM, Electronic",
+    "movies": "The Matrix, Cyberpunk 2077, Blade Runner",
+    "facebook": "facebook.com/matei.radu",
+    "instagram": "instagram.com/matei_dev",
+    "youtube": "youtube.com/@mateicodes",
+    "linkedin": "linkedin.com/in/matei-radu",
+    "avatar": "https://i.pravatar.cc/150?img=12",
+    "cover": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"
+  },
+  {
+    "id": "4",
+    "name": "Andreea Dumitrescu",
+    "location": "Brașov, România",
+    "posts": "5",
+    "status": "Offline",
+    "comments": 12,
+    "views": 4300,
+    "gender": "Female",
+    "birthdate": "18/09/2001",
+    "hobbies": "Drumeții, Escaladă, Content Writing",
+    "music": "Indie, Folk, Alternative",
+    "movies": "Into the Wild, Wild, Lord of the Rings",
+    "facebook": "facebook.com/andreea.dumitrescu",
+    "instagram": "instagram.com/andreea_mountains",
+    "youtube": "youtube.com/@andreeatravels",
+    "linkedin": "linkedin.com/in/andreea-dumitrescu",
+    "avatar": "https://i.pravatar.cc/150?img=9",
+    "cover": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b"
+  },
+  {
+    "id": "5",
+    "name": "Cristian Stan",
+    "location": "Iași, România",
+    "posts": "15",
+    "status": "Online",
+    "comments": 34,
+    "views": 19200,
+    "gender": "Male",
+    "birthdate": "30/01/1997",
+    "hobbies": "Bucătărie gourmet, Vinuri, Tenis",
+    "music": "Jazz, Lo-Fi, Hip-Hop",
+    "movies": "Chef, The Bear, Ratatouille",
+    "facebook": "facebook.com/cristian.stan",
+    "instagram": "instagram.com/cristi_chef",
+    "youtube": "youtube.com/@cristicooking",
+    "linkedin": "linkedin.com/in/cristian-stan",
+    "avatar": "https://i.pravatar.cc/150?img=68",
+    "cover": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5"
+  },
+  {
+    "id": "6",
+    "name": "Popescu Andrei",
+    "location": "Constanța, România",
+    "posts": "7",
+    "status": "Online",
+    "comments": 21,
+    "views": 15400,
+    "gender": "Male",
+    "birthdate": "10/05/1998",
+    "hobbies": "Surf, Gadgeturi, Graphic Design",
+    "music": "Rock, Indie, Synthwave",
+    "movies": "Sci-Fi, Thrillers, Anime",
+    "facebook": "facebook.com/andrei.popescu",
+    "instagram": "instagram.com/andrei_surf",
+    "youtube": "youtube.com/@andreipopescu",
+    "linkedin": "linkedin.com/in/andrei-popescu",
+    "avatar": "https://i.pravatar.cc/150?img=33",
+    "cover": "https://images.unsplash.com/photo-1503264116251-35a269479413"
+  }
+]
+
 }

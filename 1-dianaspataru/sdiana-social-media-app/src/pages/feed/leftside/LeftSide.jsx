@@ -1,28 +1,41 @@
+
+
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
+
 import styles from "./LeftSide.module.scss";
 import profile from "../../../assets/profile.webp";
-import { useState } from "react";
-import ShowChartIcon from "@mui/icons-material/ShowChart";       // pentru Activity
-import PeopleIcon from "@mui/icons-material/People";             // pentru Members
-import AppsIcon from "@mui/icons-material/Apps";                 // pentru Groups
-import SchoolIcon from "@mui/icons-material/School";             // pentru Courses
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";     // pentru Săgeată jos
-import FolderIcon from "@mui/icons-material/Folder";             // pentru All Courses
-import ArticleIcon from "@mui/icons-material/Article";           // pentru Course Single
-import ChatIcon from "@mui/icons-material/Chat";                 // pentru Message
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";     // pentru All Forums
-import ForumIcon from "@mui/icons-material/Forum";               // pentru Forum Single
+
+
+import ShowChartIcon from "@mui/icons-material/ShowChart";      
+import PeopleIcon from "@mui/icons-material/People";           
+import AppsIcon from "@mui/icons-material/Apps";                
+import SchoolIcon from "@mui/icons-material/School";            
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";    
+import FolderIcon from "@mui/icons-material/Folder";             
+import ArticleIcon from "@mui/icons-material/Article";           
+import ChatIcon from "@mui/icons-material/Chat";               
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";    
+import ForumIcon from "@mui/icons-material/Forum";               
 import VerifiedIcon from "@mui/icons-material/Verified";
 
-const LeftSide = () => {
-    // Stare pentru elementul activ din meniu
+const LeftSide = ({user}) => {
+  const navigate = useNavigate(); 
+
+
   const [activeTab, setActiveTab] = useState("Activity");
-  
-  // Stare pentru deschiderea/închiderea submeniului "Courses"
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
 
+ 
   const handleTabClick = (e, tabName) => {
     e.preventDefault();
     setActiveTab(tabName);
+
+    if (tabName === "Activity") {
+      navigate("/"); 
+    } else {
+      navigate("/not-found"); 
+    }
   };
 
   const toggleCourses = (e) => {
@@ -30,22 +43,33 @@ const LeftSide = () => {
     setIsCoursesOpen((prev) => !prev);
   };
 
-    return (
+  const userHandle = user?.name
+    ? `@${user.name.toLowerCase().replace(/\s+/g, "")}`
+    : "@user";
+
+  return (
     <aside className={styles.leftContent}>
-      {/* Profile Sidebar */}
-      <div className={styles.userProfileSidebar}>
-        <img src={profile} alt="Profile" className={styles.sidebarAvatar} />
+      <div 
+        className={styles.userProfileSidebar} 
+        onClick={() => navigate("/my-profile")} 
+        style={{ cursor: "pointer" }}
+      >
+        <img 
+          src={user?.avatar} 
+          alt={user?.name || "Profile"} 
+          className={styles.sidebarAvatar} 
+        />
         <div className={styles.userInfo}>
           <span className={styles.userName}>
-            Some Name <VerifiedIcon className={styles.verifiedBadge} />
+            {user?.name || "User Name"} <VerifiedIcon className={styles.verifiedBadge} />
           </span>
-          <span className={styles.userHandle}>@somename</span>
+          <span className={styles.userHandle}>{userHandle}</span>
         </div>
       </div>
 
       <hr />
 
-      {/* Menu Section GENERAL */}
+      {/* menu */}
       <div className={styles.menuSection}>
         <p className={styles.menuTitle}>MENU</p>
         <ul className={styles.sidebarMenu}>
@@ -55,6 +79,7 @@ const LeftSide = () => {
             </a>
           </li>
 
+          
           <li className={activeTab === "Members" ? styles.active : ""}>
             <a href="#" onClick={(e) => handleTabClick(e, "Members")}>
               <PeopleIcon /> <span>Members</span>
@@ -67,7 +92,7 @@ const LeftSide = () => {
             </a>
           </li>
 
-          {/* Submeniu Courses */}
+          {/* sub menu */}
           <li
             className={`${styles.hasSubmenu} ${
               isCoursesOpen ? styles.open : ""
@@ -103,7 +128,7 @@ const LeftSide = () => {
 
       <hr />
 
-      {/* Menu Section FORUM */}
+      {/* forum */}
       <div className={styles.menuSection}>
         <p className={styles.menuTitle}>FORUM</p>
         <ul className={styles.sidebarMenu}>
@@ -122,6 +147,6 @@ const LeftSide = () => {
       </div>
     </aside>
   );
-}
+};
 
 export default LeftSide;

@@ -5,7 +5,6 @@ import post2 from "../../../assets/post2.webp";
 
 // Material UI IMPORTS
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import InfoIcon from "@mui/icons-material/Info";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ChatIcon from "@mui/icons-material/Chat";
 import ReplyIcon from "@mui/icons-material/Reply";
@@ -14,25 +13,40 @@ import { useState } from "react";
 import CommentsSection from "./comments/CommentsSection";
 import { useNavigate } from "react-router-dom";
 
-const Newsfeed = ({ postData }) => {
-  const [isLiked, setIsLiked] = useState(false);
-  const [likes, setLikes] = useState(Math.floor(Math.random() * 100));
+// Configurare reacții disponibile
+const REACTIONS = [
+  { label: "Like", emoji: "👍", color: "#2196f3" },
+  { label: "Love", emoji: "❤️", color: "#e91e63" },
+  { label: "Haha", emoji: "😆", color: "#fbc02d" },
+  { label: "Wow", emoji: "😮", color: "#fbc02d" },
+  { label: "Sad", emoji: "😢", color: "#fbc02d" },
+  { label: "Angry", emoji: "😡", color: "#e65100" }
+];
+
+const Newsfeed = ({ postData, user, currentUser }) => {
+  const [selectedReaction, setSelectedReaction] = useState(null);
+  const [otherReactsCount, setOtherReactsCount] = useState(() => Math.floor(Math.random() * 20) + 1);
+  const [showPicker, setShowPicker] = useState(false);
+  
   const [isShared, setIsShared] = useState(false);
   const [shares, setShares] = useState(Math.floor(Math.random() * 100));
 
-
   const postImages = [post1, post2];
-
   const navigate = useNavigate();
 
-  const handleLike = () => {
-    if (!isLiked) {
-      setLikes((prevState) => prevState + 1);
+  
+  const handleLikeClick = () => {
+    if (selectedReaction) {
+      setSelectedReaction(null); 
     } else {
-      setLikes((prevState) => prevState - 1);
+      setSelectedReaction(REACTIONS[0]); 
     }
+  };
 
-    setIsLiked((prevState) => !prevState);
+  
+  const handleSelectReaction = (reaction) => {
+    setSelectedReaction(reaction);
+    setShowPicker(false);
   };
 
   const handleShare = () => {
@@ -42,17 +56,31 @@ const Newsfeed = ({ postData }) => {
 
   const goToProfilePage = () => {
     navigate(`/user/${postData.id}`);
-  }
+  };
+
+  const goToNotFound = () => {
+    navigate("/not-found");
+  };
+
+ 
+  const activeEmojis = selectedReaction 
+    ? Array.from(new Set([selectedReaction.emoji, "❤️"])) 
+    : [ "❤️"];
 
   return (
     <div className={styles.mainPost}>
       <div className={styles.post}>
+        {/* Post Header */}
         <div className={styles.postHeader}>
           <div className={styles.profileUserInfo} onClick={goToProfilePage}>
-            <a href="">
-              <img src={profile} alt="" className={styles.profileImage} />
+            <a href="#">
+              <img 
+                src={user?.avatar || profile} 
+                alt={user?.name || "Profile"} 
+                className={styles.profileImage} 
+              />
             </a>
-            <span>Sergiu Savin</span>
+            <span>{user?.name || "User Name"}</span>
             <span>08 Apr 2026</span>
           </div>
 
@@ -62,32 +90,27 @@ const Newsfeed = ({ postData }) => {
             </button>
 
             <div className={styles.profileOptionsDropdown}>
-              <button>Edit this post</button>
-              <button>Remove this post</button>
+              <button>Unfollow</button>
+              <button>Report User</button>
             </div>
           </div>
         </div>
 
+        {/* Content */}
         <div className={styles.content}>
           <div className={styles.imgWrapper}>
-            <img
-              src={postImages[postData.id % 2]}
-              alt="post"
-              className={styles.imgContent}
-            />
-
-             {/* <div className={styles.infoIconWrapper}>
-              <div className={styles.infoIcon}>
-                <InfoIcon fontSize="large" />
-              </div>
-
-              <p className={styles.infoMessage}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                
-                <a href="landing-page.html">Read more...</a>
-              </p>
-            </div> */}
-          </div> 
+            {postData.video ? (
+              <video controls className={styles.imgContent}>
+                <source src={postData.video} type="video/mp4" />
+              </video>
+            ) : (
+              <img
+                src={postData.image || postImages[postData.id % 2]}
+                alt="post"
+                className={styles.imgContent}
+              />
+            )}
+          </div>
 
           <strong className={styles.postTitle}>
             {postData.title.charAt(0).toUpperCase() + postData.title.slice(1)}
@@ -96,13 +119,27 @@ const Newsfeed = ({ postData }) => {
           <p className={styles.postDescription}>
             {postData.description.charAt(0).toUpperCase() + postData.description.slice(1)}
           </p>
-          <a href="landing-page.html">Read more...</a>
+          <span className={styles.readMore} onClick={goToNotFound}>
+            Read more...
+          </span>
         </div>
 
+        {/* Dynamic Reacts Bar (Stil imagine trimisă de tine) */}
         <div className={styles.reacts}>
           <div className={styles.likesInfo}>
-            <ThumbUpIcon />
-            <span>{likes}</span> <span> likes</span>
+            <div className={styles.emojiStack}>
+              {activeEmojis.map((emoji, idx) => (
+                <span key={idx} className={styles.emojiBadge}>{emoji}</span>
+              ))}
+            </div>
+            
+            <span className={styles.reactedText}>
+              Reacted by{" "}
+              <strong>
+                {selectedReaction ? (currentUser?.name || "You") :  "Some Name"}
+              </strong>{" "}
+              and {otherReactsCount} others
+            </span>
           </div>
 
           <div className={styles.commentsInfo}>
@@ -111,19 +148,50 @@ const Newsfeed = ({ postData }) => {
           </div>
         </div>
 
+        {/* Reaction Actions cu Pop-up selector */}
         <div className={styles.reactActions}>
           <ul className={styles.actions}>
             <li
-              className={`${styles.reaction} ${isLiked ? styles.touched : ""}`}
-              onClick={handleLike}
+              className={styles.reactionWrapper}
+              onMouseEnter={() => setShowPicker(true)}
+              onMouseLeave={() => setShowPicker(false)}
             >
-              <ThumbUpIcon />
-              <span>Like</span>
+              {/* Pop-up-ul cu reacții la Hover */}
+              {showPicker && (
+                <div className={styles.reactionsPicker}>
+                  {REACTIONS.map((reaction) => (
+                    <button
+                      key={reaction.label}
+                      className={styles.reactionBtn}
+                      onClick={() => handleSelectReaction(reaction)}
+                    >
+                      <span className={styles.emojiIcon}>{reaction.emoji}</span>
+                      <span className={styles.tooltip}>{reaction.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* buton like*/}
+              <button
+                className={`${styles.reaction} ${selectedReaction ? styles.touched : ""}`}
+                onClick={handleLikeClick}
+                style={{ color: selectedReaction ? selectedReaction.color : "inherit" }}
+              >
+                {selectedReaction ? (
+                  <span className={styles.activeEmoji}>{selectedReaction.emoji}</span>
+                ) : (
+                  <ThumbUpIcon />
+                )}
+                <span>{selectedReaction ? selectedReaction.label : "Like"}</span>
+              </button>
             </li>
+
             <li className={styles.reaction}>
               <ChatIcon />
               <span>Comment</span>
             </li>
+
             <li
               className={`${styles.reaction} ${isShared ? styles.touched : ""}`}
               onClick={handleShare}
@@ -136,25 +204,28 @@ const Newsfeed = ({ postData }) => {
 
         <hr />
 
+        {/*comment section */}
         <div className={styles.commentSection}>
           <a href="#">
-            <img src={profile} alt="" className={styles.profileImage} />
+            <img 
+              src={currentUser?.avatar || profile} 
+              alt={currentUser?.name || "My Profile"} 
+              className={styles.profileImage} 
+            />
           </a>
           <input
             type="text"
-            placeholder="Adauga un comentariu"
+            placeholder="Write a comment..."
             className={styles.newCommentField}
           />
           <div className={styles.wrap}>
-            <button
-              className={`${styles.insertCommentButton} ${styles.button}`}
-            >
+            <button className={`${styles.insertCommentButton} ${styles.button}`}>
               <SendIcon />
             </button>
           </div>
         </div>
 
-        <CommentsSection/>
+        <CommentsSection />
       </div>
     </div>
   );
