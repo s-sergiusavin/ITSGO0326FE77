@@ -1,0 +1,97 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 22px 20px 60px;
+  display: grid;
+  grid-template-columns: 245px minmax(0, 1fr) 310px;
+  gap: 22px;
+  align-items: start;
+
+  
+  @include m.desktop {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  
+  @include m.tablet {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px 14px 40px;
+  }
+}
+
+.left {
+  @include m.tablet {
+    order: 1;
+  }
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @include m.tablet {
+    order: 2;
+  }
+}
+
+.right {
+  @include m.desktop {
+    display: none; 
+  }
+
+ 
+  @include m.tablet {
+    display: block;
+    order: 3;
+  }
+}
+
+.filterInfo {
+  margin: 0;
+  padding: 10px 14px;
+  background: v.$accent-soft;
+  border-radius: v.$radius-sm;
+  color: v.$accent;
+  font-size: 13.5px;
+}
+
+.empty {
+  padding: 44px 20px;
+  text-align: center;
+  background: v.$surface;
+  border: 1px dashed v.$border;
+  border-radius: v.$radius;
+}
+
+.emptyTitle {
+  margin: 0;
+  font-family: v.$font-display;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.emptyText {
+  margin: 6px auto 18px;
+  max-width: 320px;
+  color: v.$text-muted;
+  font-size: 14px;
+}
+
+.emptyBtn {
+  padding: 9px 20px;
+  border: 1px solid v.$accent;
+  border-radius: v.$radius-pill;
+  background: none;
+  color: v.$accent;
+  font-size: 14px;
+  font-weight: 500;
+
+  &:hover {
+    background: v.$accent-soft;
+  }
+}

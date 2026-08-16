@@ -1,0 +1,144 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.sidebar {
+  position: sticky;
+  top: 76px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @include m.tablet {
+    position: static;
+  }
+}
+
+.box {
+  padding: 16px;
+  background: v.$surface;
+  border: 1px solid v.$border;
+  border-radius: v.$radius;
+}
+
+.title {
+  margin-bottom: 14px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 7px 12px;
+  border: 1px solid v.$border;
+  border-radius: v.$radius-sm;
+  background: none;
+  color: v.$text;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: border-color 0.18s, background 0.18s, color 0.18s;
+
+  &:hover {
+    border-color: v.$accent;
+    color: v.$accent;
+  }
+}
+
+.tagActive {
+  background: v.$accent-soft;
+  border-color: v.$accent;
+  color: v.$accent;
+}
+
+.tagCount {
+  font-size: 11px;
+  font-weight: 400;
+  color: v.$text-muted;
+}
+
+.clear {
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px;
+  border: none;
+  border-radius: v.$radius-sm;
+  background: v.$surface-2;
+  color: v.$text-muted;
+  font-size: 13px;
+
+  &:hover {
+    color: v.$text;
+  }
+}
+
+.people {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.personInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.personText {
+  min-width: 0;
+}
+
+.personName {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.personHandle {
+  margin: 0;
+  font-size: 12.5px;
+  color: v.$text-muted;
+}
+
+.followBtn {
+  padding: 6px 14px;
+  border: 1px solid v.$accent;
+  border-radius: v.$radius-pill;
+  background: v.$accent;
+  color: #12151a;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.18s, color 0.18s;
+}
+
+
+.followed {
+  background: none;
+  border-color: v.$border;
+  color: v.$text-muted;
+
+  &:hover {
+    border-color: v.$danger;
+    color: v.$danger;
+  }
+}

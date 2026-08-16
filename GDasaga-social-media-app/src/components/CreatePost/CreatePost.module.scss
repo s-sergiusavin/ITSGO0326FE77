@@ -1,0 +1,113 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.box {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: v.$surface;
+  border: 1px solid v.$border;
+  border-radius: v.$radius;
+
+  @include m.mobile {
+    padding: 12px;
+    gap: 10px;
+  }
+}
+
+.right {
+  flex: 1;
+  min-width: 0;
+}
+
+.input {
+  width: 100%;
+  min-height: 52px;
+  padding: 8px 0;
+  border: none;
+  background: none;
+  color: v.$text;
+  font-size: 15.5px;
+  line-height: 1.5;
+  resize: none;
+  outline: none;
+
+  &::placeholder {
+    color: v.$text-muted;
+  }
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid v.$border;
+}
+
+.mediaBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border: 1px solid v.$border;
+  border-radius: v.$radius-pill;
+  background: none;
+  color: v.$text-muted;
+  font-size: 13px;
+  transition: color 0.18s, border-color 0.18s;
+
+  &:hover {
+    color: v.$text;
+  }
+
+  svg {
+    font-size: 18px !important;
+  }
+
+  span {
+    @include m.mobile {
+      display: none;
+    }
+  }
+}
+
+.mediaOn {
+  border-color: v.$accent;
+  color: v.$accent;
+}
+
+.counter {
+  margin-left: auto;
+  font-size: 13px;
+  color: v.$text-muted;
+}
+
+.counterLow {
+  color: v.$danger;
+}
+
+.publish {
+  padding: 8px 20px;
+  border: none;
+  border-radius: v.$radius-pill;
+  background: v.$accent;
+  color: #12151a;
+  font-size: 14px;
+  font-weight: 600;
+  transition: opacity 0.18s, transform 0.1s;
+
+  &:hover:not(:disabled) {
+    opacity: 0.9;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+
+  &:disabled {
+    background: v.$surface-2;
+    color: v.$text-muted;
+    cursor: not-allowed;
+  }
+}

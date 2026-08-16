@@ -1,0 +1,257 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.post {
+  padding: 16px;
+  background: v.$surface;
+  border: 1px solid v.$border;
+  border-radius: v.$radius;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: #3a4048;
+  }
+
+  @include m.mobile {
+    padding: 14px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.name {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 600;
+
+  &:hover {
+    color: v.$accent;
+  }
+}
+
+.meta {
+  margin: 0;
+  font-size: 12.5px;
+  color: v.$text-muted;
+}
+
+.text {
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.hashtag {
+  color: v.$accent;
+}
+
+
+.image {
+  display: block;
+  width: 100%;
+  height: 340px;
+  margin-top: 14px;
+  object-fit: cover; 
+  border-radius: v.$radius-sm;
+  border: 1px solid v.$border;
+  background: v.$surface-2;
+
+  @include m.mobile {
+    height: 220px;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 12px;
+  border: none;
+  border-radius: v.$radius-pill;
+  background: none;
+  color: v.$text-muted;
+  font-size: 13.5px;
+  transition: background 0.18s, color 0.18s;
+
+  &:hover {
+    background: v.$surface-2;
+    color: v.$text;
+  }
+
+  svg {
+    font-size: 19px !important;
+  }
+}
+
+.liked {
+  color: v.$danger;
+
+  &:hover {
+    color: v.$danger;
+  }
+}
+
+
+.open {
+  background: v.$surface-2;
+  color: v.$accent;
+
+  &:hover {
+    color: v.$accent;
+  }
+}
+
+.save {
+  margin-left: auto;
+}
+
+.savedOn {
+  color: v.$accent;
+
+  &:hover {
+    color: v.$accent;
+  }
+}
+
+
+.comments {
+  margin-top: 12px;
+  padding-top: 14px;
+  border-top: 1px solid v.$border;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comment {
+  display: flex;
+  gap: 10px;
+}
+
+.bubble {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 13px;
+  background: v.$surface-2;
+  border-radius: v.$radius-sm;
+}
+
+.commentHead {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 2px;
+}
+
+.commentName {
+  font-size: 13.5px;
+  font-weight: 600;
+
+  &:hover {
+    color: v.$accent;
+  }
+}
+
+.commentTime {
+  font-size: 11.5px;
+  color: v.$text-muted;
+}
+
+.commentText {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.noComments {
+  margin: 0 0 14px;
+  font-size: 13.5px;
+  color: v.$text-muted;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  background: v.$surface-2;
+  border: 1px solid transparent;
+  border-radius: v.$radius-pill;
+  color: v.$text;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: v.$accent;
+  }
+
+  &::placeholder {
+    color: v.$text-muted;
+  }
+}
+
+.send {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background: v.$accent;
+  color: #12151a;
+  transition: opacity 0.18s;
+
+  svg {
+    font-size: 18px !important;
+  }
+
+  &:disabled {
+    background: v.$surface-2;
+    color: v.$text-muted;
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,205 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.page {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  min-height: 100vh;
+
+
+  @include m.tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.cosmos {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(116, 224, 171, 0.14), transparent 55%),
+    radial-gradient(circle at 75% 70%, rgba(169, 155, 242, 0.16), transparent 50%),
+    #14161a;
+
+  @include m.tablet {
+    display: none;
+  }
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 22% 32%, #ffffff88, transparent),
+    radial-gradient(1.5px 1.5px at 68% 18%, #ffffff66, transparent),
+    radial-gradient(2px 2px at 48% 68%, #ffffff55, transparent),
+    radial-gradient(1.5px 1.5px at 82% 58%, #ffffff77, transparent),
+    radial-gradient(1.5px 1.5px at 28% 82%, #ffffff55, transparent),
+    radial-gradient(1px 1px at 58% 42%, #ffffff66, transparent);
+  animation: twinkle 6s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.45; }
+  to   { opacity: 1; }
+}
+
+.cosmosContent {
+  position: relative;
+  text-align: center;
+}
+
+.logoText {
+  margin-top: 22px;
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+}
+
+.tagline {
+  margin-top: 6px;
+  color: v.$text-muted;
+  font-size: 15px;
+}
+
+
+.formSide {
+  display: grid;
+  place-items: center;
+  padding: 40px 24px;
+}
+
+.form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.mobileLogo {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+  font-family: v.$font-display;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+
+  @include m.tablet {
+    display: flex;
+  }
+}
+
+.title {
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 8px 0 26px;
+  color: v.$text-muted;
+  font-size: 14px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: v.$text-muted;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  background: v.$surface;
+  border: 1px solid v.$border;
+  border-radius: v.$radius-sm;
+  color: v.$text;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: v.$accent;
+  }
+
+  &::placeholder {
+    color: #6d757c;
+  }
+}
+
+
+.row {
+  display: flex;
+  gap: 14px;
+
+  @include m.mobile {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.col {
+  flex: 1;
+  min-width: 0;
+}
+
+.terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: v.$text-muted;
+  font-size: 13.5px;
+  line-height: 1.5;
+  cursor: pointer;
+
+  input {
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+    accent-color: v.$accent; 
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+}
+
+.error {
+  margin: -4px 0 16px;
+  padding: 9px 12px;
+  background: rgba(239, 106, 106, 0.1);
+  border: 1px solid rgba(239, 106, 106, 0.35);
+  border-radius: v.$radius-sm;
+  color: v.$danger;
+  font-size: 13.5px;
+}
+
+.submit {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: v.$radius-pill;
+  background: linear-gradient(120deg, v.$accent, #8fd9f0);
+  color: #12151a;
+  font-size: 15px;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.1s;
+
+  &:hover { opacity: 0.92; }
+  &:active { transform: scale(0.99); }
+}
+
+.hint {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 13.5px;
+  color: v.$text-muted;
+
+  a {
+    color: v.$accent;
+  }
+}

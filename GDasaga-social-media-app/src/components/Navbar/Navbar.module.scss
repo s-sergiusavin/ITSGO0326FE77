@@ -1,0 +1,142 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(30, 33, 38, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid v.$border;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  @include m.mobile {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandName {
+  font-family: v.$font-display;
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0.14em;
+  color: v.$text;
+
+  @include m.mobile {
+    display: none;
+  }
+}
+
+.search {
+  flex: 1;
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: v.$surface-2;
+  border: 1px solid transparent;
+  border-radius: v.$radius-pill;
+  transition: border-color 0.2s;
+
+  &:focus-within {
+    border-color: v.$accent;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    background: none;
+    border: none;
+    outline: none;
+    color: v.$text;
+    font-size: 14px;
+
+    &::placeholder {
+      color: v.$text-muted;
+    }
+  }
+}
+
+.searchIcon {
+  color: v.$text-muted;
+  font-size: 20px !important;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.iconButton {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: v.$text-muted;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: v.$surface-2;
+    color: v.$text;
+  }
+}
+
+.badge {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  display: grid;
+  place-items: center;
+  background: v.$accent;
+  color: #12151a;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: v.$radius-pill;
+}
+
+.me {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 4px 12px 4px 4px;
+  border-radius: v.$radius-pill;
+  transition: background 0.2s;
+
+  &:hover {
+    background: v.$surface-2;
+  }
+}
+
+.meName {
+  font-size: 14px;
+  font-weight: 500;
+
+  @include m.tablet {
+    display: none;
+  }
+}

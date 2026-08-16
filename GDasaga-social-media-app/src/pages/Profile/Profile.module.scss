@@ -1,0 +1,247 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 20px 60px;
+
+  @include m.mobile {
+    padding: 14px 14px 40px;
+  }
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding: 7px 14px 7px 10px;
+  border: 1px solid v.$border;
+  border-radius: v.$radius-pill;
+  background: none;
+  color: v.$text-muted;
+  font-size: 13.5px;
+
+  &:hover {
+    color: v.$text;
+    border-color: v.$accent-soft;
+  }
+
+  svg {
+    font-size: 18px !important;
+  }
+}
+
+.card {
+  overflow: hidden;
+  background: v.$surface;
+  border: 1px solid v.$border;
+  border-radius: v.$radius;
+}
+
+.cover {
+  position: relative;
+  height: 150px;
+  background: v.$surface-2;
+
+  // Voal intunecat peste poza, ca textul de dedesubt sa ramana lizibil
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(22, 24, 27, 0.15), rgba(22, 24, 27, 0.75));
+  }
+
+  @include m.mobile {
+    height: 110px;
+  }
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: -46px;
+
+  @include m.mobile {
+    padding: 0 14px;
+    margin-top: -38px;
+  }
+}
+
+.avatarRing {
+  padding: 4px;
+  background: v.$surface;
+  border-radius: 50%;
+  line-height: 0;
+}
+
+.followBtn {
+  padding: 9px 22px;
+  border: 1px solid v.$accent;
+  border-radius: v.$radius-pill;
+  background: v.$accent;
+  color: #12151a;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.following {
+  background: none;
+  border-color: v.$border;
+  color: v.$text-muted;
+
+  &:hover {
+    border-color: v.$danger;
+    color: v.$danger;
+  }
+}
+
+.info {
+  padding: 14px 20px 18px;
+
+  @include m.mobile {
+    padding: 14px;
+  }
+}
+
+.name {
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.handle {
+  margin: 2px 0 0;
+  color: v.$text-muted;
+  font-size: 14px;
+}
+
+.bio {
+  margin: 12px 0 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+  color: v.$text-muted;
+  font-size: 13.5px;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  svg {
+    font-size: 17px !important;
+  }
+}
+
+.stats {
+  display: flex;
+  gap: 26px;
+  margin-top: 16px;
+
+  div {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  strong {
+    font-family: v.$font-display;
+    font-size: 17px;
+  }
+
+  span {
+    color: v.$text-muted;
+    font-size: 13.5px;
+  }
+
+  @include m.mobile {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+
+.tabs {
+  display: flex;
+  border-top: 1px solid v.$border;
+
+  button {
+    flex: 1;
+    padding: 13px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: none;
+    color: v.$text-muted;
+    font-size: 14px;
+    font-weight: 500;
+
+    &:hover {
+      background: v.$surface-2;
+    }
+  }
+}
+
+.tabActive {
+  color: v.$accent !important;
+  border-bottom-color: v.$accent !important;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.noPosts,
+.about {
+  margin-top: 16px;
+  padding: 24px;
+  background: v.$surface;
+  border: 1px solid v.$border;
+  border-radius: v.$radius;
+  color: v.$text-muted;
+  font-size: 14.5px;
+
+  h2 {
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: v.$text;
+  }
+
+  p {
+    margin: 0 0 8px;
+  }
+}
+
+.notFound {
+  padding: 80px 20px;
+  text-align: center;
+
+  button {
+    margin-top: 14px;
+    padding: 9px 20px;
+    border: 1px solid v.$accent;
+    border-radius: v.$radius-pill;
+    background: none;
+    color: v.$accent;
+  }
+}
