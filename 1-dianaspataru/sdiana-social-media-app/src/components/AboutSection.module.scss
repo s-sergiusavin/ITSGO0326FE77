@@ -1,4 +1,5 @@
 @use '../styles/variables' as *;
+
 .profileGridDetails {
   display: flex;
   flex-direction: column;
@@ -12,30 +13,39 @@
   padding: 30px;
   position: relative;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
 
   h3 {
-    margin: 0 0 25px 0;
+    margin: 0;
     font-size: 1.2rem;
     color: $text-dark;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 15px;
+    border-bottom: none; 
+    padding-bottom: 0;
   }
 }
 
 .editBtnSmall {
-  position: absolute;
-  top: 25px;
-  right: 25px;
   background-color: $almost-aqua;
   color: #ffffff;
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
   border-radius: 8px;
+  border: none;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s, opacity 0.3s;
-  opacity: 0.8;
+  opacity: 0.9;
   text-decoration: none;
 
   &:hover {

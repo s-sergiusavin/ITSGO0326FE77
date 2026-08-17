@@ -9,7 +9,6 @@ import EditProfileModal from "../../components/EditProfileModal";
 import LeftSide from "../feed/leftside/LeftSide";
 import styles from "./MyProfile.module.scss";
 
-
 const MOCK_FRIENDS = [
   { id: 1, name: 'Andrei Popescu', role: 'UI/UX Designer', mutual: 14, avatar: 'https://i.pravatar.cc/150?img=11' },
   { id: 2, name: 'Elena Ionescu', role: 'Frontend Developer', mutual: 8, avatar: 'https://i.pravatar.cc/150?img=5' },
@@ -22,6 +21,7 @@ const MOCK_FRIENDS = [
 const MyProfile = () => {
   const [activeTab, setActiveTab] = useState("about");
   const [showEdit, setShowEdit] = useState(false);
+  const [activeSection, setActiveSection] = useState(null); // Stocăm ce secțiune se editează
 
   const user = {
     name: "Stan Maria",
@@ -42,33 +42,55 @@ const MyProfile = () => {
     cover: "https://images.unsplash.com/photo-1503264116251-35a269479413"
   };
 
-  return (
+  // function edit button
+  const handleOpenEditModal = (sectionName) => {
+    setActiveSection(sectionName);
+    setShowEdit(true);
+  };
 
+  return (
     <div className={styles.profileContainer}>
-      <LeftSide user={user}/>
+      <LeftSide user={user} />
       <main className={styles.mainContainer}>
         <div className={styles.mainContent}>
-          <div  className={styles.headerWithTabsWrapper}>
+          <div className={styles.headerWithTabsWrapper}>
             <ProfileHeader
               user={user}
-              onEditAvatar={() => setShowEdit(true)}
-              onEditCover={() => setShowEdit(true)}
+              onEditAvatar={() => {
+                setActiveSection('avatar');
+                setShowEdit(true);
+              }}
+              onEditCover={() => {
+                setActiveSection('cover');
+                setShowEdit(true);
+              }}
             />
 
             <ProfileTabs activeTab={activeTab} setActiveTab={setActiveTab} /> 
           </div>
-          {activeTab === "about" && <AboutSection user={user} />}
+
+         
+          {activeTab === "about" && (
+            <AboutSection user={user} onOpenEditModal={handleOpenEditModal} isEditable={true}/>
+          )}
           {activeTab === "friends" && <FriendsSection friends={MOCK_FRIENDS} />}
           {activeTab === "timeline" && <TimelineSection />}
           {activeTab === "notifications" && <NotificationsSection />}
 
-          {showEdit && <EditProfileModal onClose={() => setShowEdit(false)} />}
+          {/* open modal */}
+          {showEdit && (
+            <EditProfileModal 
+              section={activeSection} 
+              onClose={() => {
+                setShowEdit(false);
+                setActiveSection(null);
+              }} 
+            />
+          )}
         </div>
       </main>
     </div>
   );
-
-    
 };
 
 export default MyProfile;

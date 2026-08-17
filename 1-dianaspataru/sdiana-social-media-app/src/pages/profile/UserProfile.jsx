@@ -19,7 +19,7 @@ const MOCK_FRIENDS = [
 ];
 
 const UserProfile = () => {
-  const { id } = useParams(); // luăm ID-ul userului din URL
+  const { id } = useParams();
   const [activeTab, setActiveTab] = useState("timeline");
 
   const [user, setUser] = useState(null);
@@ -29,7 +29,6 @@ const UserProfile = () => {
   const post = useFetch(`http://localhost:3000/posts/${id}`);
 
   useEffect(() => {
-    // When the fetch hook returns (including an empty result), update state
     // only set user when pers is non-null (initial state is null)
     if (pers !== null) {
       setUser(pers);
@@ -78,7 +77,7 @@ const UserProfile = () => {
                 hideNotifications
               />
         </div>
-          {activeTab === "about" && <AboutSection user={pers} />}
+          {activeTab === "about" && <AboutSection user={pers} isEditable={false}/>}
           {activeTab === "timeline" && <TimelineSection postData={post} user={user} />}
           {activeTab === "friends" && <FriendsSection friends={MOCK_FRIENDS} />}
         </div>

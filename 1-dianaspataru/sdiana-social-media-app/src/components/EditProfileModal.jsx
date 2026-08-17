@@ -1,11 +1,11 @@
+
 import styles from "./EditProfileModal.module.scss";
 
-const EditProfileModal = ({ onClose }) => {
-
+const EditProfileModal = ({ section, onClose }) => {
   return (
     <div className={styles.modalBackdrop}>
       <div className={styles.modalCard}>
-        <h3>Edit Profile</h3>
+        <h3>Edit {section ? section.toUpperCase() : "Profile"}</h3>
 
         <label>Name</label>
         <input type="text" />
@@ -22,6 +22,6 @@ const EditProfileModal = ({ onClose }) => {
       </div>
     </div>
   );
-}
+};
 
-export default  EditProfileModal;
+export default EditProfileModal;

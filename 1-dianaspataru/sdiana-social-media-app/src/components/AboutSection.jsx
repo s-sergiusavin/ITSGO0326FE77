@@ -1,11 +1,24 @@
 import styles from "./AboutSection.module.scss";
+import EditIcon from "@mui/icons-material/Edit";
 
-const AboutSection = ({ user }) => {
-
+const AboutSection = ({ user, onOpenEditModal, isEditable = false }) => {
   return (
     <div className={styles.profileGridDetails}>
+      
+      {/* personal */}
       <div className={styles.detailsCard}>
-        <h3>Personal Information</h3>
+        <div className={styles.cardHeader}>
+          <h3>Personal Information</h3>
+          {isEditable && (
+            <button 
+              className={styles.editBtnSmall} 
+              onClick={() => onOpenEditModal('personal')}
+              aria-label="Edit"
+            >
+              <EditIcon style={{ fontSize: '18px' }} />
+            </button>
+          )}
+        </div>
         <div className={styles.infoList}>
           <div className={styles.infoItem}>
             <span>Name</span>
@@ -26,8 +39,20 @@ const AboutSection = ({ user }) => {
         </div>
       </div>
 
+      {/* hobbies */}
       <div className={`${styles.detailsCard} ${styles.hobbies}`}>
-        <h3>Hobbies & Interests</h3>
+        <div className={styles.cardHeader}>
+          <h3>Hobbies & Interests</h3>
+          {isEditable && (
+            <button 
+              className={styles.editBtnSmall} 
+              onClick={() => onOpenEditModal('hobbies')}
+              aria-label="Edit"
+            >
+              <EditIcon style={{ fontSize: '18px' }} />
+            </button>
+          )}
+        </div>
         <div className={styles.infoList}>
           <div className={styles.infoItem}>
             <span>My Hobbies</span>
@@ -44,8 +69,20 @@ const AboutSection = ({ user }) => {
         </div>
       </div>
 
+      {/* social */}
       <div className={styles.detailsCard}>
-        <h3>Social Networks</h3>
+        <div className={styles.cardHeader}>
+          <h3>Social Networks</h3>
+          {isEditable && (
+            <button 
+              className={styles.editBtnSmall} 
+              onClick={() => onOpenEditModal('social')}
+              aria-label="Editează Rețele Sociale"
+            >
+              <EditIcon style={{ fontSize: '18px' }} />
+            </button>
+          )}
+        </div>
         <div className={styles.infoList}>
           <div className={styles.infoItem}>
             <span>Facebook</span>
@@ -65,8 +102,9 @@ const AboutSection = ({ user }) => {
           </div>
         </div>
       </div>
+
     </div>
   );
-}
+};
 
-export default  AboutSection;
+export default AboutSection;
