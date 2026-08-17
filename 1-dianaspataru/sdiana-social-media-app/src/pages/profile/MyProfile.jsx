@@ -38,7 +38,7 @@ const MyProfile = () => {
     instagram: "instagram.com/",
     youtube: "youtube.com/",
     linkedin: "linkedin.com/in/e",
-    avatar: "https://i.pravatar.cc/150?img=3",
+    avatar: "https://i.pravatar.cc/150?img=5",
     cover: "https://images.unsplash.com/photo-1503264116251-35a269479413"
   };
 

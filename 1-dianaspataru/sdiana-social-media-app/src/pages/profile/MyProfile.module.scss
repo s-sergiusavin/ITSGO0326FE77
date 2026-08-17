@@ -1,4 +1,6 @@
+
 @use '../../styles/variables' as *;
+
 .profileContainer {
   min-height: 100vh;
   background-color: $cloud-dancer;
@@ -7,6 +9,18 @@
   margin-top: 5rem;
   padding: 0 3vw;
   gap: 2rem;
+
+  /* responsive */
+  @media (max-width: $break-tablet) {
+    justify-content: center;
+    padding: 0 1rem;
+    margin-top: 4rem;
+
+    /* ascunde left side avand in vedere ca e primul copil din profilecontainer */
+    > *:first-child {
+      display: none;
+    }
+  }
 }
 
 .mainContainer {
@@ -16,6 +30,11 @@
   padding: 5rem 3vw 2rem 3vw;
   gap: 2rem;
   width: 100%;
+
+  @media (max-width: $break-tablet) {
+    padding: 2rem 0;
+    justify-content: center;
+  }
 }
 
 .mainContent {
@@ -26,6 +45,10 @@
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
+
+  @media (max-width: $break-tablet) {
+    max-width: 100%;
+  }
 }
 
 .headerWithTabsWrapper {
@@ -35,4 +58,5 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
+  width: 100%;
 }

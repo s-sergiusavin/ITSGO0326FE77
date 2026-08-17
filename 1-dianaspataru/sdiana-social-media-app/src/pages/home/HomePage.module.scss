@@ -1,7 +1,6 @@
-
+@use '../../styles/variables' as *;
 
 .mainContainer {
-  
   display: flex;
   justify-content: space-between;
   margin-top: 5rem;
@@ -9,13 +8,12 @@
   gap: 2rem;
 
   aside {
-      position: sticky;
-        top: 5rem;
-        height: calc(100vh - 5rem);
-        overflow-y: auto;
-        flex-shrink: 0;
+    position: sticky;
+    top: 5rem;
+    height: calc(100vh - 5rem);
+    overflow-y: auto;
+    flex-shrink: 0;
 
-   
     &.leftSide {
       width: 22rem;
     }
@@ -23,24 +21,44 @@
     &.rightSide {
       width: 22rem;
     }
-
   }
 
   section {
     flex: 1;
+    min-width: 0; 
   }
 
-    &.leftSide {
-      left: 0;
-    }
+  // responsive
 
-    &.rightSide {
-      right: 0; 
-    }
+  @media (max-width: $break-laptop) {
+    padding: 0 1.5rem;
+    gap: 1.5rem;
 
-   
-    > * {
+    aside {
+      &.leftSide {
+        width: 18rem;
+      }
+      &.rightSide {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: $break-tablet) {
+    flex-direction: column;
+    padding: 0 1rem;
+    margin-top: 4rem;
+
+    aside {
+      position: relative;
+      top: 0;
+      height: auto;
       width: 100%;
-      box-sizing: border-box;
+      display: none; 
+    }
+
+    section {
+      width: 100%;
     }
   }
+}

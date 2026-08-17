@@ -161,31 +161,7 @@
   }
 }
 
-.infoIconWrapper {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  padding: 0.8rem 1rem;
-  background-color: $cloud-dancer;
-  border-radius: 0.6rem;
-  margin-top: 0.5rem;
 
-  .infoIcon {
-    color: $almost-aqua;
-    display: flex;
-    align-items: center;
-  }
-
-  .infoMessage {
-    font-size: 0.85rem;
-    color: $text-muted;
-    line-height: 1.4;
-
-    a {
-      margin-left: 5px;
-    }
-  }
-}
 
 .postTitle {
   font-size: 1.1rem;
@@ -260,6 +236,7 @@
   .actions {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     list-style: none;
     padding: 0;
     margin: 0;

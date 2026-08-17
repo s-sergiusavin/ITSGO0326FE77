@@ -1,4 +1,3 @@
-
 @use '../styles/variables' as *;
 
 .profileNavTabs {
@@ -6,10 +5,12 @@
   border-top: 1px solid $cloud-dancer;
   padding: 0 1rem;
   background-color: white;
+  overflow-x: auto;
 
   .tabBtn {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     padding: 1.2rem 1.5rem;
     color: $nimbus-cloud;
@@ -21,6 +22,7 @@
     font-size: 1rem;
     font-family: inherit;
     transition: all 0.3s ease;
+    white-space: nowrap;
 
     .tabIcon {
       font-size: 1.2rem;
@@ -30,6 +32,22 @@
     &:hover {
       color: $almost-aqua;
       border-bottom-color: $almost-aqua;
+    }
+  }
+
+  /* responsiv , doar iconitele pe mobile */
+  @media (max-width: $break-tablet) {
+    justify-content: space-around;
+    padding: 0;
+
+    .tabBtn {
+      padding: 1rem;
+      font-size: 0; 
+      gap: 0;
+
+      .tabIcon {
+        font-size: 1.4rem; 
+      }
     }
   }
 }
