@@ -1,0 +1,367 @@
+.landing-page {
+  min-height: 100vh;
+  background-color: #018281;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+  background-size: 4px 4px;
+  padding: 1.5rem;
+}
+
+.landing-page a {
+  text-decoration: none;
+}
+
+.landing-page .hero-window {
+  max-width: 60rem;
+  margin: 0 auto 1.5rem;
+}
+
+.landing-page header {
+  background: #333
+    url("https://mshanken.imgix.net/wso/bolt/2025-06/restaurant-guide-chains-fogo-de-chao-dining-061225_1600.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 22rem;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
+}
+
+.landing-page header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 10, 124, 0.15) 0%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.landing-page .back-image {
+  width: 2.5rem;
+  height: 0.7rem;
+  position: fixed;
+  top: 1.2rem;
+  left: 1.2rem;
+  z-index: 5;
+  background: var(--chrome);
+  border: 2px solid var(--chrome-shadow);
+  box-shadow: inset 1px 1px 0 #fff;
+  padding: 0.3rem;
+}
+
+.landing-page header h1 {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  padding: 1rem 1rem 0.3rem;
+  color: white;
+}
+
+.landing-page header h1 span {
+  text-transform: uppercase;
+  font-family: topaz, sans-serif;
+  display: block;
+  font-size: 2.6rem;
+  color: var(--cyan-glow);
+  position: relative;
+  z-index: 1;
+
+}
+
+.landing-page header h1 span::before {
+  content: none;
+}
+
+.landing-page .header-description {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.85rem;
+  padding: 0 0.5rem;
+  max-width: 85%;
+  display: block;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: #e6e6e6;
+}
+
+.landing-page .form-container {
+  position: relative;
+  z-index: 1;
+  margin: 0.5rem 2rem 1.5rem;
+  background: var(--chrome);
+  border: 2px solid var(--chrome-shadow);
+  box-shadow: inset 1px 1px 0 #fff, 3px 3px 0 rgba(0, 0, 0, 0.4);
+  padding: 1rem 1.2rem;
+  max-width: 24rem;
+}
+
+.landing-page .form-container label {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--navy);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.landing-page .form-container p {
+  color: #555;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  margin: 0.3rem 0 0.8rem;
+}
+
+.landing-page .form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-page .form-container form input[type="text"] {
+  font-family: var(--font-ui);
+  border: 2px solid var(--chrome-shadow);
+  box-shadow: inset 1px 1px 0 #8f8f9c, inset -1px -1px 0 #fff;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0;
+  background: #fff;
+}
+
+.landing-page .form-container form input[type="text"]:focus {
+  outline: 2px solid var(--cyan-glow);
+  outline-offset: 1px;
+}
+
+.landing-page .form-container form input[type="button"] {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--hot-pink);
+  border: 2px solid #8c1a5c;
+  box-shadow: inset 1px 1px 0 #ff9bd0, inset -2px -2px 0 #8c1a5c;
+  border-radius: 0;
+  color: white;
+  padding: 0.7rem 0;
+  width: 60%;
+  font-size: 0.9rem;
+  align-self: center;
+  cursor: pointer;
+}
+
+.landing-page .form-container form input[type="button"]:hover {
+  background: #ff5cae;
+}
+
+.landing-page .form-container form input[type="button"]:active {
+  box-shadow: inset -1px -1px 0 #ff9bd0, inset 2px 2px 0 #8c1a5c;
+  transform: translate(1px, 1px);
+}
+
+.landing-page .call-to-action {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.landing-page .call-to-action-window {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.landing-page .call-to-action .call-to-action-message {
+  padding: 2rem 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--paper);
+}
+
+.landing-page .call-to-action .call-to-action-message h2 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  color: var(--navy);
+  font-size: 1.6rem;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+}
+
+.landing-page .call-to-action .call-to-action-message h2::before {
+  content: none;
+}
+
+.landing-page .call-to-action .call-to-action-message p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text);
+  max-width: 42rem;
+}
+
+.landing-page .call-to-action .call-to-action-message img {
+  max-width: 100%;
+  margin-top: 1.2rem;
+  border: 2px solid var(--chrome-shadow);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.landing-page .contact-window {
+  max-width: 60rem;
+  margin: 1.5rem auto 0;
+}
+
+.landing-page .contact-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 2.5rem 2.5rem;
+  background: var(--paper);
+}
+
+.landing-page .contact-form-container {
+  width: 100%;
+  max-width: 28rem;
+  background: var(--chrome);
+  border: 2px solid var(--chrome-shadow);
+  box-shadow: inset 1px 1px 0 #fff, 3px 3px 0 rgba(0, 0, 0, 0.4);
+  padding: 1.2rem 1.4rem 1.4rem;
+}
+
+.landing-page .contact-form-container h2 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  color: var(--navy);
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.landing-page .contact-form-container h2::before {
+  content: none;
+}
+
+.landing-page .contact-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: #555;
+  margin: 0 0 1rem;
+}
+
+.landing-page .contact-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-page .contact-form-container label {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--navy);
+  display: block;
+  margin: 0.6rem 0 0.4rem;
+}
+
+.landing-page .contact-form-container label:first-of-type {
+  margin-top: 0;
+}
+
+.landing-page .contact-form-container input[type="text"],
+.landing-page .contact-form-container input[type="email"],
+.landing-page .contact-form-container textarea {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  border: 2px solid var(--chrome-shadow);
+  box-shadow: inset 1px 1px 0 #8f8f9c, inset -1px -1px 0 #fff;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0;
+  background: #fff;
+  resize: vertical;
+}
+
+.landing-page .contact-form-container input[type="text"]:focus,
+.landing-page .contact-form-container input[type="email"]:focus,
+.landing-page .contact-form-container textarea:focus {
+  outline: 2px solid var(--cyan-glow);
+  outline-offset: 1px;
+}
+
+.landing-page .contact-form-container input[type="submit"] {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--hot-pink);
+  border: 2px solid #8c1a5c;
+  box-shadow: inset 1px 1px 0 #ff9bd0, inset -2px -2px 0 #8c1a5c;
+  border-radius: 0;
+  color: white;
+  padding: 0.7rem 0;
+  width: 60%;
+  font-size: 0.9rem;
+  align-self: center;
+  cursor: pointer;
+  margin-top: 1.2rem;
+}
+
+.landing-page .contact-form-container input[type="submit"]:hover {
+  background: #ff5cae;
+}
+
+.landing-page .contact-form-container input[type="submit"]:active {
+  box-shadow: inset -1px -1px 0 #ff9bd0, inset 2px 2px 0 #8c1a5c;
+  transform: translate(1px, 1px);
+}
+
+.landing-page .contact-success {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--navy);
+  text-align: center;
+  margin-top: 0.8rem;
+}
+
+/* ================= RESPONSIVE — landing/event page ================== */
+@media (max-width: 640px) {
+  .landing-page {
+    padding: 0.8rem;
+  }
+
+  .landing-page header {
+    height: 17rem;
+  }
+
+  .landing-page header h1 {
+    font-size: 1.3rem;
+    margin: 0 1.2rem 0.4rem;
+  }
+
+  .landing-page header h1 span {
+    font-size: 1.8rem;
+  }
+
+  .landing-page .header-description {
+    padding: 0.7rem 1.2rem;
+    max-width: 100%;
+    font-size: 0.78rem;
+  }
+
+  .landing-page .form-container {
+    margin: 0.5rem 1.2rem 1.2rem;
+    max-width: none;
+  }
+
+  .landing-page .call-to-action .call-to-action-message {
+    padding: 1.5rem 1.2rem 1.8rem;
+  }
+
+  .landing-page .call-to-action .call-to-action-message h2 {
+    font-size: 1.2rem;
+  }
+
+  .landing-page .contact-section {
+    padding: 1.5rem 1.2rem 1.8rem;
+  }
+
+  .landing-page .contact-form-container {
+    max-width: none;
+  }
+}

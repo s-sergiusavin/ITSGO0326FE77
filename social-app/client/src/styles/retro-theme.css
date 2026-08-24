@@ -1,0 +1,354 @@
+/* ============================================================
+   RETRO DESKTOP THEME
+   A Y2K / "Windows 98 desktop" visual language shared by every
+   page. Tokens first, then reusable window-chrome primitives.
+   ============================================================ */
+
+:root {
+  /* --- palette (6 named hex values) --- */
+  --chrome: #c6c6ce;       /* panel face gray */
+  --chrome-shadow: #6f6f7c; /* bevel dark edge */
+  --navy: #000a7c;          /* titlebars, headers */
+  --cyan-glow: #00e5d4;     /* links, icons, focus */
+  --hot-pink: #ff3ea1;      /* signature accent: likes, badges, highlights */
+  --paper: #f2efe1;         /* content / card background */
+
+  --text: #14141c;
+  --text-invert: #ffffff;
+
+  --font-display: "Pixelify Sans", sans-serif;
+  --font-ui: "Space Mono", monospace;
+  --font-body: "IBM Plex Sans", sans-serif;
+}
+
+/* --- desktop backdrop: subtle dither/scanline texture --- */
+.retro-desktop {
+  min-height: 100vh;
+  background-color: #018281;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+  background-size: 4px 4px;
+  font-family: var(--font-body);
+  color: var(--text);
+}
+
+/* --- beveled 3D panel (the base "window" look) --- */
+.win-panel {
+  background: var(--chrome);
+  border: 2px solid var(--chrome-shadow);
+  border-radius: 2px;
+  box-shadow:
+    inset 1px 1px 0 #ffffff,
+    inset -2px -2px 0 #8f8f9c,
+    3px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* --- titlebar with gradient + traffic-light controls --- */
+.win-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: linear-gradient(90deg, var(--navy) 0%, #1084d0 100%);
+  color: var(--text-invert);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--chrome-shadow);
+}
+
+.win-titlebar .win-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.win-titlebar .win-controls {
+  display: flex;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.win-titlebar .win-controls span {
+  width: 0.9rem;
+  height: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--chrome);
+  color: var(--navy);
+  border: 1px solid var(--chrome-shadow);
+  box-shadow: inset 1px 1px 0 #fff;
+  font-size: 0.6rem;
+  line-height: 1;
+  font-weight: 900;
+}
+
+/* --- chunky 3D button, the "OK / Cancel" dialog-button feel --- */
+.btn-3d {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: var(--chrome);
+  color: var(--text);
+  border: 2px solid var(--chrome-shadow);
+  box-shadow: inset 1px 1px 0 #fff, inset -2px -2px 0 #8f8f9c;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  transition: transform 0.05s ease;
+}
+
+.btn-3d:hover {
+  background: #d4d4dc;
+}
+
+.btn-3d:active {
+  box-shadow: inset -1px -1px 0 #fff, inset 2px 2px 0 #8f8f9c;
+  transform: translate(1px, 1px);
+}
+
+.btn-3d.accent {
+  background: var(--hot-pink);
+  color: var(--text-invert);
+  border-color: #8c1a5c;
+  box-shadow: inset 1px 1px 0 #ff9bd0, inset -2px -2px 0 #8c1a5c;
+}
+
+.btn-3d.accent:hover {
+  background: #ff5cae;
+}
+
+/* --- pixel badge (notification counts, "NEW" tags) --- */
+.pixel-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.7rem;
+  background: var(--hot-pink);
+  color: var(--text-invert);
+  border: 1px solid #8c1a5c;
+  padding: 0.1rem 0.4rem;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* --- inset "screen" look for inputs (sunken bevel) --- */
+.input-sunken {
+  font-family: var(--font-ui);
+  background: #ffffff;
+  border: 2px solid var(--chrome-shadow);
+  box-shadow: inset 1px 1px 0 #8f8f9c, inset -1px -1px 0 #fff;
+  padding: 0.5rem;
+  color: var(--text);
+}
+
+.input-sunken:focus {
+  outline: 2px solid var(--cyan-glow);
+  outline-offset: 1px;
+}
+
+/* --- scrolling marquee ticker --- */
+.marquee-track {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #000000;
+  color: var(--cyan-glow);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  padding: 0.4rem 0;
+  border: 2px solid var(--chrome-shadow);
+}
+
+.marquee-track span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 18s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track span {
+    animation: none;
+    padding-left: 0;
+  }
+}
+
+/* --- lightbox modal --- */
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 8, 20, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 2rem;
+  animation: fade-in 0.15s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox-window {
+  max-width: min(90vw, 50rem);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.lightbox-window .win-controls span {
+  cursor: pointer;
+}
+
+.lightbox-body {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  padding: 0.5rem;
+}
+
+.lightbox-body img {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+}
+
+/* --- generic modal (edit-profile, add-photo, etc.) --- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 8, 20, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 150;
+  padding: 1.5rem;
+  animation: fade-in 0.15s ease;
+  overflow-y: auto;
+}
+
+.modal-window {
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-window .win-controls span {
+  cursor: pointer;
+}
+
+.modal-body {
+  background: var(--paper);
+  padding: 1rem 1.2rem;
+  overflow-y: auto;
+}
+
+/* --- toast (undo notifications) --- */
+.retro-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.7rem 0.9rem;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--text);
+  animation: toast-in 0.2s ease;
+}
+
+@keyframes toast-in {
+  from {
+    transform: translate(-50%, 1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--text);
+  line-height: 1;
+  padding: 0 0.2rem;
+}
+
+.toast-close:hover {
+  color: var(--hot-pink);
+}
+
+/* ============================================================
+   RESPONSIVE — shared window chrome (all pages)
+   ============================================================ */
+@media (max-width: 640px) {
+  .win-titlebar {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .win-titlebar .win-controls span {
+    width: 0.75rem;
+    height: 0.75rem;
+    font-size: 0.5rem;
+  }
+
+  .btn-3d {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .marquee-track {
+    font-size: 0.72rem;
+  }
+
+  .lightbox-window {
+    width: 95vw;
+  }
+
+  .modal-window {
+    max-width: 95vw !important;
+  }
+
+  .retro-toast {
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 1rem;
+    width: auto;
+    max-width: none;
+    transform: none;
+  }
+}
